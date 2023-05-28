@@ -13,7 +13,7 @@
 		"@lukebennett/eslint-config": "0.0.0",
 		"@lukebennett/prettier-config": "0.0.0",
 		"@manypkg/cli": "^0.20.0",
-		"@turbo/gen": "^1.9.7",
+		"@turbo/gen": "^1.9.9",
 		"eslint": "8.41.0",
 		"eslint-config-custom": "0.0.0",
 		"prettier": "^2.8.8",

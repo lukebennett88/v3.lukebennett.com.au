@@ -23,12 +23,12 @@
 		"eslint-config-next": "13.4.4",
 		"framer-motion": "^10.12.16",
 		"next": "13.4.4",
-		"postcss": "8.4.23",
+		"postcss": "8.4.24",
 		"prettier": "^2.8.8",
 		"prettier-plugin-tailwindcss": "^0.3.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"react-error-boundary": "^4.0.4",
+		"react-error-boundary": "^4.0.7",
 		"tailwindcss": "3.3.2",
 		"typescript": "5.0.4"
 	}
