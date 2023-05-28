@@ -1,0 +1,26 @@
+{
+	"name": "@lukebennett/root",
+	"private": true,
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev",
+		"fix": "pnpm fix:lint && pnpm fix:format",
+		"fix:format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"fix:lint": "turbo run lint -- --fix",
+		"postinstall": "manypkg check"
+	},
+	"dependencies": {
+		"@lukebennett/eslint-config": "0.0.0",
+		"@lukebennett/prettier-config": "0.0.0",
+		"@manypkg/cli": "^0.20.0",
+		"@turbo/gen": "^1.9.7",
+		"eslint": "8.41.0",
+		"eslint-config-custom": "0.0.0",
+		"prettier": "^2.8.8",
+		"turbo": "^1.9.9"
+	},
+	"packageManager": "pnpm@8.5.1",
+	"manypkg": {
+		"defaultBranch": "main"
+	}
+}
