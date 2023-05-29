@@ -8,7 +8,7 @@
 		"start": "next start"
 	},
 	"dependencies": {
-		"@keystatic/core": "^0.0.104",
+		"@keystatic/core": "^0.0.105",
 		"@keystatic/next": "^0.0.7",
 		"@lukebennett/tsconfig": "0.0.0",
 		"@tailwindcss/typography": "^0.5.9",
@@ -28,7 +28,7 @@
 		"prettier-plugin-tailwindcss": "^0.3.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"react-error-boundary": "^4.0.7",
+		"react-error-boundary": "^4.0.8",
 		"tailwindcss": "3.3.2",
 		"typescript": "5.0.4"
 	}

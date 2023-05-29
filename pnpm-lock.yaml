@@ -32,11 +32,11 @@ importers:
   apps/web:
     dependencies:
       '@keystatic/core':
-        specifier: ^0.0.104
-        version: 0.0.104(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^0.0.105
+        version: 0.0.105(react-dom@18.2.0)(react@18.2.0)
       '@keystatic/next':
         specifier: ^0.0.7
-        version: 0.0.7(@keystatic/core@0.0.104)(next@13.4.4)(react-dom@18.2.0)(react@18.2.0)
+        version: 0.0.7(@keystatic/core@0.0.105)(next@13.4.4)(react-dom@18.2.0)(react@18.2.0)
       '@lukebennett/tsconfig':
         specifier: 0.0.0
         version: link:../../packages/tsconfig
@@ -92,8 +92,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       react-error-boundary:
-        specifier: ^4.0.7
-        version: 4.0.7(react@18.2.0)
+        specifier: ^4.0.8
+        version: 4.0.8(react@18.2.0)
       tailwindcss:
         specifier: 3.3.2
         version: 3.3.2
@@ -236,7 +236,7 @@ packages:
     resolution: {integrity: sha512-orajc5T2PsRYUN3ZryCEFeMDYwyw09c/pZeaQEZPH0MpKzSvn3e0uXsDBu3k03VI+9DBiRo+l22BfKTpKwa/Wg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.22.3
+      '@babel/types': 7.22.4
     dev: false
 
   /@babel/helper-module-transforms@7.22.1:
@@ -356,6 +356,15 @@ packages:
 
   /@babel/types@7.22.3:
     resolution: {integrity: sha512-P3na3xIQHTKY4L0YOG7pM8M8uoUIB910WQaSiiMCZUC2Cy8XFEQONGABFnHWBa2gpGKODTAJcNhi5Zk0sLRrzg==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/helper-string-parser': 7.21.5
+      '@babel/helper-validator-identifier': 7.19.1
+      to-fast-properties: 2.0.0
+    dev: false
+
+  /@babel/types@7.22.4:
+    resolution: {integrity: sha512-Tx9x3UBHTTsMSW85WB2kphxYQVvrZ/t1FxD88IpSgIjiUJlCm9z+xWIDwyo1vffTwSqteqyznB8ZE9vYYk16zA==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/helper-string-parser': 7.21.5
@@ -695,8 +704,8 @@ packages:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
     dev: false
 
-  /@keystatic/core@0.0.104(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-NiSa/JmFT0xt3OTq3QNCgpf4FxchYsJ5IO6xKOHEp4g3LR5PRCg6BEiF9loLCyPWMRhtqc4daWPfyogfv86IYA==}
+  /@keystatic/core@0.0.105(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Mf4qpSHzBRc//p/8YdkwIEjSSZsEjJbPqlpGV16cICAQWBbFVa80TuGmbNcxPoDG5dk3wpdbKbAGrz35KV9gAg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -706,7 +715,7 @@ packages:
       '@emotion/css': 11.11.0
       '@emotion/weak-memoize': 0.3.1
       '@hapi/iron': 7.0.1
-      '@markdoc/markdoc': 0.2.2(@types/react@18.2.7)(react@18.2.0)
+      '@markdoc/markdoc': 0.3.0(@types/react@18.2.7)(react@18.2.0)
       '@react-aria/focus': 3.12.1(react@18.2.0)
       '@react-aria/i18n': 3.7.2(react@18.2.0)
       '@react-aria/interactions': 3.15.1(react@18.2.0)
@@ -793,7 +802,7 @@ packages:
       - supports-color
     dev: false
 
-  /@keystatic/next@0.0.7(@keystatic/core@0.0.104)(next@13.4.4)(react-dom@18.2.0)(react@18.2.0):
+  /@keystatic/next@0.0.7(@keystatic/core@0.0.105)(next@13.4.4)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-e/stO9ZH+q/Hs++jF6eAA/F6Zyv55QY9K228/6S1rWbizs8w4STgTaCnfye+dCXWLkZAKFhWQv5E0aGpccyXVQ==}
     peerDependencies:
       '@keystatic/core': '*'
@@ -802,7 +811,7 @@ packages:
       react-dom: ^18.2.0
     dependencies:
       '@babel/runtime': 7.22.3
-      '@keystatic/core': 0.0.104(react-dom@18.2.0)(react@18.2.0)
+      '@keystatic/core': 0.0.105(react-dom@18.2.0)(react@18.2.0)
       '@types/react': 18.2.7
       chokidar: 3.5.3
       next: 13.4.4(react-dom@18.2.0)(react@18.2.0)
@@ -859,8 +868,8 @@ packages:
       read-yaml-file: 1.1.0
     dev: false
 
-  /@markdoc/markdoc@0.2.2(@types/react@18.2.7)(react@18.2.0):
-    resolution: {integrity: sha512-0TiD9jmA5h5znN4lxo7HECAu3WieU5g5vUsfByeucrdR/x88hEilpt16EydFyJwJddQ/3w5HQgW7Ovy62r4cyw==}
+  /@markdoc/markdoc@0.3.0(@types/react@18.2.7)(react@18.2.0):
+    resolution: {integrity: sha512-QWCF8krIIw52ulflfnoff0yG1eKl9CCGA3KAiOjHyYtHNzSEouFh8lO52nAaO3qV2Ctj1GTB8TTb2rTfvISQfA==}
     engines: {node: '>=14.7.0'}
     peerDependencies:
       '@types/react': '*'
@@ -4334,7 +4343,7 @@ packages:
       eslint: 8.41.0
       eslint-import-resolver-node: 0.3.7
       eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.59.7)(eslint-import-resolver-node@0.3.7)(eslint-plugin-import@2.27.5)(eslint@8.41.0)
-      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.59.7)(eslint-import-resolver-typescript@2.7.1)(eslint@8.41.0)
+      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.59.7)(eslint-import-resolver-typescript@3.5.5)(eslint@8.41.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.41.0)
       eslint-plugin-react: 7.32.2(eslint@8.41.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.41.0)
@@ -4401,7 +4410,7 @@ packages:
       enhanced-resolve: 5.14.1
       eslint: 8.41.0
       eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.59.7)(eslint-import-resolver-node@0.3.7)(eslint-import-resolver-typescript@3.5.5)(eslint@8.41.0)
-      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.59.7)(eslint-import-resolver-typescript@2.7.1)(eslint@8.41.0)
+      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.59.7)(eslint-import-resolver-typescript@3.5.5)(eslint@8.41.0)
       get-tsconfig: 4.5.0
       globby: 13.1.4
       is-core-module: 2.12.1
@@ -4493,6 +4502,39 @@ packages:
       eslint: 8.41.0
       eslint-import-resolver-node: 0.3.7
       eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.59.7)(eslint-import-resolver-node@0.3.7)(eslint-import-resolver-typescript@2.7.1)(eslint@8.41.0)
+      has: 1.0.3
+      is-core-module: 2.12.1
+      is-glob: 4.0.3
+      minimatch: 3.1.2
+      object.values: 1.1.6
+      resolve: 1.22.2
+      semver: 6.3.0
+      tsconfig-paths: 3.14.2
+    transitivePeerDependencies:
+      - eslint-import-resolver-typescript
+      - eslint-import-resolver-webpack
+      - supports-color
+    dev: false
+
+  /eslint-plugin-import@2.27.5(@typescript-eslint/parser@5.59.7)(eslint-import-resolver-typescript@3.5.5)(eslint@8.41.0):
+    resolution: {integrity: sha512-LmEt3GVofgiGuiE+ORpnvP+kAm3h6MLZJ4Q5HCyHADofsb4VzXFsRiWj3c0OFiV+3DWFh0qg3v9gcPlfc3zRow==}
+    engines: {node: '>=4'}
+    peerDependencies:
+      '@typescript-eslint/parser': '*'
+      eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
+    peerDependenciesMeta:
+      '@typescript-eslint/parser':
+        optional: true
+    dependencies:
+      '@typescript-eslint/parser': 5.59.7(eslint@8.41.0)(typescript@5.0.4)
+      array-includes: 3.1.6
+      array.prototype.flat: 1.3.1
+      array.prototype.flatmap: 1.3.1
+      debug: 3.2.7
+      doctrine: 2.1.0
+      eslint: 8.41.0
+      eslint-import-resolver-node: 0.3.7
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.59.7)(eslint-import-resolver-node@0.3.7)(eslint-import-resolver-typescript@3.5.5)(eslint@8.41.0)
       has: 1.0.3
       is-core-module: 2.12.1
       is-glob: 4.0.3
@@ -6616,8 +6658,8 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-error-boundary@4.0.7(react@18.2.0):
-    resolution: {integrity: sha512-XyDSL7Uhv3PMs0e1k29cMSnZPSlUCsF7Ci0dtdcpkaWDi9bM2hw6ru2l+PgBhiqilE1ne2XIlsllcaHsn0B6Dw==}
+  /react-error-boundary@4.0.8(react@18.2.0):
+    resolution: {integrity: sha512-QI6a1r5KCf12vl8U+aEdbs+WXRA5yS9sMOv6K5ZR6gytXcCJACEkRp7TShgTCja0yg7W6SWFYgXyXVL+EGNP0w==}
     peerDependencies:
       react: '>=16.13.1'
     dependencies:
