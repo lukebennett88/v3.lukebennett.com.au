@@ -1,5 +1,6 @@
 import './globals.css';
 
+import { Analytics } from '@vercel/analytics/react';
 import { clsx } from 'clsx';
 import { Atkinson_Hyperlegible } from 'next/font/google';
 
@@ -33,7 +34,10 @@ export default function RootLayout({
 			<body className="flex min-h-[100dvh] flex-col">
 				<Nav />
 				<main className={clsx(containerClasses, 'flex-1 pb-24')}>
-					<ErrorBoundary>{children}</ErrorBoundary>
+					<ErrorBoundary>
+						{children}
+						<Analytics />
+					</ErrorBoundary>
 				</main>
 				<Footer />
 			</body>
