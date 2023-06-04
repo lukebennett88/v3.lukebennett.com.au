@@ -13,13 +13,13 @@
 		"@lukebennett/eslint-config": "0.0.0",
 		"@lukebennett/prettier-config": "0.0.0",
 		"@manypkg/cli": "^0.20.0",
-		"@turbo/gen": "^1.9.9",
-		"eslint": "8.41.0",
+		"@turbo/gen": "^1.10.1",
+		"eslint": "8.42.0",
 		"eslint-config-custom": "0.0.0",
 		"prettier": "^2.8.8",
-		"turbo": "^1.9.9"
+		"turbo": "^1.10.1"
 	},
-	"packageManager": "pnpm@8.5.1",
+	"packageManager": "pnpm@8.6.0",
 	"manypkg": {
 		"defaultBranch": "main"
 	}
