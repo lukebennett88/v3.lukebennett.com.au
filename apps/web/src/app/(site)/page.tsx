@@ -7,7 +7,7 @@ export default async function Page() {
 	const { content } = await reader.singletons.homepage.readOrThrow();
 	return (
 		<div className="grid items-center gap-y-8 md:grid-cols-2">
-			<div className="prose">
+			<div className="prose dark:prose-invert">
 				<DocumentRenderer document={await content()} />
 			</div>
 			<div>

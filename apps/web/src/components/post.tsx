@@ -9,7 +9,7 @@ export function Post({
 	title: string;
 }) {
 	return (
-		<div className="prose">
+		<div className="prose dark:prose-invert">
 			<h1>{title}</h1>
 			<DocumentRenderer document={document} />
 		</div>

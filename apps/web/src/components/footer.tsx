@@ -10,7 +10,7 @@ export function Footer() {
 		<footer
 			className={clsx(
 				containerClasses,
-				'flex flex-col items-center justify-between gap-4 py-8 text-gray-700 lg:flex-row'
+				'flex flex-col items-center justify-between gap-4 py-8 text-gray-700 lg:flex-row dark:text-gray-400'
 			)}
 		>
 			<span>

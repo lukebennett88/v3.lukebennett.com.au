@@ -5,10 +5,10 @@ import { clsx } from 'clsx';
 import { Atkinson_Hyperlegible } from 'next/font/google';
 
 import { ErrorBoundary } from '~/components/error-boundary';
+import { Footer } from '~/components/footer';
+import { Nav } from '~/components/nav';
+import { ThemeProvider } from '~/components/theme-provider';
 import { containerClasses } from '~/lib/classes';
-
-import { Footer } from '../../components/footer';
-import { Nav } from '../../components/nav';
 
 const atkinsonHyperlegible = Atkinson_Hyperlegible({
 	subsets: ['latin'],
@@ -28,17 +28,20 @@ export default function RootLayout({
 }) {
 	return (
 		<html
+			suppressHydrationWarning
 			lang="en-AU"
 			className={clsx(atkinsonHyperlegible.variable, 'font-sans text-xl')}
 		>
-			<body className="flex min-h-[100dvh] flex-col">
-				<Nav />
-				<main className={clsx(containerClasses, 'flex-1 pb-24')}>
-					<ErrorBoundary>
-						{children}
-						<Analytics />
-					</ErrorBoundary>
-				</main>
+			<body className="flex min-h-[100dvh] flex-col dark:bg-gray-900">
+				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+					<Nav />
+					<main className={clsx(containerClasses, 'flex-1 pb-24')}>
+						<ErrorBoundary>
+							{children}
+							<Analytics />
+						</ErrorBoundary>
+					</main>
+				</ThemeProvider>
 				<Footer />
 			</body>
 		</html>
