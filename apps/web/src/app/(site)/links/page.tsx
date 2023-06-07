@@ -1,3 +1,5 @@
+import { default as Link } from 'next/link';
+
 import { reader } from '~/keystatic/reader';
 
 export default async function Page() {
@@ -5,6 +7,10 @@ export default async function Page() {
 	return (
 		<div className="prose dark:prose-invert">
 			<h1>Links</h1>
+			<p>
+				Interesting links with limited commentary. For longer form content,{' '}
+				<Link href="/posts">check out the posts section</Link> instead.
+			</p>
 			<ul>
 				{links.map((link) => (
 					<li key={link.slug}>
