@@ -67,6 +67,9 @@ export const config = createConfig({
 						label: 'Title',
 					},
 				}),
+				publishedAt: fields.date({
+					label: 'Published at',
+				}),
 				content: fields.document({
 					label: 'Content',
 					formatting: true,
