@@ -143,10 +143,12 @@ export default function Image() {
 				<path fillOpacity={0.1} d="M51 800.6h1097.8v5.6H50.8z" />
 			</svg>
 		),
-		// ImageResponse options
+		/** ImageResponse options */
 		{
-			// For convenience, we can re-use the exported opengraph-image
-			// size config to also set the ImageResponse's width and height.
+			/**
+			 * For convenience, we can re-use the exported opengraph-image
+			 * size config to also set the ImageResponse's width and height.
+			 */
 			...size,
 		}
 	);
