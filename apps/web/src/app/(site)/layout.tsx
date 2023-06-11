@@ -2,7 +2,6 @@ import './globals.css';
 
 import { Analytics } from '@vercel/analytics/react';
 import { clsx } from 'clsx';
-import { Atkinson_Hyperlegible } from 'next/font/google';
 
 import { ErrorBoundary } from '~/components/error-boundary';
 import { Footer } from '~/components/footer';
@@ -10,12 +9,7 @@ import { Nav } from '~/components/nav';
 import { ThemeProvider } from '~/components/theme-provider';
 import { siteConfig } from '~/config/site';
 import { containerClasses } from '~/lib/classes';
-
-const atkinsonHyperlegible = Atkinson_Hyperlegible({
-	subsets: ['latin'],
-	variable: '--font-sans',
-	weight: ['400', '700'],
-});
+import { fontSans } from '~/lib/fonts';
 
 export const metadata = {
 	title: siteConfig.title,
@@ -31,7 +25,7 @@ export default function RootLayout({
 		<html
 			suppressHydrationWarning
 			lang="en-AU"
-			className={clsx(atkinsonHyperlegible.variable, 'font-sans text-xl')}
+			className={clsx(fontSans.variable, 'font-sans text-xl')}
 		>
 			<body className="flex min-h-[100dvh] flex-col dark:bg-gray-900">
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
