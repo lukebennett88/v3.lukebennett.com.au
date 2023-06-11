@@ -54,6 +54,11 @@ export const config = createConfig({
 						isRequired: true,
 					},
 				}),
+				isDraft: fields.checkbox({
+					label: 'Do not publish',
+					description:
+						'Check this box to prevent this post from being published',
+					defaultValue: false,
 				}),
 				content: fields.document({
 					label: 'Content',
