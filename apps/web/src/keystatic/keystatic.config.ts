@@ -50,6 +50,10 @@ export const config = createConfig({
 				}),
 				publishedAt: fields.date({
 					label: 'Published at',
+					validation: {
+						isRequired: true,
+					},
+				}),
 				}),
 				content: fields.document({
 					label: 'Content',
@@ -72,6 +76,9 @@ export const config = createConfig({
 				}),
 				publishedAt: fields.date({
 					label: 'Published at',
+					validation: {
+						isRequired: true,
+					},
 				}),
 				content: fields.document({
 					label: 'Content',
