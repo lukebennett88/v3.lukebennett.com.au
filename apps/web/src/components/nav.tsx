@@ -7,14 +7,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { Logo } from '~/components/logo';
+import { siteConfig } from '~/config/site';
 import { containerClasses, focusClasses } from '~/lib/classes';
-
-let navLinks = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Posts', href: '/posts' },
-	{ label: 'Links', href: '/links' },
-	{ label: 'About', href: '/about' },
-];
 
 export function Nav() {
 	const pathname = usePathname();
@@ -40,15 +34,13 @@ export function Nav() {
 				</a>
 			</div>
 			<div className="flex items-center gap-2 rounded-full bg-gray-200 p-1.5 dark:bg-gray-950">
-				{navLinks.map((link) => {
+				{siteConfig.mainNav.map(({ href, label }) => {
 					const isHighlighted =
-						link.href === '/'
-							? pathname === link.href
-							: pathname?.includes(link.href);
+						href === '/' ? pathname === href : pathname?.includes(href);
 					return (
 						<Link
-							href={link.href}
-							key={link.href}
+							href={href}
+							key={href}
 							className={clsx(
 								isHighlighted
 									? ''
@@ -66,7 +58,7 @@ export function Nav() {
 									transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
 								/>
 							)}
-							<span className="relative z-10">{link.label}</span>
+							<span className="relative z-10">{label}</span>
 						</Link>
 					);
 				})}

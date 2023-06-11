@@ -8,6 +8,7 @@ import { ErrorBoundary } from '~/components/error-boundary';
 import { Footer } from '~/components/footer';
 import { Nav } from '~/components/nav';
 import { ThemeProvider } from '~/components/theme-provider';
+import { siteConfig } from '~/config/site';
 import { containerClasses } from '~/lib/classes';
 
 const atkinsonHyperlegible = Atkinson_Hyperlegible({
@@ -17,8 +18,8 @@ const atkinsonHyperlegible = Atkinson_Hyperlegible({
 });
 
 export const metadata = {
-	title: 'Luke Bennett',
-	description: 'Luke Bennett’s personal website',
+	title: siteConfig.title,
+	description: siteConfig.description,
 };
 
 export default function RootLayout({
