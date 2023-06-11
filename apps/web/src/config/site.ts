@@ -8,6 +8,7 @@ export const siteConfig = {
 	title: 'Luke Bennett',
 	description: 'Luke Bennett’s personal website',
 	baseUrl: 'https://www.lukebennett.com.au',
+	startDate: '2023-05-29' /** Date v3 of the website was first published */,
 	mainNav: [
 		{ label: 'Home', href: '/' },
 		{ label: 'Posts', href: '/posts' },
