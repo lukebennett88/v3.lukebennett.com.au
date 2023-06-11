@@ -30,12 +30,7 @@ export default function RootLayout({
 			<body className="flex min-h-[100dvh] flex-col dark:bg-gray-900">
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<Nav />
-					<main
-						className={clsx(
-							containerClasses,
-							'flex-1 pb-24 [text-wrap:balance]'
-						)}
-					>
+					<main className={clsx(containerClasses, 'flex-1 pb-24')}>
 						<ErrorBoundary>
 							{children}
 							<Analytics />
