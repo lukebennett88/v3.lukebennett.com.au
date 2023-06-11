@@ -1,9 +1,9 @@
 import { siteConfig } from '~/config/site';
 
-function toIsoString(date: unknown) {
+export function toIsoString(date: unknown): string {
 	return new Date(typeof date === 'string' ? date : siteConfig.startDate)
 		.toISOString()
-		.split('T')[0];
+		.split('T')[0]!;
 }
 
 type Post = {
