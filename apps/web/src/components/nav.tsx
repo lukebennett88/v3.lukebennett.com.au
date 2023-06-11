@@ -10,6 +10,8 @@ import { Logo } from '~/components/logo';
 import { siteConfig } from '~/config/site';
 import { containerClasses, focusClasses } from '~/lib/classes';
 
+export const MAIN_ID = 'main';
+
 export function Nav() {
 	const pathname = usePathname();
 	const { setTheme } = useTheme();
@@ -21,6 +23,15 @@ export function Nav() {
 				'flex flex-col items-center gap-4 py-8 lg:flex-row'
 			)}
 		>
+			<a
+				href={`#${MAIN_ID}`}
+				className={clsx(
+					'sr-only focus:block focus:not-sr-only focus:px-3 focus:py-1.5 focus:rounded-full focus:absolute focus:bg-gray-200',
+					focusClasses
+				)}
+			>
+				Skip to main content
+			</a>
 			<div className="flex flex-1 items-center">
 				<a
 					href="/"
