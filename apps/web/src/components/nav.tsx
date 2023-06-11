@@ -26,7 +26,8 @@ export function Nav() {
 			<a
 				href={`#${MAIN_ID}`}
 				className={clsx(
-					'sr-only focus:block focus:not-sr-only focus:px-3 focus:py-1.5 focus:rounded-full focus:absolute focus:bg-gray-200',
+					'sr-only focus-visible:inline-block focus-visible:not-sr-only focus-visible:px-3 focus-visible:py-1.5 focus-visible:rounded-full focus-visible:absolute focus-visible:bg-gray-200',
+					'focus-visible:hover:text-gray-600 dark:focus-visible:hover:text-white dark:focus-visible:bg-teal-700',
 					focusClasses
 				)}
 			>
@@ -56,7 +57,7 @@ export function Nav() {
 								isHighlighted
 									? ''
 									: 'hover:text-gray-600 dark:hover:text-white',
-								'relative rounded-full px-4 py-1.5 text-sm font-medium text-gray-800 dark:text-gray-200 transition focus-visible:bg-teal-50 focus-visible:ring-offset-teal-50',
+								'relative rounded-full px-4 py-1.5 text-sm font-medium text-gray-800 dark:text-gray-200 transition focus-visible:ring-offset-teal-50',
 								focusClasses
 							)}
 						>
