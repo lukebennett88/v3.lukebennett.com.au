@@ -4,7 +4,9 @@ import { reader } from '~/keystatic/reader';
 import { sortPosts } from '~/lib/utils';
 
 export default async function Page() {
-	const posts = sortPosts(await reader.collections.posts.all());
+	const posts = sortPosts(await reader.collections.posts.all()).filter(
+		(post) => !post.entry.isDraft
+	);
 	return (
 		<div className="prose dark:prose-invert">
 			<h1>Posts</h1>
