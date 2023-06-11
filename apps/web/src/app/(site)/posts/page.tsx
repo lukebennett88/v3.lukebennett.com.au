@@ -1,13 +1,10 @@
 import { default as Link } from 'next/link';
 
 import { reader } from '~/keystatic/reader';
+import { sortPosts } from '~/lib/utils';
 
 export default async function Page() {
-	const posts = (await reader.collections.posts.all()).sort(
-		(a, b) =>
-			new Date(b.entry.publishedAt).getTime() -
-			new Date(a.entry.publishedAt).getTime()
-	);
+	const posts = sortPosts(await reader.collections.posts.all());
 	return (
 		<div className="prose dark:prose-invert">
 			<h1>Posts</h1>
