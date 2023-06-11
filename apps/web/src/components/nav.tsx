@@ -26,8 +26,9 @@ export function Nav() {
 			<a
 				href={`#${MAIN_ID}`}
 				className={clsx(
-					'sr-only focus-visible:inline-block focus-visible:not-sr-only focus-visible:px-3 focus-visible:py-1.5 focus-visible:rounded-full focus-visible:absolute focus-visible:bg-gray-200',
-					'focus-visible:hover:text-gray-600 dark:focus-visible:hover:text-white dark:focus-visible:bg-teal-700',
+					'sr-only',
+					'focus-visible:inline-block focus-visible:not-sr-only focus-visible:px-3 focus-visible:py-1.5 focus-visible:rounded-full focus-visible:absolute focus-visible:bg-gray-200 focus-visible:hover:text-gray-600',
+					'dark:focus-visible:hover:text-white dark:focus-visible:bg-teal-700',
 					focusClasses
 				)}
 			>
