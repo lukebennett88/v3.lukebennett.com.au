@@ -1,4 +1,5 @@
 import { type Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 import { Post } from '~/components/post';
 import { reader } from '~/keystatic/reader';
@@ -22,8 +23,10 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-	const { content, title } = await reader.collections.posts.readOrThrow(
-		params.slug
-	);
+	const { content, title, isDraft } =
+		await reader.collections.posts.readOrThrow(params.slug);
+	if (isDraft) {
+		return notFound();
+	}
 	return <Post title={title} document={await content()} />;
 }
