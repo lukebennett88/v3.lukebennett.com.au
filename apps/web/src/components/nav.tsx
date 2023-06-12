@@ -38,12 +38,12 @@ export function Nav() {
 				<a
 					href="/"
 					className={clsx(
-						'rounded-full font-sans font-bold hover:text-teal-600',
+						'rounded-full h-11 w-11 font-sans font-bold hover:text-teal-600 p-1 bg-white dark:bg-gray-950',
 						focusClasses
 					)}
 				>
 					<span className="sr-only">Luke</span>
-					<Logo className="h-10 w-10 text-teal-700 transition-colors" />
+					<Logo className="text-teal-700 transition-colors" />
 				</a>
 			</div>
 			<div className="flex items-center gap-2 rounded-full bg-gray-200 p-1.5 dark:bg-gray-950">
