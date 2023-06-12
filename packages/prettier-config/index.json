@@ -4,7 +4,8 @@
 	"importOrder": ["<THIRD_PARTY_MODULES>", "", "^~/(.*)$", "", "^[./]"],
 	"plugins": [
 		"prettier-plugin-packagejson",
-		"@ianvs/prettier-plugin-sort-imports"
+		"@ianvs/prettier-plugin-sort-imports",
+		"prettier-plugin-tailwindcss"
 	],
 	"pluginSearchDirs": false,
 	"proseWrap": "always",
