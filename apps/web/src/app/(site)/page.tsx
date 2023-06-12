@@ -1,6 +1,5 @@
-import { DocumentRenderer } from '@keystatic/core/renderer';
-
 import { Me } from '~/components/me';
+import { DocumentRenderer } from '~/keystatic/document-renderer';
 import { reader } from '~/keystatic/reader';
 
 export default async function Page() {

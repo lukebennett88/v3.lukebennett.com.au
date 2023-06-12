@@ -5,6 +5,8 @@ import {
 	singleton,
 } from '@keystatic/core';
 
+import { componentBlocks } from './component-block';
+
 export const config = createConfig({
 	storage:
 		process.env.NODE_ENV === 'production'
@@ -71,6 +73,7 @@ export const config = createConfig({
 				}),
 				content: fields.document({
 					label: 'Content',
+					componentBlocks,
 					formatting: true,
 					dividers: true,
 					links: true,
@@ -102,6 +105,7 @@ export const config = createConfig({
 				}),
 				content: fields.document({
 					label: 'Content',
+					componentBlocks,
 					formatting: true,
 					dividers: true,
 					links: true,

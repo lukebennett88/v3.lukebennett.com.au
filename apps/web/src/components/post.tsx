@@ -1,5 +1,6 @@
 import { type DocumentElement } from '@keystatic/core';
-import { DocumentRenderer } from '@keystatic/core/renderer';
+
+import { DocumentRenderer } from '~/keystatic/document-renderer';
 
 export function Post({
 	document,

@@ -1,7 +1,7 @@
-import { DocumentRenderer } from '@keystatic/core/renderer';
 import { default as Link } from 'next/link';
 
 import { ExternalLinkHeading } from '~/components/link-heading';
+import { DocumentRenderer } from '~/keystatic/document-renderer';
 import { reader } from '~/keystatic/reader';
 import { sortPosts } from '~/lib/utils';
 
