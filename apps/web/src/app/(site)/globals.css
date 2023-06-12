@@ -4,7 +4,7 @@
 
 @layer base {
 	body {
-		scrollbar-color: theme(colors.white) theme(colors.teal.700);
+		scrollbar-color: theme(colors.gray.200) theme(colors.teal.700);
 		scrollbar-gutter: stable;
 	}
 	body::-webkit-scrollbar {
@@ -16,8 +16,8 @@
 		border-radius: theme(borderRadius.full);
 	}
 	body::-webkit-scrollbar-track {
-		border-left: 1px solid theme(colors.teal.700 / 25%);
-		background: theme(colors.teal.700 / 10%);
+		background: theme(colors.gray.200);
+		box-shadow: theme(boxShadow.DEFAULT);
 	}
 	[id] {
 		scroll-margin-top: theme(spacing[4]);
