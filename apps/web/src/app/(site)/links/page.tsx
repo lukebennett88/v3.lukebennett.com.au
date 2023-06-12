@@ -3,9 +3,10 @@ import { default as Link } from 'next/link';
 
 import { ExternalLinkHeading } from '~/components/link-heading';
 import { reader } from '~/keystatic/reader';
+import { sortPosts } from '~/lib/utils';
 
 export default async function Page() {
-	const links = await reader.collections.links.all();
+	const links = sortPosts(await reader.collections.links.all());
 	return (
 		<div className="flex flex-col gap-4">
 			<div className="prose dark:prose-invert">
