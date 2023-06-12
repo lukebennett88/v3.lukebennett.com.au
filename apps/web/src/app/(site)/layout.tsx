@@ -27,7 +27,7 @@ export default function RootLayout({
 			lang="en-AU"
 			className={clsx(fontSans.variable, 'font-sans text-xl')}
 		>
-			<body className="flex min-h-[100dvh] flex-col bg-gray-50 dark:bg-gray-900">
+			<body className="flex min-h-[100dvh] flex-col bg-gray-100 dark:bg-gray-900">
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<Nav />
 					<main id={MAIN_ID} className={clsx(containerClasses, 'flex-1 pb-24')}>
