@@ -38,7 +38,7 @@ export function Nav() {
 				<a
 					href="/"
 					className={clsx(
-						'h-11 w-11 rounded-full bg-white p-1 font-sans font-bold hover:text-teal-600 dark:bg-gray-950',
+						'h-11 w-11 rounded-full bg-white p-1 font-sans font-bold shadow hover:text-teal-600 dark:bg-gray-950',
 						focusClasses
 					)}
 				>
@@ -46,7 +46,7 @@ export function Nav() {
 					<Logo className="text-teal-700 transition-colors" />
 				</a>
 			</div>
-			<div className="flex items-center gap-2 rounded-full bg-gray-200 p-1.5 dark:bg-gray-950">
+			<div className="flex items-center gap-2 rounded-full bg-gray-200 p-1.5 shadow-inner dark:bg-gray-950">
 				{siteConfig.mainNav.map(({ href, label }) => {
 					const isHighlighted =
 						href === '/' ? pathname === href : pathname?.includes(href);
@@ -63,7 +63,7 @@ export function Nav() {
 								<motion.span
 									aria-hidden="true"
 									layoutId="bubble"
-									className="pointer-events-none absolute inset-0 rounded-full bg-white dark:bg-gray-800"
+									className="pointer-events-none absolute inset-0 rounded-full bg-white shadow dark:bg-gray-800"
 									style={{ borderRadius: 9999 }}
 									transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
 								/>

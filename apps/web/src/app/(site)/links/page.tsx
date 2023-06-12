@@ -24,7 +24,7 @@ export default async function Page() {
 					return (
 						<li
 							key={link.slug}
-							className="prose dark:prose-invert -mx-4 rounded-xl bg-white p-4 dark:bg-gray-800 break-words"
+							className="prose dark:prose-invert -mx-4 break-words rounded-xl bg-white p-4 shadow dark:bg-gray-800"
 						>
 							<a href={`/links/${link.slug}`} className="inline-block">
 								<h2 className="m-0">{link.entry.title}</h2>
