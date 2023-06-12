@@ -8,7 +8,7 @@ export function Footer() {
 		<footer
 			className={clsx(
 				containerClasses,
-				'flex flex-col items-center justify-between gap-4 py-8 text-gray-700 lg:flex-row dark:text-gray-400'
+				'flex flex-col items-center justify-between gap-4 py-8 text-gray-700 dark:text-gray-400 lg:flex-row'
 			)}
 		>
 			<span>

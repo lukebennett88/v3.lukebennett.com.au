@@ -27,8 +27,8 @@ export function Nav() {
 				href={`#${MAIN_ID}`}
 				className={clsx(
 					'sr-only',
-					'focus-visible:inline-block focus-visible:not-sr-only focus-visible:px-3 focus-visible:py-1.5 focus-visible:rounded-full focus-visible:absolute focus-visible:bg-gray-200 focus-visible:hover:text-gray-600',
-					'dark:focus-visible:hover:text-white dark:focus-visible:bg-teal-700',
+					'focus-visible:not-sr-only focus-visible:absolute focus-visible:inline-block focus-visible:rounded-full focus-visible:bg-gray-200 focus-visible:px-3 focus-visible:py-1.5 focus-visible:hover:text-gray-600',
+					'dark:focus-visible:bg-teal-700 dark:focus-visible:hover:text-white',
 					focusClasses
 				)}
 			>
@@ -38,7 +38,7 @@ export function Nav() {
 				<a
 					href="/"
 					className={clsx(
-						'rounded-full h-11 w-11 font-sans font-bold hover:text-teal-600 p-1 bg-white dark:bg-gray-950',
+						'h-11 w-11 rounded-full bg-white p-1 font-sans font-bold hover:text-teal-600 dark:bg-gray-950',
 						focusClasses
 					)}
 				>
@@ -63,7 +63,7 @@ export function Nav() {
 								<motion.span
 									aria-hidden="true"
 									layoutId="bubble"
-									className="absolute inset-0 rounded-full bg-white dark:bg-gray-800 pointer-events-none"
+									className="pointer-events-none absolute inset-0 rounded-full bg-white dark:bg-gray-800"
 									style={{ borderRadius: 9999 }}
 									transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
 								/>
@@ -73,7 +73,7 @@ export function Nav() {
 					);
 				})}
 			</div>
-			<div className="hidden flex-1 md:flex justify-end gap-4">
+			<div className="hidden flex-1 justify-end gap-4 md:flex">
 				{[
 					{
 						label: 'Light',
