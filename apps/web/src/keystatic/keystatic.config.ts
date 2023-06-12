@@ -94,6 +94,12 @@ export const config = createConfig({
 						isRequired: true,
 					},
 				}),
+				linkedUrl: fields.url({
+					label: 'Linked URL',
+					validation: {
+						isRequired: true,
+					},
+				}),
 				content: fields.document({
 					label: 'Content',
 					formatting: true,
