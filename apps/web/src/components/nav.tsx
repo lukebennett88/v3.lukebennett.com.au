@@ -55,10 +55,7 @@ export function Nav() {
 							href={href}
 							key={href}
 							className={clsx(
-								isHighlighted
-									? ''
-									: 'hover:text-gray-600 dark:hover:text-white',
-								'relative rounded-full px-4 py-1.5 text-sm font-medium text-gray-800 dark:text-gray-200 transition focus-visible:ring-offset-teal-50',
+								'relative rounded-full px-4 py-1.5 text-sm font-medium text-gray-800 transition hover:bg-gray-100 focus-visible:ring-offset-teal-50 dark:text-gray-200 dark:hover:bg-gray-900',
 								focusClasses
 							)}
 						>
@@ -66,7 +63,7 @@ export function Nav() {
 								<motion.span
 									aria-hidden="true"
 									layoutId="bubble"
-									className="absolute inset-0 rounded-full bg-white dark:bg-gray-900 pointer-events-none"
+									className="absolute inset-0 rounded-full bg-white dark:bg-gray-800 pointer-events-none"
 									style={{ borderRadius: 9999 }}
 									transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
 								/>
