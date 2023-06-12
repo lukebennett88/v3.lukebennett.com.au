@@ -30,5 +30,5 @@ export default async function Page({ params }: { params: { slug: string } }) {
 		return notFound();
 	}
 
-	return <Post title={title} document={await content()} />;
+	return <Post title={<h1>{title}</h1>} document={await content()} />;
 }

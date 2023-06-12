@@ -1,6 +1,7 @@
 import { DocumentRenderer } from '@keystatic/core/renderer';
 import { default as Link } from 'next/link';
 
+import { ExternalLinkHeading } from '~/components/link-heading';
 import { reader } from '~/keystatic/reader';
 
 export default async function Page() {
@@ -26,9 +27,14 @@ export default async function Page() {
 							key={link.slug}
 							className="prose dark:prose-invert -mx-4 break-words rounded-xl bg-white p-4 shadow dark:bg-gray-800"
 						>
-							<a href={`/links/${link.slug}`} className="inline-block">
-								<h2 className="m-0">{link.entry.title}</h2>
-							</a>
+							<div className="flex items-baseline justify-between gap-6">
+								<ExternalLinkHeading href={link.entry.linkedUrl} level="2">
+									{link.entry.title}
+								</ExternalLinkHeading>
+								<a href={`/links/${link.slug}`} className="inline-block">
+									Permalink
+								</a>
+							</div>
 							<DocumentRenderer document={await content()} />
 							<time dateTime={link.entry.publishedAt} className="text-sm">
 								{new Intl.DateTimeFormat('en', {

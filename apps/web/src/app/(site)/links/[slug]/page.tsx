@@ -1,5 +1,6 @@
 import { type Metadata } from 'next';
 
+import { ExternalLinkHeading } from '~/components/link-heading';
 import { Post } from '~/components/post';
 import { reader } from '~/keystatic/reader';
 
@@ -22,8 +23,16 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-	const { content, title } = await reader.collections.links.readOrThrow(
-		params.slug
+	const { content, title, linkedUrl } =
+		await reader.collections.links.readOrThrow(params.slug);
+	return (
+		<Post
+			title={
+				<ExternalLinkHeading href={linkedUrl} level="1">
+					{title}
+				</ExternalLinkHeading>
+			}
+			document={await content()}
+		/>
 	);
-	return <Post title={title} document={await content()} />;
 }

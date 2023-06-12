@@ -6,11 +6,11 @@ export function Post({
 	title,
 }: {
 	document: DocumentElement[];
-	title: string;
+	title: JSX.Element;
 }) {
 	return (
 		<div className="prose dark:prose-invert">
-			<h1>{title}</h1>
+			{title}
 			<DocumentRenderer document={document} />
 		</div>
 	);
