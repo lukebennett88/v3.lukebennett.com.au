@@ -15,8 +15,8 @@ export async function GET() {
 		items: [
 			...sortedEntries.map((item) => ({
 				id: item.slug,
-				content_text: item.entry.content,
-				url: `${siteConfig.baseUrl}/${item.type}s/${item.slug}`,
+				content_text: item.entry.title,
+				url: `${siteConfig.baseUrl}/${item.url}`,
 			})),
 		],
 	};
