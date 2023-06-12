@@ -6,9 +6,18 @@ import {
 } from '@keystatic/core';
 
 export const config = createConfig({
-	storage: {
-		kind: 'local',
-	},
+	storage:
+		process.env.NODE_ENV === 'production'
+			? {
+					kind: 'github',
+					repo: {
+						name: 'v3.lukebennett.com.au',
+						owner: 'lukebennett88',
+					},
+			  }
+			: {
+					kind: 'local',
+			  },
 	singletons: {
 		homepage: singleton({
 			label: 'Homepage',
