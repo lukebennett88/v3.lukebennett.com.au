@@ -1,0 +1,19 @@
+Over the past few years I've found myself working in the design system space quite a bit, in fact I'm working on one right now.
+
+When you're building a design system, it's a good idea to focus on a few key things from the start because they effect everything else; tokens, typography and layout. Lets talk about layout components and why they're important to build early on.
+
+Design systems are all about systems. How you lay things out on the page can be a system, so it's a good idea to codify that. Do you like flexbox or grid (or if you're really old, floats)? Margin or gap? There a so many ways to build a page that is visually identical, but they might not all be as resilient (awkward breakpoints, too much text etc). If you build your layout components early on, then you can compose your other components with them. One such component that gets used more than most is the Track component.
+
+I don't want to take any credit for this component, as it's a [Matt Stow](https://twitter.com/stowball) special. The Track component is used for distributing content horizontally. A Track has two rails (we call these `railStart` and `railEnd` in our implementation) and the `center` which is usually where the main content goes. Any time there are two bits of content that sit side-by-side in the horizontal direction, chances are you probably want to use a Track. It's especially useful for aligning icons or form controls such as radio or checkbox inputs.
+
+Here's a simplified example of what the markup for a Radio component might look like:
+
+```
+<Track
+	railStart={<RadioPrimitive />}
+	center={label}
+	verticalAlign="middle"
+/>
+```
+
+Now those of you with real world experience might be thinking "yeah thats great, but that only requires a handful of CSS properties to build, I'm not that impressed".
