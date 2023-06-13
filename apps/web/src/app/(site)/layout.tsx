@@ -33,7 +33,7 @@ export default function RootLayout({
 					<main id={MAIN_ID} className={clsx(containerClasses, 'flex-1 pb-20')}>
 						<ErrorBoundary>
 							{children}
-							<Analytics />
+							{process.env.NODE_ENV === 'production' && <Analytics />}
 						</ErrorBoundary>
 					</main>
 				</ThemeProvider>
