@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+	/* Scrollbar styles */
 	body {
 		scrollbar-color: theme(colors.gray.200) theme(colors.teal.700);
 		scrollbar-gutter: stable;
@@ -19,6 +20,17 @@
 		background: theme(colors.gray.200);
 		box-shadow: theme(boxShadow.DEFAULT);
 	}
+	.dark body {
+		scrollbar-color: theme(colors.gray.800) theme(colors.teal.700);
+	}
+	.dark body::-webkit-scrollbar-thumb {
+		background: theme(colors.teal.700);
+	}
+	.dark body::-webkit-scrollbar-track {
+		background: theme(colors.gray.800);
+	}
+
+	/* Apply scroll-margin to IDs */
 	[id] {
 		scroll-margin-top: theme(spacing[4]);
 	}
