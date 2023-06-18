@@ -1,5 +1,7 @@
 import { GitHubIcon } from '~/components/icons/github';
+import { JsonFeedIcon } from '~/components/icons/json-feed';
 import { MastodonIcon } from '~/components/icons/mastodon';
+import { RssFeedIcon } from '~/components/icons/rss-feed';
 import { TwitterIcon } from '~/components/icons/twitter';
 
 export type SiteConfig = typeof siteConfig;
@@ -27,6 +29,14 @@ export const siteConfig = {
 		GitHub: {
 			href: 'https://github.com/lukebennett88',
 			icon: GitHubIcon,
+		},
+		'JSON Feed': {
+			href: '/feed.json',
+			icon: JsonFeedIcon,
+		},
+		'RSS Feed': {
+			href: '/feed.xml',
+			icon: RssFeedIcon,
 		},
 	},
 };
