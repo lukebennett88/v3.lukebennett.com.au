@@ -36,14 +36,14 @@ export async function getSortedEntries() {
 			posts.map((post) => ({
 				...post,
 				type: 'post' as const,
-				url: `posts/${post.slug}`,
+				pathname: `/posts/${post.slug}`,
 			}))
 		),
 		reader.collections.links.all().then((links) =>
 			links.map((link) => ({
 				...link,
 				type: 'link' as const,
-				url: `links/${link.slug}`,
+				pathname: `/links/${link.slug}`,
 			}))
 		),
 	]);

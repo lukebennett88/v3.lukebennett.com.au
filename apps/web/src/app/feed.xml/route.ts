@@ -15,12 +15,13 @@ export async function GET() {
 
 	const sortedEntries = (await getSortedEntries()).slice(0, MAX_POSTS);
 
-	sortedEntries.forEach(async ({ entry, url }) => {
+	sortedEntries.forEach(async ({ entry, pathname }) => {
 		feed.item({
-			title: entry.title,
-			description: '',
-			url: `${siteConfig.baseUrl}/${url}`,
+			author: 'Luke Bennett',
 			date: toIsoString(entry.publishedAt),
+			description: '',
+			title: entry.title,
+			url: `${siteConfig.baseUrl}${pathname}`,
 		});
 	});
 

@@ -1,5 +1,5 @@
 import { siteConfig } from '~/config/site';
-import { getSortedEntries } from '~/lib/utils';
+import { getSortedEntries, toIsoString } from '~/lib/utils';
 
 const MAX_POSTS = 100;
 
@@ -12,13 +12,17 @@ export async function GET() {
 		home_page_url: siteConfig.baseUrl,
 		feed_url: `${siteConfig.baseUrl}/feed.json`,
 		icon: `${siteConfig.baseUrl}/apple-icon.png`,
-		items: [
-			...sortedEntries.map((item) => ({
-				id: item.slug,
-				content_text: item.entry.title,
-				url: `${siteConfig.baseUrl}/${item.url}`,
-			})),
-		],
+		items: sortedEntries.map(({ entry, pathname, type }) => {
+			const url = `${siteConfig.baseUrl}${pathname}`;
+			return {
+				authors: [{ name: 'Luke Bennett' }],
+				date_published: toIsoString(entry.publishedAt),
+				...(type === 'link' ? { external_url: entry.linkedUrl } : undefined),
+				id: url,
+				title: entry.title,
+				url,
+			};
+		}),
 	};
 
 	return new Response(JSON.stringify(body, null, 2), {
