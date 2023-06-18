@@ -25,8 +25,7 @@ export function Footer() {
 										focusClasses
 									)}
 									href={href}
-									target="_blank"
-									rel="noopener noreferrer"
+									rel="me"
 								>
 									<span className="sr-only">{name}</span>
 									<Icon className="h-4 w-4" />
