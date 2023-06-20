@@ -7,12 +7,7 @@ import {
 
 import { componentBlocks } from './component-block';
 
-const shouldUseGitHub = process.env.NODE_ENV === 'production';
-
-function addPrefix<S extends string>(path: S) {
-	const prefix = shouldUseGitHub ? '/apps/web/' : './';
-	return `${prefix}${path}` as const;
-}
+const shouldUseGitHub = process.env.NODE_ENV !== 'production';
 
 export const config = createConfig({
 	storage: shouldUseGitHub
@@ -29,7 +24,7 @@ export const config = createConfig({
 	singletons: {
 		homepage: singleton({
 			label: 'Homepage',
-			path: addPrefix('src/content/_homepage'),
+			path: './src/content/_homepage',
 			schema: {
 				content: fields.document({
 					label: 'Content',
@@ -42,7 +37,7 @@ export const config = createConfig({
 		}),
 		about: singleton({
 			label: 'About',
-			path: addPrefix('src/content/_about'),
+			path: './src/content/_about',
 			schema: {
 				content: fields.document({
 					label: 'Content',
@@ -57,7 +52,7 @@ export const config = createConfig({
 	collections: {
 		posts: collection({
 			label: 'Posts',
-			path: addPrefix('src/content/posts/*'),
+			path: './src/content/posts/*',
 			slugField: 'title',
 			schema: {
 				title: fields.slug({
@@ -89,7 +84,7 @@ export const config = createConfig({
 		}),
 		links: collection({
 			label: 'Links',
-			path: addPrefix('src/content/links/*'),
+			path: './src/content/links/*',
 			slugField: 'title',
 			schema: {
 				title: fields.slug({
