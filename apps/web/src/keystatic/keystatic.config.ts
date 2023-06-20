@@ -7,23 +7,29 @@ import {
 
 import { componentBlocks } from './component-block';
 
+const shouldUseGitHub = process.env.NODE_ENV === 'production';
+
+function addPrefix<S extends string>(path: S) {
+	const prefix = shouldUseGitHub ? '/apps/web/' : './';
+	return `${prefix}${path}` as const;
+}
+
 export const config = createConfig({
-	storage:
-		process.env.NODE_ENV === 'production'
-			? {
-					kind: 'github',
-					repo: {
-						name: 'v3.lukebennett.com.au',
-						owner: 'lukebennett88',
-					},
-			  }
-			: {
-					kind: 'local',
-			  },
+	storage: shouldUseGitHub
+		? {
+				kind: 'github',
+				repo: {
+					name: 'v3.lukebennett.com.au',
+					owner: 'lukebennett88',
+				},
+		  }
+		: {
+				kind: 'local',
+		  },
 	singletons: {
 		homepage: singleton({
 			label: 'Homepage',
-			path: 'src/content/_homepage',
+			path: addPrefix('src/content/_homepage'),
 			schema: {
 				content: fields.document({
 					label: 'Content',
@@ -36,7 +42,7 @@ export const config = createConfig({
 		}),
 		about: singleton({
 			label: 'About',
-			path: 'src/content/_about',
+			path: addPrefix('src/content/_about'),
 			schema: {
 				content: fields.document({
 					label: 'Content',
@@ -51,7 +57,7 @@ export const config = createConfig({
 	collections: {
 		posts: collection({
 			label: 'Posts',
-			path: 'src/content/posts/*',
+			path: addPrefix('src/content/posts/*'),
 			slugField: 'title',
 			schema: {
 				title: fields.slug({
@@ -83,7 +89,7 @@ export const config = createConfig({
 		}),
 		links: collection({
 			label: 'Links',
-			path: 'src/content/links/*',
+			path: addPrefix('src/content/links/*'),
 			slugField: 'title',
 			schema: {
 				title: fields.slug({
