@@ -7,7 +7,9 @@ import {
 
 import { componentBlocks } from './component-block';
 
-const shouldUseGitHub = process.env.NODE_ENV !== 'production';
+const shouldUseGitHub = process.env.NODE_ENV === 'production';
+
+export const localBaseDirectory = '../../';
 
 export const config = createConfig({
 	storage: shouldUseGitHub
@@ -24,7 +26,7 @@ export const config = createConfig({
 	singletons: {
 		homepage: singleton({
 			label: 'Homepage',
-			path: './src/content/_homepage',
+			path: 'apps/web/src/content/_homepage',
 			schema: {
 				content: fields.document({
 					label: 'Content',
@@ -37,7 +39,7 @@ export const config = createConfig({
 		}),
 		about: singleton({
 			label: 'About',
-			path: './src/content/_about',
+			path: 'apps/web/src/content/_about',
 			schema: {
 				content: fields.document({
 					label: 'Content',
@@ -52,7 +54,7 @@ export const config = createConfig({
 	collections: {
 		posts: collection({
 			label: 'Posts',
-			path: './src/content/posts/*',
+			path: 'apps/web/src/content/posts/*',
 			slugField: 'title',
 			schema: {
 				title: fields.slug({
@@ -84,7 +86,7 @@ export const config = createConfig({
 		}),
 		links: collection({
 			label: 'Links',
-			path: './src/content/links/*',
+			path: 'apps/web/src/content/links/*',
 			slugField: 'title',
 			schema: {
 				title: fields.slug({
