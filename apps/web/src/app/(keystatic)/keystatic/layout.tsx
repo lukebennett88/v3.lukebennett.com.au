@@ -2,8 +2,7 @@ import KeystaticApp from './keystatic';
 
 export default function RootLayout() {
 	return (
-		<html lang="en">
-			<head />
+		<html lang="en-AU">
 			<body>
 				<KeystaticApp />
 			</body>
