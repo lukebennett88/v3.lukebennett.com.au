@@ -29,6 +29,15 @@ export default function RootLayout({
 			lang="en-AU"
 			className={clsx(fontSans.variable, 'font-sans text-xl')}
 		>
+			<head>
+				<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+				<link
+					rel="icon"
+					href="/favicon-dark.svg"
+					type="image/svg+xml"
+					media="(prefers-color-scheme: dark)"
+				/>
+			</head>
 			<body className="flex min-h-[100dvh] flex-col bg-gray-100 [tab-size:2] dark:bg-gray-900">
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<Nav />

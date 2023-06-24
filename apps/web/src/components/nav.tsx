@@ -35,16 +35,18 @@ export function Nav() {
 				Skip to main content
 			</a>
 			<div className="flex flex-1 items-center">
-				<a
+				<Link
 					href="/"
 					className={clsx(
-						'h-11 w-11 rounded-full bg-white p-1 font-sans font-bold shadow hover:text-teal-600 dark:bg-gray-950',
+						'h-11 w-11 rounded-full p-1 font-sans font-bold shadow transition-colors',
+						'bg-gray-50 text-teal-700 hover:bg-white hover:text-teal-600',
+						'dark:bg-teal-600 dark:text-gray-800 dark:hover:bg-teal-500 dark:hover:text-gray-700',
 						focusClasses
 					)}
 				>
 					<span className="sr-only">Luke</span>
-					<Logo className="text-teal-700 transition-colors" />
-				</a>
+					<Logo />
+				</Link>
 			</div>
 			<div className="flex items-center gap-2 rounded-full bg-gray-200 p-1.5 shadow-inner dark:bg-gray-950">
 				{siteConfig.mainNav.map(({ href, label }) => {
