@@ -18,7 +18,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 	const { title } = await reader.collections.links.readOrThrow(params.slug);
 	return {
-		title: `${title} | Luke Bennett`,
+		title,
 	};
 }
 

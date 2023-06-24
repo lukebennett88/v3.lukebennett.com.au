@@ -13,7 +13,10 @@ import { containerClasses } from '~/lib/classes';
 import { fontSans } from '~/lib/fonts';
 
 export const metadata = {
-	title: siteConfig.title,
+	title: {
+		default: siteConfig.title,
+		template: `%s | ${siteConfig.title}`,
+	},
 	description: siteConfig.description,
 	metadataBase: new URL(siteConfig.baseUrl),
 } satisfies Metadata;

@@ -18,7 +18,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 	const { title } = await reader.collections.posts.readOrThrow(params.slug);
 	return {
-		title: `${title} | Luke Bennett`,
+		title,
 	};
 }
 
