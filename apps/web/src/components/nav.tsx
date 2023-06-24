@@ -40,7 +40,7 @@ export function Nav() {
 					className={clsx(
 						'h-11 w-11 rounded-full p-1 font-sans font-bold shadow transition-colors',
 						'bg-gray-50 text-teal-700 hover:bg-white hover:text-teal-600',
-						'dark:bg-teal-600 dark:text-gray-800 dark:hover:bg-teal-500 dark:hover:text-gray-700',
+						'dark:bg-teal-500 dark:text-gray-800 dark:hover:bg-teal-400 dark:hover:text-gray-700',
 						focusClasses
 					)}
 				>
