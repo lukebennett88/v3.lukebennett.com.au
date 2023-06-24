@@ -1,4 +1,4 @@
-import KeystaticApp from './keystatic';
+import KeystaticApp from './_keystatic';
 
 export default function RootLayout() {
 	return (
