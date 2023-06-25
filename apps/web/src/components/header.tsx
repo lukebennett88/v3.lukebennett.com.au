@@ -2,11 +2,11 @@
 
 import { clsx } from 'clsx';
 import { motion } from 'framer-motion';
-import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { Logo } from '~/components/logo';
+import { ThemeSwitcher } from '~/components/theme-switcher';
 import { siteConfig } from '~/config/site';
 import { containerClasses, focusClasses } from '~/lib/classes';
 
@@ -14,14 +14,13 @@ export const MAIN_ID = 'main';
 
 export function Header() {
 	const pathname = usePathname();
-	const { setTheme } = useTheme();
 
 	return (
 		<header
 			role="banner"
 			className={clsx(
 				containerClasses,
-				'flex flex-col items-center gap-4 py-8 lg:flex-row'
+				'flex flex-wrap items-center gap-4 py-8'
 			)}
 		>
 			<a
@@ -49,7 +48,11 @@ export function Header() {
 					<Logo />
 				</Link>
 			</div>
-			<nav role="navigation" aria-label="Primary">
+			<nav
+				role="navigation"
+				aria-label="Primary"
+				className="order-last flex w-full justify-center md:order-none md:w-auto"
+			>
 				<ul className="flex items-center gap-2 rounded-full bg-gray-200 p-1.5 shadow-inner dark:bg-gray-950">
 					{siteConfig.mainNav.map(({ href, label }) => {
 						const isCurrent = pathname === href;
@@ -85,30 +88,7 @@ export function Header() {
 					})}
 				</ul>
 			</nav>
-			<div className="hidden flex-1 justify-end gap-4 md:flex">
-				{[
-					{
-						label: 'Light',
-						theme: 'light',
-					},
-					{
-						label: 'Dark',
-						theme: 'dark',
-					},
-					{
-						label: 'System',
-						theme: 'system',
-					},
-				].map(({ label, theme }) => (
-					<button
-						key={theme}
-						onClick={() => setTheme(theme)}
-						className={focusClasses}
-					>
-						{label}
-					</button>
-				))}
-			</div>
+			<ThemeSwitcher />
 		</header>
 	);
 }
