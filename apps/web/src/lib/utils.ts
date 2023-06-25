@@ -55,11 +55,12 @@ export async function getSortedEntries() {
 }
 
 export function formatToAustralianDate(date: string) {
-	return new Intl.DateTimeFormat('en', {
-		timeZone: 'Australia/Sydney',
-		weekday: 'long',
-		year: 'numeric',
-		month: 'long',
+	const [day, month, year] = new Intl.DateTimeFormat('en-AU', {
 		day: 'numeric',
-	}).format(new Date(date));
+		month: 'long',
+		year: 'numeric',
+	})
+		.format(new Date(date))
+		.split(' ');
+	return `${day} ${month} ${year}`;
 }
