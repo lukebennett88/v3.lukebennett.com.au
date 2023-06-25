@@ -53,3 +53,13 @@ export async function getSortedEntries() {
 			item.type === 'link' || (item.type === 'post' && !item.entry.isDraft)
 	);
 }
+
+export function formatToAustralianDate(date: string) {
+	return new Intl.DateTimeFormat('en', {
+		timeZone: 'Australia/Sydney',
+		weekday: 'long',
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	}).format(new Date(date));
+}
