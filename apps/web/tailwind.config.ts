@@ -13,6 +13,18 @@ export default {
 			fontFamily: {
 				sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
 			},
+			typography: () => ({
+				DEFAULT: {
+					css: {
+						h1: {
+							textWrap: 'balance',
+						},
+						h2: {
+							textWrap: 'balance',
+						},
+					},
+				},
+			}),
 		},
 	},
 	plugins: [require('@tailwindcss/typography')],

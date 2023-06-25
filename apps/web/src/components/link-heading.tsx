@@ -9,7 +9,7 @@ export function ExternalLinkHeading({
 }) {
 	const Tag = `h${level}` as const;
 	return (
-		<a href={href} className="group relative underline [text-wrap:balance]">
+		<a href={href} className="group relative underline">
 			<Tag className="inline-block underline">
 				{children}
 				<span className="inline-flex items-center">
