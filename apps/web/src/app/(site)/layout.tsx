@@ -1,4 +1,4 @@
-import './globals.css';
+import '~/styles/global.css';
 
 import { Analytics } from '@vercel/analytics/react';
 import { clsx } from 'clsx';
