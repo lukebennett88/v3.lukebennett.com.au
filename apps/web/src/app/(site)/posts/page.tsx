@@ -29,7 +29,7 @@ export default async function Page() {
 						)}
 					>
 						<a href={`/posts/${post.slug}`} className="inline-block">
-							<h2 className="m-0">{post.entry.title}</h2>
+							<h2 className="m-0 [text-wrap:balance]">{post.entry.title}</h2>
 						</a>
 						<br />
 						<time dateTime={post.entry.publishedAt} className="text-sm">
