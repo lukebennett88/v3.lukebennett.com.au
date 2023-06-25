@@ -12,12 +12,13 @@ import { containerClasses, focusClasses } from '~/lib/classes';
 
 export const MAIN_ID = 'main';
 
-export function Nav() {
+export function Header() {
 	const pathname = usePathname();
 	const { setTheme } = useTheme();
 
 	return (
-		<nav
+		<header
+			role="banner"
 			className={clsx(
 				containerClasses,
 				'flex flex-col items-center gap-4 py-8 lg:flex-row'
@@ -44,37 +45,46 @@ export function Nav() {
 						focusClasses
 					)}
 				>
-					<span className="sr-only">Luke</span>
+					<span className="sr-only">{siteConfig.title}</span>
 					<Logo />
 				</Link>
 			</div>
-			<div className="flex items-center gap-2 rounded-full bg-gray-200 p-1.5 shadow-inner dark:bg-gray-950">
-				{siteConfig.mainNav.map(({ href, label }) => {
-					const isHighlighted =
-						href === '/' ? pathname === href : pathname?.includes(href);
-					return (
-						<Link
-							href={href}
-							key={href}
-							className={clsx(
-								'relative rounded-full px-4 py-1.5 text-sm font-medium text-gray-800 transition hover:bg-gray-100 focus-visible:ring-offset-teal-50 dark:text-gray-200 dark:hover:bg-gray-900',
-								focusClasses
-							)}
-						>
-							{isHighlighted && (
-								<motion.span
-									aria-hidden="true"
-									layoutId="bubble"
-									className="pointer-events-none absolute inset-0 rounded-full bg-white shadow dark:bg-gray-800"
-									style={{ borderRadius: 9999 }}
-									transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-								/>
-							)}
-							<span className="relative z-10">{label}</span>
-						</Link>
-					);
-				})}
-			</div>
+			<nav role="navigation" aria-label="Primary">
+				<ul className="flex items-center gap-2 rounded-full bg-gray-200 p-1.5 shadow-inner dark:bg-gray-950">
+					{siteConfig.mainNav.map(({ href, label }) => {
+						const isCurrent = pathname === href;
+						const isHighlighted =
+							href === '/' ? pathname === href : pathname?.includes(href);
+						return (
+							<li key={href}>
+								<Link
+									aria-current={isCurrent ? 'page' : undefined}
+									href={href}
+									className={clsx(
+										'relative rounded-full px-4 py-1.5 text-sm font-medium text-gray-800 transition hover:bg-gray-100 focus-visible:ring-offset-teal-50 dark:text-gray-200 dark:hover:bg-gray-900',
+										focusClasses
+									)}
+								>
+									{isHighlighted && (
+										<motion.span
+											aria-hidden="true"
+											layoutId="bubble"
+											className="pointer-events-none absolute inset-0 rounded-full bg-white shadow dark:bg-gray-800"
+											style={{ borderRadius: 9999 }}
+											transition={{
+												type: 'spring',
+												bounce: 0.2,
+												duration: 0.6,
+											}}
+										/>
+									)}
+									<span className="relative z-10">{label}</span>
+								</Link>
+							</li>
+						);
+					})}
+				</ul>
+			</nav>
 			<div className="hidden flex-1 justify-end gap-4 md:flex">
 				{[
 					{
@@ -99,6 +109,6 @@ export function Nav() {
 					</button>
 				))}
 			</div>
-		</nav>
+		</header>
 	);
 }

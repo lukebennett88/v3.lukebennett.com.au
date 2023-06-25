@@ -6,7 +6,7 @@ import { type Metadata } from 'next';
 
 import { ErrorBoundary } from '~/components/error-boundary';
 import { Footer } from '~/components/footer';
-import { MAIN_ID, Nav } from '~/components/nav';
+import { Header, MAIN_ID } from '~/components/header';
 import { ThemeProvider } from '~/components/theme-provider';
 import { siteConfig } from '~/config/site';
 import { containerClasses } from '~/lib/classes';
@@ -79,7 +79,7 @@ export default function RootLayout({
 			</head>
 			<body className="flex min-h-[100dvh] flex-col bg-gray-100 [tab-size:2] dark:bg-gray-900">
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<Nav />
+					<Header />
 					<main id={MAIN_ID} className={clsx(containerClasses, 'flex-1 pb-20')}>
 						<ErrorBoundary>
 							{children}
