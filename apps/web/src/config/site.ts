@@ -16,6 +16,9 @@ export const siteConfig = {
 		{ label: 'Posts', href: '/posts' },
 		{ label: 'Links', href: '/links' },
 		{ label: 'About', href: '/about' },
+		...(process.env.NODE_ENV === 'development'
+			? [{ label: 'Keystatic', href: '/keystatic' }]
+			: []),
 	],
 	links: {
 		Mastodon: {
