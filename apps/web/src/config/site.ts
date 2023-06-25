@@ -16,11 +16,8 @@ export const siteConfig = {
 		{ label: 'Posts', href: '/posts' },
 		{ label: 'Links', href: '/links' },
 		{ label: 'About', href: '/about' },
-		...(process.env.NODE_ENV === 'development'
-			? [{ label: 'Keystatic', href: '/keystatic' }]
-			: []),
 	],
-	links: {
+	socialLinks: {
 		Mastodon: {
 			href: 'https://mastodon.social/@luke_bennett_',
 			icon: MastodonIcon,
@@ -33,11 +30,13 @@ export const siteConfig = {
 			href: 'https://github.com/lukebennett88',
 			icon: GitHubIcon,
 		},
+	},
+	rssFeed: {
 		'JSON Feed': {
 			href: '/feed.json',
 			icon: JsonFeedIcon,
 		},
-		'RSS Feed': {
+		'XML Feed': {
 			href: '/feed.xml',
 			icon: RssFeedIcon,
 		},

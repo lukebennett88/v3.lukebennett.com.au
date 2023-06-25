@@ -8,33 +8,77 @@ export function Footer() {
 		<footer
 			className={clsx(
 				containerClasses,
-				'flex flex-col items-center justify-between gap-4 py-8 text-gray-700 dark:text-gray-400 lg:flex-row'
+				'flex flex-col items-center justify-between gap-4 py-8 text-gray-700 dark:text-gray-400'
 			)}
 		>
-			<span>
+			<FooterNav />
+			<SocialLinks />
+			<p>
 				&copy; {new Date().getFullYear()} Luke Bennett. All rights reserved.
-			</span>
-			<nav>
-				<ul className="flex items-center gap-4">
-					{Object.entries(siteConfig.links).map(
-						([name, { href, icon: Icon }]) => (
-							<li key={name}>
-								<a
-									className={clsx(
-										'block rounded text-gray-500 transition-colors duration-200 hover:text-gray-700',
-										focusClasses
-									)}
-									href={href}
-									rel="me"
-								>
-									<span className="sr-only">{name}</span>
-									<Icon className="h-4 w-4" />
-								</a>
-							</li>
-						)
-					)}
-				</ul>
-			</nav>
+			</p>
+			{process.env.NODE_ENV === 'development' && (
+				<div
+					className={clsx(containerClasses, 'fixed bottom-4 flex justify-end')}
+				>
+					<a
+						className="rounded-full bg-teal-700 px-6 text-white"
+						href="/keystatic"
+					>
+						Keystatic
+					</a>
+				</div>
+			)}
 		</footer>
+	);
+}
+
+function FooterNav() {
+	return (
+		<nav
+			role="navigation"
+			aria-label="RSS Feeds"
+			className="flex flex-col items-center"
+		>
+			<h2>Subscribe to my RSS feed</h2>
+			<ul className="flex items-center gap-4">
+				{Object.entries(siteConfig.rssFeed).map(([name, { href }]) => (
+					<li key={name}>
+						<a className="inline-flex items-center gap-2 underline" href={href}>
+							{name}
+						</a>
+					</li>
+				))}
+			</ul>
+		</nav>
+	);
+}
+
+function SocialLinks() {
+	return (
+		<nav
+			role="navigation"
+			aria-label="Social"
+			className="flex flex-col items-center"
+		>
+			<ul className="flex items-center gap-4">
+				{Object.entries(siteConfig.socialLinks).map(
+					([name, { href, icon: Icon }]) => (
+						<li key={name}>
+							<a
+								className={clsx(
+									'block rounded text-gray-500 transition-colors duration-200 hover:text-gray-700',
+									focusClasses
+								)}
+								href={href}
+								rel="me"
+							>
+								<span className="sr-only">{name}</span>
+								<Icon className="h-4 w-4" />
+							</a>
+						</li>
+					)
+				)}
+			</ul>
+		</nav>
 	);
 }
