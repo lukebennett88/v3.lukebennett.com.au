@@ -1,7 +1,5 @@
 import { GitHubIcon } from '~/components/icons/github';
-import { JsonFeedIcon } from '~/components/icons/json-feed';
 import { MastodonIcon } from '~/components/icons/mastodon';
-import { RssFeedIcon } from '~/components/icons/rss-feed';
 import { TwitterIcon } from '~/components/icons/twitter';
 
 export type SiteConfig = typeof siteConfig;
@@ -34,11 +32,9 @@ export const siteConfig = {
 	rssFeed: {
 		'JSON Feed': {
 			href: '/feed.json',
-			icon: JsonFeedIcon,
 		},
 		'XML Feed': {
 			href: '/feed.xml',
-			icon: RssFeedIcon,
 		},
 	},
 };
