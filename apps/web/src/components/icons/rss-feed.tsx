@@ -1,8 +1,11 @@
 export function RssFeedIcon(props: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
-			xmlns="http://www.w3.org/2000/svg"
+			aria-hidden="true"
+			focusable="false"
+			role="img"
 			viewBox="0 0 455.7 455.7"
+			xmlns="http://www.w3.org/2000/svg"
 			{...props}
 		>
 			<path fill="#a7a7a7" d="M0 0h455.7v455.7H0z" />

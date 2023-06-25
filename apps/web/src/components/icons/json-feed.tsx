@@ -1,6 +1,13 @@
 export function JsonFeedIcon(props: React.SVGProps<SVGSVGElement>) {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" {...props}>
+		<svg
+			aria-hidden="true"
+			focusable="false"
+			role="img"
+			viewBox="0 0 140 140"
+			xmlns="http://www.w3.org/2000/svg"
+			{...props}
+		>
 			<g fill="none" fillRule="evenodd">
 				<path fill="#c4c4c4" d="M0 0h140v140H0z" />
 				<path
