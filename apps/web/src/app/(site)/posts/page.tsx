@@ -2,7 +2,7 @@ import { clsx } from 'clsx';
 import { default as Link } from 'next/link';
 
 import { reader } from '~/keystatic/reader';
-import { sortPosts } from '~/lib/utils';
+import { formatToAustralianDate, sortPosts } from '~/lib/utils';
 
 export default async function Page() {
 	const posts = sortPosts(await reader.collections.posts.all()).filter((post) =>
@@ -20,26 +20,20 @@ export default async function Page() {
 				</p>
 			</div>
 			<ul className="flex max-w-prose flex-col gap-4" role="list">
-				{posts.map(async (post) => (
+				{posts.map(async ({ slug, entry }) => (
 					<li
-						key={post.slug}
+						key={slug}
 						className={clsx(
 							'prose dark:prose-invert -mx-4 break-words rounded-xl bg-white p-4 shadow dark:bg-gray-800',
-							post.entry.isDraft && 'border-2 border-dashed border-yellow-500'
+							entry.isDraft && 'border-2 border-dashed border-yellow-500'
 						)}
 					>
-						<a href={`/posts/${post.slug}`} className="inline-block">
-							<h2 className="m-0">{post.entry.title}</h2>
+						<a href={`/posts/${slug}`} className="inline-block">
+							<h2 className="m-0">{entry.title}</h2>
 						</a>
 						<br />
-						<time dateTime={post.entry.publishedAt} className="text-sm">
-							{new Intl.DateTimeFormat('en', {
-								timeZone: 'Australia/Sydney',
-								weekday: 'long',
-								year: 'numeric',
-								month: 'long',
-								day: 'numeric',
-							}).format(new Date(post.entry.publishedAt))}
+						<time dateTime={entry.publishedAt} className="text-sm">
+							{formatToAustralianDate(entry.publishedAt)}
 						</time>
 					</li>
 				))}
