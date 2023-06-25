@@ -23,16 +23,17 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-	const { content, title, linkedUrl } =
+	const { content, linkedUrl, publishedAt, title } =
 		await reader.collections.links.readOrThrow(params.slug);
 	return (
 		<Post
+			document={await content()}
+			publishedAt={publishedAt}
 			title={
 				<ExternalLinkHeading href={linkedUrl} level="1">
 					{title}
 				</ExternalLinkHeading>
 			}
-			document={await content()}
 		/>
 	);
 }
