@@ -1,8 +1,13 @@
 import { clsx } from 'clsx';
+import { type Metadata } from 'next';
 import { default as Link } from 'next/link';
 
 import { reader } from '~/keystatic/reader';
 import { formatToAustralianDate, sortPosts } from '~/lib/utils';
+
+export const metadata = {
+	title: 'Posts',
+} satisfies Metadata;
 
 export default async function Page() {
 	const posts = sortPosts(await reader.collections.posts.all()).filter((post) =>

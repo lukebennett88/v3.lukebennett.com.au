@@ -1,3 +1,4 @@
+import { type Metadata } from 'next';
 import { default as Link } from 'next/link';
 
 import { ExternalLinkHeading } from '~/components/link-heading';
@@ -5,6 +6,10 @@ import { ZeroWidthSpace } from '~/components/zero-width-space';
 import { DocumentRenderer } from '~/keystatic/document-renderer';
 import { reader } from '~/keystatic/reader';
 import { formatToAustralianDate, sortPosts } from '~/lib/utils';
+
+export const metadata = {
+	title: 'Links',
+} satisfies Metadata;
 
 export default async function Page() {
 	const links = sortPosts(await reader.collections.links.all());
