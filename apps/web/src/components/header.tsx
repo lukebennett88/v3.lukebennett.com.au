@@ -64,7 +64,8 @@ export function Header() {
 									aria-current={isCurrent ? 'page' : undefined}
 									href={href}
 									className={clsx(
-										'relative rounded-full px-4 py-1.5 text-sm font-medium text-gray-800 transition hover:bg-gray-100 focus-visible:ring-offset-teal-50 dark:text-gray-200 dark:hover:bg-gray-900',
+										'relative rounded-full px-3 py-1.5 text-xs font-medium text-gray-800 transition hover:bg-gray-100 focus-visible:ring-offset-teal-50 dark:text-gray-200 dark:hover:bg-gray-900',
+										'text-sm sm:px-4 sm:py-1.5',
 										focusClasses
 									)}
 								>
