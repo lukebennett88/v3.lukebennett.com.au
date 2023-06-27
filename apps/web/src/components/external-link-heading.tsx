@@ -1,3 +1,5 @@
+import { ZeroWidthSpace } from '~/components/zero-width-space';
+
 export function ExternalLinkHeading({
 	children,
 	href,
@@ -10,11 +12,10 @@ export function ExternalLinkHeading({
 	const Tag = `h${level}` as const;
 	return (
 		<a href={href} className="group relative underline">
-			<Tag className="inline-block underline">
+			<Tag className="m-0 inline-block underline">
 				{children}
 				<span className="inline-flex items-center">
-					{/* Zero width space */}
-					&#8203;
+					<ZeroWidthSpace />
 					<svg
 						aria-hidden="true"
 						className="ms-1 hidden h-[0.75em] w-[0.75em] group-hover:absolute group-hover:inline-block group-focus:absolute group-focus:inline-block"

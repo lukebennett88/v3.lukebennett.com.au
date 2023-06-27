@@ -33,9 +33,9 @@ export default async function Page() {
 							entry.isDraft && 'border-2 border-dashed border-yellow-500'
 						)}
 					>
-						<a href={`/posts/${slug}`} className="inline-block">
+						<Link href={`/posts/${slug}`} className="inline-block">
 							<h2 className="m-0">{entry.title}</h2>
-						</a>
+						</Link>
 						<br />
 						<time dateTime={entry.publishedAt} className="text-sm">
 							{formatToAustralianDate(entry.publishedAt)}

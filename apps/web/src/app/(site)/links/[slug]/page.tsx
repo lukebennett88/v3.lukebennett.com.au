@@ -1,6 +1,6 @@
 import { type Metadata } from 'next';
 
-import { ExternalLinkHeading } from '~/components/link-heading';
+import { ExternalLinkHeading } from '~/components/external-link-heading';
 import { Post } from '~/components/post';
 import { reader } from '~/keystatic/reader';
 
