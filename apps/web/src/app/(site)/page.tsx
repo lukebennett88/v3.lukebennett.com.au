@@ -1,6 +1,13 @@
 import { Me } from '~/components/me';
+import { siteConfig } from '~/config/site';
 import { DocumentRenderer } from '~/keystatic/document-renderer';
 import { reader } from '~/keystatic/reader';
+
+export const metadata = {
+	title: {
+		absolute: siteConfig.title,
+	},
+};
 
 export default async function Page() {
 	const { content } = await reader.singletons.homepage.readOrThrow();
