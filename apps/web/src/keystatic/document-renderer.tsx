@@ -1,23 +1,29 @@
-import { type InferRenderersForComponentBlocks } from '@keystatic/core';
 import {
 	DocumentRenderer as KeystaticDocumentRenderer,
 	type DocumentRendererProps,
 } from '@keystatic/core/renderer';
+import { getHighlighter } from 'shiki';
 
-import { componentBlocks } from './component-block';
+import {
+	componentBlockRenderers,
+	getDocumentRenderers,
+} from '~/keystatic/renderers';
 
-export function DocumentRenderer({
-	componentBlocks = componentBlockRenderers,
-	...consumerProps
-}: DocumentRendererProps) {
+export async function DocumentRenderer(props: DocumentRendererProps) {
+	const highlighter = await getHighlighter({
+		theme: 'poimandres',
+	});
+	const {
+		componentBlocks = componentBlockRenderers,
+		renderers = getDocumentRenderers(highlighter),
+		...consumerProps
+	} = props;
+
 	return (
 		<KeystaticDocumentRenderer
 			componentBlocks={componentBlocks}
+			renderers={renderers}
 			{...consumerProps}
 		/>
 	);
 }
-
-const componentBlockRenderers = {} satisfies InferRenderersForComponentBlocks<
-	typeof componentBlocks
->;
