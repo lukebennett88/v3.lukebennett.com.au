@@ -59,7 +59,7 @@ export function Header() {
 						const isHighlighted =
 							href === '/' ? pathname === href : pathname?.includes(href);
 						return (
-							<li key={href}>
+							<li key={href} className="flex">
 								<Link
 									aria-current={isCurrent ? 'page' : undefined}
 									href={href}
