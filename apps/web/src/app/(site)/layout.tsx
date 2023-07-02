@@ -69,7 +69,7 @@ export default function RootLayout({
 			className={clsx(
 				fontSerif.variable,
 				fontSans.variable,
-				'font-sans text-xl'
+				'font-sans text-xl antialiased'
 			)}
 		>
 			<head>
