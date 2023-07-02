@@ -7,6 +7,7 @@ import { CloudImage } from './cloud-image';
 import { Code } from './code';
 import { Heading } from './heading';
 import { InlineCode } from './inline-code';
+import { Link } from './link';
 
 export function getDocumentRenderers(highlighter: Highlighter) {
 	return {
@@ -21,6 +22,9 @@ export function getDocumentRenderers(highlighter: Highlighter) {
 		inline: {
 			code(props) {
 				return <InlineCode {...props} />;
+			},
+			link(props) {
+				return <Link {...props} />;
 			},
 		},
 	} satisfies DocumentRendererProps['renderers'];
