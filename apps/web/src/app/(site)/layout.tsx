@@ -10,7 +10,7 @@ import { Header, MAIN_ID } from '~/components/header';
 import { ThemeProvider } from '~/components/theme-provider';
 import { siteConfig } from '~/config/site';
 import { containerClasses, innerPaddingClasses } from '~/lib/classes';
-import { fontSans, fontSerif } from '~/lib/fonts';
+import { fontMono, fontSans, fontSerif } from '~/lib/fonts';
 
 export const metadata = {
 	title: {
@@ -69,6 +69,7 @@ export default function RootLayout({
 			className={clsx(
 				fontSerif.variable,
 				fontSans.variable,
+				fontMono.variable,
 				'font-sans text-xl antialiased'
 			)}
 		>

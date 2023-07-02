@@ -2,8 +2,18 @@ import { type Config } from 'tailwindcss';
 import { zinc } from 'tailwindcss/colors';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
-const fontSans = ['var(--font-sans)', ...defaultTheme.fontFamily.sans];
-const fontSerif = ['var(--font-serif)', ...defaultTheme.fontFamily.serif];
+export const fontStackSansArray = [
+	'var(--font-sans)',
+	...defaultTheme.fontFamily.sans,
+];
+export const fontStackSerifArray = [
+	'var(--font-serif)',
+	...defaultTheme.fontFamily.serif,
+];
+export const fontStackMonoArray = [
+	'var(--font-mono)',
+	...defaultTheme.fontFamily.mono,
+];
 
 export default {
 	darkMode: 'class',
@@ -14,19 +24,20 @@ export default {
 				gray: zinc,
 			},
 			fontFamily: {
-				sans: fontSans,
-				serif: fontSerif,
+				sans: fontStackSansArray,
+				serif: fontStackSerifArray,
+				mono: fontStackMonoArray,
 			},
-			typography: () => ({
+			typography: (theme: any) => ({
 				DEFAULT: {
 					css: {
-						fontFamily: fontSerif.join(', '),
+						fontFamily: fontStackSerifArray.join(', '),
 						h1: {
-							fontFamily: fontSans.join(', '),
+							fontFamily: fontStackSansArray.join(', '),
 							textWrap: 'balance',
 						},
 						h2: {
-							fontFamily: fontSans.join(', '),
+							fontFamily: fontStackSansArray.join(', '),
 							textWrap: 'balance',
 						},
 					},
