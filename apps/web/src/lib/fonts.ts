@@ -19,5 +19,5 @@ export const fontSans = Source_Sans_3({
 export const fontMono = Source_Code_Pro({
 	subsets: ['latin'],
 	variable: '--font-mono',
-	weight: ['400', '700'],
+	weight: ['400', '500'],
 });

@@ -6,6 +6,7 @@ import { componentBlocks } from '../component-block';
 import { CloudImage } from './cloud-image';
 import { Code } from './code';
 import { Heading } from './heading';
+import { InlineCode } from './inline-code';
 
 export function getDocumentRenderers(highlighter: Highlighter) {
 	return {
@@ -15,6 +16,11 @@ export function getDocumentRenderers(highlighter: Highlighter) {
 			},
 			heading(props) {
 				return <Heading {...props} isAnchor />;
+			},
+		},
+		inline: {
+			code(props) {
+				return <InlineCode {...props} />;
 			},
 		},
 	} satisfies DocumentRendererProps['renderers'];

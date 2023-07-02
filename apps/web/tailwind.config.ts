@@ -40,6 +40,12 @@ export default {
 							fontFamily: fontStackSansArray.join(', '),
 							textWrap: 'balance',
 						},
+						'code::before': {
+							content: 'none',
+						},
+						'code::after': {
+							content: 'none',
+						},
 					},
 				},
 			}),
