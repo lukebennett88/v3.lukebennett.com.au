@@ -1,13 +1,18 @@
 import { clsx } from 'clsx';
 
 import { siteConfig } from '~/config/site';
-import { containerClasses, focusClasses } from '~/lib/classes';
+import {
+	containerClasses,
+	focusClasses,
+	innerPaddingClasses,
+} from '~/lib/classes';
 
 export function Footer() {
 	return (
 		<footer
 			className={clsx(
 				containerClasses,
+				innerPaddingClasses,
 				'flex flex-col items-center justify-between gap-4 py-8 text-gray-700 dark:text-gray-400'
 			)}
 		>
@@ -18,7 +23,11 @@ export function Footer() {
 			</p>
 			{process.env.NODE_ENV === 'development' && (
 				<div
-					className={clsx(containerClasses, 'fixed bottom-4 flex justify-end')}
+					className={clsx(
+						containerClasses,
+						innerPaddingClasses,
+						'fixed bottom-8 flex justify-end'
+					)}
 				>
 					<a
 						className="rounded-full bg-teal-700 px-6 text-white"

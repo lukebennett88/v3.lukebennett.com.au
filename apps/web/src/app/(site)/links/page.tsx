@@ -14,7 +14,7 @@ export const metadata = {
 export default async function Page() {
 	const links = sortPosts(await reader.collections.links.all());
 	return (
-		<div className="flex flex-col gap-4">
+		<div className="mx-auto flex max-w-prose flex-col gap-4">
 			<div className="prose dark:prose-invert">
 				<h1>Links</h1>
 				<p className="[text-wrap:balance]">
@@ -24,7 +24,7 @@ export default async function Page() {
 					<Link href="/posts">check out the posts section</Link> instead.
 				</p>
 			</div>
-			<ul className="flex max-w-prose flex-col gap-4" role="list">
+			<ul className="flex max-w-prose flex-col gap-1 sm:gap-3" role="list">
 				{links.map(async ({ slug, entry }) => {
 					const { content } = await reader.collections.links.readOrThrow(slug);
 					const headingLevel = '2';
@@ -32,7 +32,7 @@ export default async function Page() {
 					return (
 						<li
 							key={slug}
-							className="prose dark:prose-invert -mx-4 break-words rounded-xl bg-white p-4 shadow dark:bg-gray-800"
+							className="prose dark:prose-invert -mx-4 break-words bg-white p-4 shadow dark:bg-gray-800 sm:rounded-xl"
 						>
 							<div className="flex items-start justify-between gap-6">
 								<ExternalLinkHeading

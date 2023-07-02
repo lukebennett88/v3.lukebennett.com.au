@@ -1,4 +1,6 @@
-export const containerClasses = 'mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8';
+export const containerClasses = 'mx-auto w-full max-w-4xl';
+
+export const innerPaddingClasses = 'px-4 sm:px-6 lg:px-8';
 
 export const paragraphClasses =
 	'text-[20px] leading-[33.36px] before:mb-[-0.496em] before:table after:mt-[-0.504em] after:table';

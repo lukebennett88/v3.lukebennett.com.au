@@ -9,8 +9,8 @@ import { Footer } from '~/components/footer';
 import { Header, MAIN_ID } from '~/components/header';
 import { ThemeProvider } from '~/components/theme-provider';
 import { siteConfig } from '~/config/site';
-import { containerClasses } from '~/lib/classes';
-import { fontSans } from '~/lib/fonts';
+import { containerClasses, innerPaddingClasses } from '~/lib/classes';
+import { fontSans, fontSerif } from '~/lib/fonts';
 
 export const metadata = {
 	title: {
@@ -66,7 +66,11 @@ export default function RootLayout({
 		<html
 			suppressHydrationWarning
 			lang="en-AU"
-			className={clsx(fontSans.variable, 'font-sans text-xl')}
+			className={clsx(
+				fontSerif.variable,
+				fontSans.variable,
+				'font-sans text-xl'
+			)}
 		>
 			<head>
 				<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -77,17 +81,30 @@ export default function RootLayout({
 					media="(prefers-color-scheme: dark)"
 				/>
 			</head>
-			<body className="flex min-h-[100dvh] flex-col bg-gray-100 [tab-size:2] dark:bg-gray-900">
-				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<Header />
-					<main id={MAIN_ID} className={clsx(containerClasses, 'flex-1 pb-20')}>
-						<ErrorBoundary>
-							{children}
-							{process.env.NODE_ENV === 'production' && <Analytics />}
-						</ErrorBoundary>
-					</main>
-				</ThemeProvider>
-				<Footer />
+			<body className="flex min-h-[100dvh] justify-center bg-teal-700 p-2 [tab-size:2]">
+				<div
+					className={clsx(
+						containerClasses,
+						'flex flex-col rounded-2xl bg-gray-100 shadow-2xl dark:bg-gray-900'
+					)}
+				>
+					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+						<Header />
+						<main
+							id={MAIN_ID}
+							className={clsx(
+								innerPaddingClasses,
+								'flex-1 bg-gray-100 pb-20 pt-10 dark:bg-gray-900'
+							)}
+						>
+							<ErrorBoundary>
+								{children}
+								{process.env.NODE_ENV === 'production' && <Analytics />}
+							</ErrorBoundary>
+						</main>
+						<Footer />
+					</ThemeProvider>
+				</div>
 			</body>
 		</html>
 	);

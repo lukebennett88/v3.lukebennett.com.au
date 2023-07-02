@@ -13,7 +13,7 @@ export function Post({
 	title: JSX.Element;
 }) {
 	return (
-		<div className="prose dark:prose-invert">
+		<div className="prose dark:prose-invert mx-auto">
 			<time className="block text-sm" dateTime={publishedAt}>
 				{formatToAustralianDate(publishedAt)}
 			</time>

@@ -14,7 +14,7 @@ export default async function Page() {
 		process.env.NODE_ENV === 'production' ? !post.entry.isDraft : true
 	);
 	return (
-		<div className="flex flex-col gap-4">
+		<div className="mx-auto flex max-w-prose flex-col gap-4">
 			<div className="prose dark:prose-invert">
 				<h1>Posts</h1>
 				<p className="[text-wrap:balance]">
@@ -24,12 +24,12 @@ export default async function Page() {
 					<Link href="links">check out the links section</Link> instead.
 				</p>
 			</div>
-			<ul className="flex max-w-prose flex-col gap-4" role="list">
+			<ul className="flex max-w-prose flex-col gap-1 sm:gap-3" role="list">
 				{posts.map(async ({ slug, entry }) => (
 					<li
 						key={slug}
 						className={clsx(
-							'prose dark:prose-invert -mx-4 break-words rounded-xl bg-white p-4 shadow dark:bg-gray-800',
+							'prose dark:prose-invert -mx-4 break-words bg-white p-4 shadow dark:bg-gray-800 sm:rounded-xl',
 							entry.isDraft && 'border-2 border-dashed border-yellow-500'
 						)}
 					>

@@ -3,33 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-	/* Scrollbar styles */
-	body {
-		scrollbar-color: theme(colors.gray.200) theme(colors.teal.700);
-		scrollbar-gutter: stable;
-	}
-	body::-webkit-scrollbar {
-		width: theme(spacing[3]);
-		height: theme(spacing[3]);
-	}
-	body::-webkit-scrollbar-thumb {
-		background: theme(colors.teal.700);
-		border-radius: theme(borderRadius.full);
-	}
-	body::-webkit-scrollbar-track {
-		background: theme(colors.gray.200);
-		box-shadow: theme(boxShadow.DEFAULT);
-	}
-	.dark body {
-		scrollbar-color: theme(colors.gray.800) theme(colors.teal.700);
-	}
-	.dark body::-webkit-scrollbar-thumb {
-		background: theme(colors.teal.700);
-	}
-	.dark body::-webkit-scrollbar-track {
-		background: theme(colors.gray.800);
-	}
-
 	/* Apply scroll-margin to IDs */
 	[id] {
 		scroll-margin-top: theme(spacing[4]);

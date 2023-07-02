@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 import { Logo } from '~/components/logo';
 import { ThemeSwitcher } from '~/components/theme-switcher';
 import { siteConfig } from '~/config/site';
-import { containerClasses, focusClasses } from '~/lib/classes';
+import { focusClasses, innerPaddingClasses } from '~/lib/classes';
 
 export const MAIN_ID = 'main';
 
@@ -19,7 +19,7 @@ export function Header() {
 		<header
 			role="banner"
 			className={clsx(
-				containerClasses,
+				innerPaddingClasses,
 				'flex flex-wrap items-center gap-4 py-8'
 			)}
 		>
@@ -39,8 +39,8 @@ export function Header() {
 					href="/"
 					className={clsx(
 						'h-11 w-11 rounded-full p-1 font-sans font-bold shadow transition-colors',
-						'bg-gray-50 text-teal-700 hover:bg-white hover:text-teal-600',
-						'dark:bg-teal-500 dark:text-gray-800 dark:hover:bg-teal-400 dark:hover:text-gray-700',
+						'bg-white text-teal-700 hover:text-teal-600',
+						'dark:bg-teal-600 dark:text-gray-900 dark:hover:bg-teal-500',
 						focusClasses
 					)}
 				>
