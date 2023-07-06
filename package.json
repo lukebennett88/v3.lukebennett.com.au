@@ -3,6 +3,12 @@
 	"private": true,
 	"scripts": {
 		"build": "turbo run build",
+		"build:packages": "turbo run build --filter=./packages/*",
+		"build:web": "turbo run build --filter=web...",
+		"check": "pnpm run check:format && pnpm run check:lint && pnpm run check:types",
+		"check:format": "pnpm prettier . --cache --check",
+		"check:lint": "turbo run lint",
+		"check:types": "pnpm build:packages && turbo run check:types",
 		"dev": "turbo run dev",
 		"fix": "pnpm fix:lint && pnpm fix:format",
 		"fix:format": "prettier --write \"**/*.{ts,tsx,md}\"",
