@@ -18,14 +18,14 @@ export const DropdownMenuContent = forwardRef<
 	return (
 		<DropdownMenuPrimitive.Portal>
 			<DropdownMenuPrimitive.Content
-				ref={forwardedRef}
-				sideOffset={sideOffset}
 				className={clsx(
 					'z-50 min-w-min max-w-max overflow-hidden rounded-lg p-1 shadow-md',
 					'border bg-white',
 					'dark:border-gray-700 dark:bg-gray-800',
 					className
 				)}
+				ref={forwardedRef}
+				sideOffset={sideOffset}
 				{...props}
 			/>
 		</DropdownMenuPrimitive.Portal>
@@ -40,7 +40,6 @@ export const DropdownMenuItem = forwardRef<
 >(function DropdownMenuItem({ className, inset, ...props }, forwardedRef) {
 	return (
 		<DropdownMenuPrimitive.Item
-			ref={forwardedRef}
 			className={clsx(
 				'relative flex w-full cursor-default select-none items-center rounded px-2 py-1.5 text-sm outline-none transition-colors',
 				'data-[highlighted]:bg-teal-700 data-[highlighted]:text-white',
@@ -49,6 +48,7 @@ export const DropdownMenuItem = forwardRef<
 				inset && 'pl-8',
 				className
 			)}
+			ref={forwardedRef}
 			{...props}
 		/>
 	);

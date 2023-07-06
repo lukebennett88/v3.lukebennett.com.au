@@ -31,8 +31,8 @@ export default async function Page() {
 					const HeadingTag = `h${headingLevel}` as const;
 					return (
 						<li
-							key={slug}
 							className="prose dark:prose-invert -mx-4 break-words bg-white p-4 shadow dark:bg-gray-800 sm:rounded-xl"
+							key={slug}
 						>
 							<div className="flex items-start justify-between gap-6">
 								<ExternalLinkHeading
@@ -49,7 +49,7 @@ export default async function Page() {
 								</div>
 							</div>
 							<DocumentRenderer document={await content()} />
-							<time dateTime={entry.publishedAt} className="text-sm">
+							<time className="text-sm" dateTime={entry.publishedAt}>
 								{formatToAustralianDate(entry.publishedAt)}
 							</time>
 						</li>

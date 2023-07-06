@@ -18,10 +18,10 @@ export function CloudImage({
 	const img = (
 		<Image
 			alt={alt}
-			src={src}
-			width={width}
 			height={height}
+			src={src}
 			style={{ aspectRatio: width / height }}
+			width={width}
 		/>
 	);
 	if (caption) {

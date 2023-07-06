@@ -32,9 +32,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
 	return (
 		<Post
+			document={await content()}
 			publishedAt={publishedAt}
 			title={<h1>{title}</h1>}
-			document={await content()}
 		/>
 	);
 }

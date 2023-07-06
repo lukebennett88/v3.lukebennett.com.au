@@ -45,10 +45,10 @@ export function ThemeSwitcher() {
 							icon: ComputerIcon,
 						},
 					].map(({ label, theme, icon: Icon }) => (
-						<DropdownMenuItem key={theme} asChild>
+						<DropdownMenuItem asChild key={theme}>
 							<button
-								onClick={() => setTheme(theme)}
 								className="flex items-center gap-2"
+								onClick={() => setTheme(theme)}
 							>
 								<Icon className="h-4 w-4" />
 								{label}

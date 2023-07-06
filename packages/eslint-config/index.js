@@ -7,6 +7,8 @@ const ERROR = 2;
 	rules: {
 		'@next/next/no-html-link-for-pages': OFF,
 		'@next/next/no-img-element': OFF,
+		'prefer-const': WARN,
+		'react/jsx-sort-props': WARN,
 	},
 	parserOptions: {
 		babelOptions: {

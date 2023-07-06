@@ -27,17 +27,17 @@ export default async function Page() {
 			<ul className="flex max-w-prose flex-col gap-1 sm:gap-3" role="list">
 				{posts.map(async ({ slug, entry }) => (
 					<li
-						key={slug}
 						className={clsx(
 							'prose dark:prose-invert -mx-4 break-words bg-white p-4 shadow dark:bg-gray-800 sm:rounded-xl',
 							entry.isDraft && 'border-2 border-dashed border-yellow-500'
 						)}
+						key={slug}
 					>
-						<Link href={`/posts/${slug}`} className="inline-block">
+						<Link className="inline-block" href={`/posts/${slug}`}>
 							<h2 className="m-0">{entry.title}</h2>
 						</Link>
 						<br />
-						<time dateTime={entry.publishedAt} className="text-sm">
+						<time className="text-sm" dateTime={entry.publishedAt}>
 							{formatToAustralianDate(entry.publishedAt)}
 						</time>
 					</li>

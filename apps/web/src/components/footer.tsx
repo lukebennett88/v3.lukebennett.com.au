@@ -44,9 +44,9 @@ export function Footer() {
 function FooterNav() {
 	return (
 		<nav
-			role="navigation"
 			aria-label="RSS Feeds"
 			className="flex flex-col items-center"
+			role="navigation"
 		>
 			<h2>Subscribe to my RSS feed</h2>
 			<ul className="flex items-center gap-4">
@@ -65,9 +65,9 @@ function FooterNav() {
 function SocialLinks() {
 	return (
 		<nav
-			role="navigation"
 			aria-label="Social"
 			className="flex flex-col items-center"
+			role="navigation"
 		>
 			<ul className="flex items-center gap-4">
 				{Object.entries(siteConfig.socialLinks).map(

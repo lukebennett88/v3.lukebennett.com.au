@@ -6,10 +6,10 @@ export const cloudImage = component({
 	preview: ({ fields }) => (
 		<CloudImage
 			alt={fields.alt.value}
-			src={fields.src.value!}
 			caption={fields.caption.value}
-			width={fields.width.value!}
 			height={fields.height.value!}
+			src={fields.src.value!}
+			width={fields.width.value!}
 		/>
 	),
 	label: 'Cloud image',

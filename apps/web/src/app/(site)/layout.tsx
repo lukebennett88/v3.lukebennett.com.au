@@ -64,22 +64,22 @@ export default function RootLayout({
 }) {
 	return (
 		<html
-			suppressHydrationWarning
-			lang="en-AU"
 			className={clsx(
 				fontSerif.variable,
 				fontSans.variable,
 				fontMono.variable,
 				'font-sans text-xl antialiased'
 			)}
+			lang="en-AU"
+			suppressHydrationWarning
 		>
 			<head>
-				<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+				<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
 				<link
-					rel="icon"
 					href="/favicon-dark.svg"
-					type="image/svg+xml"
 					media="(prefers-color-scheme: dark)"
+					rel="icon"
+					type="image/svg+xml"
 				/>
 			</head>
 			<body className="flex min-h-[100dvh] justify-center bg-teal-700 p-2 [tab-size:2]">
@@ -92,11 +92,11 @@ export default function RootLayout({
 					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 						<Header />
 						<main
-							id={MAIN_ID}
 							className={clsx(
 								innerPaddingClasses,
 								'flex-1 bg-gray-100 pb-20 pt-10 dark:bg-gray-900'
 							)}
+							id={MAIN_ID}
 						>
 							<ErrorBoundary>
 								{children}

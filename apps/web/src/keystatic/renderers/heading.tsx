@@ -38,7 +38,7 @@ export function Heading({
 	if (isAnchor) {
 		const slug = getSlug(children);
 		return (
-			<a href={`#${slug}`} id={slug} className="relative block no-underline">
+			<a className="relative block no-underline" href={`#${slug}`} id={slug}>
 				<Tag
 					{...consumerProps}
 					className={clsx(alignmentClass, '[text-wrap:balance]', className)}
