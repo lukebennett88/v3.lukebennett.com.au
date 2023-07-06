@@ -1,24 +1,14 @@
-import typographyPlugin from '@tailwindcss/typography';
 import { type Config } from 'tailwindcss';
 import { zinc } from 'tailwindcss/colors';
 import defaultTheme from 'tailwindcss/defaultTheme';
+import typographyPlugin from '@tailwindcss/typography';
 
-export const fontStackSansArray = [
-	'var(--font-sans)',
-	...defaultTheme.fontFamily.sans,
-];
-export const fontStackSerifArray = [
-	'var(--font-serif)',
-	...defaultTheme.fontFamily.serif,
-];
-export const fontStackMonoArray = [
-	'var(--font-mono)',
-	...defaultTheme.fontFamily.mono,
-];
+export const fontStackSansArray = [...defaultTheme.fontFamily.sans];
+export const fontStackSerifArray = [...defaultTheme.fontFamily.serif];
+export const fontStackMonoArray = [...defaultTheme.fontFamily.mono];
 
 export default {
-	darkMode: 'class',
-	content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
 			colors: {

@@ -1,8 +1,9 @@
 {
+	"[astro]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
 	"editor.codeActionsOnSave": { "source.fixAll": true },
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
-	"eslint.packageManager": "pnpm",
+	"prettier.documentSelectors": ["**/*.astro"],
 	"typescript.preferences.importModuleSpecifier": "non-relative",
 	"typescript.tsdk": "node_modules/typescript/lib"
 }

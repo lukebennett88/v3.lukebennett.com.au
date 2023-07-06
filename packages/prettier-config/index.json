@@ -8,6 +8,7 @@
 		"prettier-plugin-tailwindcss"
 	],
 	"pluginSearchDirs": false,
+	"printWidth": 120,
 	"proseWrap": "always",
 	"singleQuote": true,
 	"tabWidth": 2,

@@ -1,15 +1,39 @@
 ---
+import { clsx } from 'clsx';
+import { getHighlighter } from 'shiki';
+import { Me } from '~/components/me';
+import { DocumentRenderer } from '~/keystatic/document-renderer';
+import { reader } from '~/keystatic/reader';
+import { containerClasses, innerPaddingClasses } from '~/lib/classes';
+import BaseHead from '../components/BaseHead.astro';
+import { Footer } from '../components/footer';
+import { Header, MAIN_ID } from '../components/header';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const { content } = await reader.singletons.homepage.readOrThrow();
+const document = await content();
+const highlighter = await getHighlighter({
+	theme: 'poimandres',
+});
 ---
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-AU" class="font-sans text-xl antialiased">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="flex min-h-[100dvh] justify-center bg-teal-700 p-2 [tab-size:2]">
+		<div class={clsx(containerClasses, 'flex flex-col rounded-2xl bg-gray-100 shadow-2xl dark:bg-gray-900')}>
+			<Header />
+			<main class={clsx(innerPaddingClasses, 'flex-1 bg-gray-100 pb-20 pt-10 dark:bg-gray-900')} id={MAIN_ID}>
+				<div class="mx-auto grid max-w-prose items-center gap-16">
+					<div class="prose dark:prose-invert">
+						<DocumentRenderer document={document} highlighter={highlighter} />
+					</div>
+					<Me />
+				</div>
+			</main>
+			<Footer />
+		</div>
 	</body>
 </html>

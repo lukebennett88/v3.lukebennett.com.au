@@ -2,10 +2,8 @@
 	"extends": "@lukebennett/tsconfig/react-library",
 	"compilerOptions": {
 		"baseUrl": ".",
-		"paths": { "~/*": ["./src/*"] },
-		"jsx": "react-jsx",
-		"jsxImportSource": "react"
+		"paths": { "~/*": ["./src/*"] }
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-	"exclude": ["dist", "build", "node_modules"]
+	"include": ["."],
+	"exclude": [".astro", ".vercel", "node_modules"]
 }
