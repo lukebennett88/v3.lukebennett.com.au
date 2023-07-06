@@ -28,7 +28,7 @@ export default {
 				serif: fontStackSerifArray,
 				mono: fontStackMonoArray,
 			},
-			typography: (theme: any) => ({
+			typography: () => ({
 				DEFAULT: {
 					css: {
 						fontFamily: fontStackSerifArray.join(', '),
