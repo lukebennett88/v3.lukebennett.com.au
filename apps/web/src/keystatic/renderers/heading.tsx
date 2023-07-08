@@ -71,12 +71,15 @@ function getTextNode(node: React.ReactNode): string {
 	if (!node) {
 		return '';
 	}
+
 	if (typeof node === 'string') {
 		return node;
 	}
+
 	if (typeof node === 'number') {
 		return String(node);
 	}
+
 	if (
 		typeof node === 'object' &&
 		'text' in node &&
@@ -84,11 +87,14 @@ function getTextNode(node: React.ReactNode): string {
 	) {
 		return node.text;
 	}
+
 	if (node instanceof Array) {
 		return node.map(getTextNode).join('');
 	}
+
 	if (typeof node === 'object' && 'props' in node && 'node' in node.props) {
 		return getTextNode(node.props.node);
 	}
+
 	return '';
 }

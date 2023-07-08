@@ -1,4 +1,6 @@
-.next
-dist
-node_modules
+.next/
+coverage/
+dist/
+lib/
+node_modules/
 pnpm-lock.yaml

@@ -32,5 +32,6 @@ export function CloudImage({
 			</figure>
 		);
 	}
+
 	return img;
 }

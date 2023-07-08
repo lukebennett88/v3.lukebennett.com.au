@@ -1,6 +1,17 @@
 {
 	"name": "@lukebennett/root",
 	"private": true,
+	"description": "Personal website for Luke Bennett",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lukebennett88/v3.lukebennett.com.au"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Luke Bennett",
+		"email": "hello@lukebennett.com.au"
+	},
+	"type": "module",
 	"scripts": {
 		"build": "turbo run build",
 		"build:packages": "turbo run build --filter=./packages/*",
@@ -11,9 +22,14 @@
 		"check:types": "pnpm build:packages && turbo run check:types",
 		"dev": "turbo run dev",
 		"fix": "pnpm fix:lint && pnpm fix:format",
-		"fix:format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"fix:format": "pnpm format --write",
 		"fix:lint": "turbo run lint -- --fix",
-		"postinstall": "manypkg check"
+		"format": "prettier \"**/*\" --ignore-unknown --cache",
+		"postinstall": "manypkg check",
+		"lint:md": "markdownlint \"**/*.md\" \".github/**/*.md\" --rules sentences-per-line",
+		"lint:package": "npmPkgJsonLint .",
+		"lint:packages": "pnpm dedupe --check",
+		"lint:spelling": "cspell \"**\" \".github/**/*\""
 	},
 	"dependencies": {
 		"@lukebennett/eslint-config": "0.0.0",
@@ -26,6 +42,9 @@
 		"turbo": "^1.10.7"
 	},
 	"packageManager": "pnpm@8.6.0",
+	"engines": {
+		"node": ">=18"
+	},
 	"manypkg": {
 		"defaultBranch": "main"
 	}
