@@ -19,7 +19,7 @@ importers:
         version: 0.21.0
       '@turbo/gen':
         specifier: ^1.10.7
-        version: 1.10.7(@types/node@18.16.19)(typescript@5.1.6)
+        version: 1.10.7(@types/node@20.0.0)(typescript@5.1.6)
       eslint:
         specifier: ^8.44.0
         version: 8.44.0
@@ -60,8 +60,8 @@ importers:
         specifier: ^8.40.2
         version: 8.40.2
       '@types/node':
-        specifier: ^18.16.19
-        version: 18.16.19
+        specifier: ^20.0.0
+        version: 20.0.0
       '@types/prettier':
         specifier: ^2.7.3
         version: 2.7.3
@@ -2830,7 +2830,7 @@ packages:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     dev: false
 
-  /@turbo/gen@1.10.7(@types/node@18.16.19)(typescript@5.1.6):
+  /@turbo/gen@1.10.7(@types/node@20.0.0)(typescript@5.1.6):
     resolution: {integrity: sha512-yQB/A+J17Ze3oewdaJqQ9jcFLzBNU3D/QIZeYU2GBeJk/NiXh2eKfeuu33U/MduOajRVfXl82r8j7It6glVowQ==}
     hasBin: true
     dependencies:
@@ -2841,7 +2841,7 @@ packages:
       minimatch: 9.0.2
       node-plop: 0.26.3
       semver: 7.5.3
-      ts-node: 10.9.1(@types/node@18.16.19)(typescript@5.1.6)
+      ts-node: 10.9.1(@types/node@20.0.0)(typescript@5.1.6)
       update-check: 1.5.4
       validate-npm-package-name: 5.0.0
     transitivePeerDependencies:
@@ -2866,7 +2866,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 18.16.19
+      '@types/node': 20.0.0
     dev: false
 
   /@types/inquirer@6.5.0:
@@ -2891,7 +2891,7 @@ packages:
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 18.16.19
+      '@types/node': 20.0.0
     dev: false
 
   /@types/linkify-it@3.0.2:
@@ -2935,8 +2935,8 @@ packages:
     resolution: {integrity: sha512-eUXZzHLHoZqj1frtUetNkUetYoJ6X55UmrVnFD4DMhVeAmwLjniZhtBmsRiemQh4uq4G3vUra/Ws/hs9vEvL3Q==}
     dev: false
 
-  /@types/node@18.16.19:
-    resolution: {integrity: sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==}
+  /@types/node@20.0.0:
+    resolution: {integrity: sha512-cD2uPTDnQQCVpmRefonO98/PPijuOnnEy5oytWJFPY1N9aJCz2wJ5kSGWO+zJoed2cY2JxQh6yBuUq4vIn61hw==}
     dev: false
 
   /@types/parse-json@4.0.0:
@@ -2968,7 +2968,7 @@ packages:
   /@types/responselike@1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 18.16.19
+      '@types/node': 20.0.0
     dev: false
 
   /@types/rss@0.0.30:
@@ -2990,7 +2990,7 @@ packages:
   /@types/through@0.0.30:
     resolution: {integrity: sha512-FvnCJljyxhPM3gkRgWmxmDZyAQSiBQQWLI0A0VFL0K7W1oRUrPJSqNO0NvTnLkBcotdlp3lKvaT0JrnyRDkzOg==}
     dependencies:
-      '@types/node': 18.16.19
+      '@types/node': 20.0.0
     dev: false
 
   /@types/unist@2.0.6:
@@ -7240,7 +7240,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: false
 
-  /ts-node@10.9.1(@types/node@18.16.19)(typescript@5.1.6):
+  /ts-node@10.9.1(@types/node@20.0.0)(typescript@5.1.6):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -7259,7 +7259,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 18.16.19
+      '@types/node': 20.0.0
       acorn: 8.9.0
       acorn-walk: 8.2.0
       arg: 4.1.3
