@@ -75,8 +75,8 @@ importers:
         specifier: ^0.0.30
         version: 0.0.30
       '@unpic/react':
-        specifier: ^0.0.32
-        version: 0.0.32(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^0.0.33
+        version: 0.0.33(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
       '@vercel/analytics':
         specifier: ^1.0.1
         version: 1.0.1
@@ -3195,14 +3195,14 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: false
 
-  /@unpic/core@0.0.27:
-    resolution: {integrity: sha512-zfhjepdcgXa7v6dID8P0WXrgSqhRnWpn2Vq+3nM9ieQvBUSU+H4ogMSzTJCC2/BhGfSZPZGyLfUKL/X191VaiA==}
+  /@unpic/core@0.0.28:
+    resolution: {integrity: sha512-PYsFg/Xik2LBwW/NEaTtD1ORD6X9t3tkBbAGLNIha6WERW/SF+SgXnwd/kWC7ZXhh+sGHQFqdNfqRz4Rd/H19A==}
     dependencies:
-      unpic: 3.8.1
+      unpic: 3.9.0
     dev: false
 
-  /@unpic/react@0.0.32(next@13.4.8)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-8bhdGoXyZRTpDMIiodrotiw2vE4XTsBpQTfK7NL+Z/dmtobLVs7eypM6Lv8KCoNcNHEwRfNvZZ/zuAJVm0WpXA==}
+  /@unpic/react@0.0.33(next@13.4.8)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-DEMOnNDCb/o5RYgFwIIu03jjf/BuDwISHPaD0vGgYA5LMuNVA0SmS0qC1mIGOc3l7D7aQA10gg6GM7HkCIecwQ==}
     peerDependencies:
       next: '>=12'
       react: '>=17'
@@ -3211,7 +3211,7 @@ packages:
       next:
         optional: true
     dependencies:
-      '@unpic/core': 0.0.27
+      '@unpic/core': 0.0.28
       next: 13.4.8(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -7589,8 +7589,8 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: false
 
-  /unpic@3.8.1:
-    resolution: {integrity: sha512-/TzVRKYuhiEUnee2O2v43riVWI0wQJm02wkV3+kB3q8VF1jZiMJc5KCuRU52w6npfXI/B921u7rp8ySmTy5LVw==}
+  /unpic@3.9.0:
+    resolution: {integrity: sha512-BnNI9lme7SrhPBzBF+XSkiyiVLza0bSRvIg09xsOnzv9rImcW1+OcBSJBUB+JOWxVLUu5LecjTclMtJTwbUYMw==}
     dev: false
 
   /untildify@4.0.0:
