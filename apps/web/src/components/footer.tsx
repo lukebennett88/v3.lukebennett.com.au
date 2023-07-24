@@ -13,7 +13,7 @@ export function Footer() {
 			className={clsx(
 				containerClasses,
 				innerPaddingClasses,
-				'flex flex-col items-center justify-between gap-4 py-8 text-gray-700 dark:text-gray-400'
+				'flex flex-col items-center justify-between gap-4 py-8 text-gray-700 dark:text-gray-400',
 			)}
 		>
 			<FooterNav />
@@ -26,7 +26,7 @@ export function Footer() {
 					className={clsx(
 						containerClasses,
 						innerPaddingClasses,
-						'fixed bottom-8 flex justify-end'
+						'fixed bottom-8 flex justify-end',
 					)}
 				>
 					<a
@@ -76,7 +76,7 @@ function SocialLinks() {
 							<a
 								className={clsx(
 									'block rounded text-gray-500 transition-colors duration-200 hover:text-gray-700',
-									focusClasses
+									focusClasses,
 								)}
 								href={href}
 								rel="me"
@@ -85,7 +85,7 @@ function SocialLinks() {
 								<Icon className="h-4 w-4" />
 							</a>
 						</li>
-					)
+					),
 				)}
 			</ul>
 		</nav>

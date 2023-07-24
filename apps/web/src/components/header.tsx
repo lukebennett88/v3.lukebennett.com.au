@@ -19,7 +19,7 @@ export function Header() {
 		<header
 			className={clsx(
 				innerPaddingClasses,
-				'flex flex-wrap items-center gap-4 py-8'
+				'flex flex-wrap items-center gap-4 py-8',
 			)}
 			role="banner"
 		>
@@ -28,7 +28,7 @@ export function Header() {
 					'sr-only',
 					'focus-visible:not-sr-only focus-visible:absolute focus-visible:inline-block focus-visible:rounded-full focus-visible:bg-gray-200 focus-visible:px-3 focus-visible:py-1.5 focus-visible:hover:text-gray-600',
 					'dark:focus-visible:bg-teal-700 dark:focus-visible:hover:text-white',
-					focusClasses
+					focusClasses,
 				)}
 				href={`#${MAIN_ID}`}
 			>
@@ -40,7 +40,7 @@ export function Header() {
 						'h-11 w-11 rounded-full p-1 font-sans font-bold shadow transition-colors',
 						'bg-white text-teal-700 hover:text-teal-600',
 						'dark:bg-teal-600 dark:text-gray-900 dark:hover:bg-teal-500',
-						focusClasses
+						focusClasses,
 					)}
 					href="/"
 				>
@@ -65,7 +65,7 @@ export function Header() {
 									className={clsx(
 										'relative rounded-full px-3 py-1.5 text-xs font-medium text-gray-800 transition hover:bg-gray-100 focus-visible:ring-offset-teal-50 dark:text-gray-200 dark:hover:bg-gray-900',
 										'text-sm sm:px-4 sm:py-1.5',
-										focusClasses
+										focusClasses,
 									)}
 									href={href}
 								>

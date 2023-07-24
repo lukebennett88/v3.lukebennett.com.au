@@ -14,7 +14,7 @@ export function InlineCode({
 				'rounded-md border px-1 py-0.5 font-mono font-medium',
 				'border-gray-300 bg-gray-200 text-gray-900',
 				'dark:border-gray-600 dark:bg-gray-700 dark:text-gray-50',
-				className
+				className,
 			)}
 		>
 			{children}

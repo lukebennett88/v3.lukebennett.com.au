@@ -20,7 +20,7 @@ export function ThemeSwitcher() {
 				<DropdownMenuTrigger
 					className={clsx(
 						'flex h-9 w-9 items-center justify-center rounded-full',
-						focusClasses
+						focusClasses,
 					)}
 				>
 					<SunIcon className="h-4 w-4 dark:hidden" />

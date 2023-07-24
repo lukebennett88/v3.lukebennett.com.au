@@ -68,7 +68,7 @@ export default function RootLayout({
 				fontSerif.variable,
 				fontSans.variable,
 				fontMono.variable,
-				'font-sans text-xl antialiased'
+				'font-sans text-xl antialiased',
 			)}
 			lang="en-AU"
 			suppressHydrationWarning
@@ -86,7 +86,7 @@ export default function RootLayout({
 				<div
 					className={clsx(
 						containerClasses,
-						'flex flex-col rounded-2xl bg-gray-100 shadow-2xl dark:bg-gray-900'
+						'flex flex-col rounded-2xl bg-gray-100 shadow-2xl dark:bg-gray-900',
 					)}
 				>
 					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
@@ -94,7 +94,7 @@ export default function RootLayout({
 						<main
 							className={clsx(
 								innerPaddingClasses,
-								'flex-1 bg-gray-100 pb-20 pt-10 dark:bg-gray-900'
+								'flex-1 bg-gray-100 pb-20 pt-10 dark:bg-gray-900',
 							)}
 							id={MAIN_ID}
 						>

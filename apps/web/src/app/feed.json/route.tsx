@@ -23,7 +23,7 @@ export async function GET() {
 				return {
 					authors: [{ name: 'Luke Bennett' }],
 					content_html: renderToStaticMarkup(
-						<DocumentRenderer document={await entry.content()} />
+						<DocumentRenderer document={await entry.content()} />,
 					),
 					date_published: toIsoString(entry.publishedAt),
 					...(type === 'link' ? { external_url: entry.linkedUrl } : undefined),
@@ -31,7 +31,7 @@ export async function GET() {
 					title: entry.title,
 					url,
 				};
-			})
+			}),
 		),
 	};
 

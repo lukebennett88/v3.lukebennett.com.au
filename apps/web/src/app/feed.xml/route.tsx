@@ -26,12 +26,12 @@ export async function GET() {
 				author: 'Luke Bennett',
 				date: toIsoString(entry.publishedAt),
 				description: renderToStaticMarkup(
-					<DocumentRenderer document={await entry.content()} />
+					<DocumentRenderer document={await entry.content()} />,
 				),
 				title: entry.title,
 				url: `${siteConfig.baseUrl}${pathname}`,
 			});
-		})
+		}),
 	);
 
 	return new Response(feed.xml({ indent: true }), {

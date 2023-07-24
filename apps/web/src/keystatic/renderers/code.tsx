@@ -21,7 +21,7 @@ export function Code({
 		});
 	} catch (_error) {
 		throw new Error(
-			`Failed to highlight code block with language "${language}"`
+			`Failed to highlight code block with language "${language}"`,
 		);
 	}
 

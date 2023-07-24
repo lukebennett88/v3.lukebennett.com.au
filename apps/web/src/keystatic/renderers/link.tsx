@@ -9,7 +9,7 @@ export function Link({ className, ...consumerProps }: LinkProps) {
 			{...consumerProps}
 			className={clsx(
 				'-mx-0.5 rounded-md px-0.5 decoration-teal-700 underline-offset-2 transition-colors hover:bg-teal-700/50',
-				className
+				className,
 			)}
 		/>
 	);

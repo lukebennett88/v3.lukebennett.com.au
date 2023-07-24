@@ -13,7 +13,7 @@ export const DropdownMenuContent = forwardRef<
 	React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>
 >(function DropdownMenuContent(
 	{ className, sideOffset = 4, ...props },
-	forwardedRef
+	forwardedRef,
 ) {
 	return (
 		<DropdownMenuPrimitive.Portal>
@@ -22,7 +22,7 @@ export const DropdownMenuContent = forwardRef<
 					'z-50 min-w-min max-w-max overflow-hidden rounded-lg p-1 shadow-md',
 					'border bg-white',
 					'dark:border-gray-700 dark:bg-gray-800',
-					className
+					className,
 				)}
 				ref={forwardedRef}
 				sideOffset={sideOffset}
@@ -46,7 +46,7 @@ export const DropdownMenuItem = forwardRef<
 				'dark:data-[highlighted]:bg-teal-500 dark:data-[highlighted]:text-gray-950',
 				'focus:bg-bg-gray-200 focus:text-accent-foreground',
 				inset && 'pl-8',
-				className
+				className,
 			)}
 			ref={forwardedRef}
 			{...props}

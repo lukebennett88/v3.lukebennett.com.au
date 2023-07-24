@@ -5,7 +5,6 @@
 		{ "files": ".*rc", "options": { "parser": "json" } },
 		{ "files": ".nvmrc", "options": { "parser": "yaml" } }
 	],
-	"pluginSearchDirs": false,
 	"plugins": [
 		"prettier-plugin-curly",
 		"prettier-plugin-packagejson",

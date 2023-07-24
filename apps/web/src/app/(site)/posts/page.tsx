@@ -10,8 +10,9 @@ export const metadata = {
 } satisfies Metadata;
 
 export default async function Page() {
-	const posts = sortPosts(await reader.collections.posts.all()).filter((post) =>
-		process.env.NODE_ENV === 'production' ? !post.entry.isDraft : true
+	const posts = sortPosts(await reader.collections.posts.all()).filter(
+		(post) =>
+			process.env.NODE_ENV === 'production' ? !post.entry.isDraft : true,
 	);
 	return (
 		<div className="mx-auto flex max-w-prose flex-col gap-4">
@@ -29,7 +30,7 @@ export default async function Page() {
 					<li
 						className={clsx(
 							'prose dark:prose-invert -mx-4 break-words bg-white p-4 shadow dark:bg-gray-800 sm:rounded-xl',
-							entry.isDraft && 'border-2 border-dashed border-yellow-500'
+							entry.isDraft && 'border-2 border-dashed border-yellow-500',
 						)}
 						key={slug}
 					>
