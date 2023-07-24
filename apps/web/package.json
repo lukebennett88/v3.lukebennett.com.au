@@ -5,7 +5,7 @@
 		"build": "next build",
 		"check:types": "tsc --noEmit",
 		"dev": "next dev",
-		"lint": "TIMING=1 eslint \"src/**/*.ts*\"",
+		"lint": "TIMING=1 eslint \"src/**/*.{js,ts,jsx,tsx}*\" --max-warnings 0 --report-unused-disable-directives",
 		"start": "next start"
 	},
 	"dependencies": {

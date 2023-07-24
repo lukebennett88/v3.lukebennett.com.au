@@ -13,7 +13,7 @@ type Post = {
 		title: string;
 		publishedAt: string;
 	};
-};
+}
 
 export function postsToSitemapEntries(posts: Post[]) {
 	return posts.map((post) => ({

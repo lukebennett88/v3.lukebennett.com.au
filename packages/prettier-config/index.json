@@ -1,6 +1,9 @@
 {
 	"$schema": "http://json.schemastore.org/prettierrc",
 	"endOfLine": "lf",
+	"importOrder": ["<THIRD_PARTY_MODULES>", "", "^~/(.*)$", "", "^[./]"],
+	"importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+	"importOrderTypeScriptVersion": "5.0.0",
 	"overrides": [
 		{ "files": ".*rc", "options": { "parser": "json" } },
 		{ "files": ".nvmrc", "options": { "parser": "yaml" } }
@@ -8,6 +11,7 @@
 	"plugins": [
 		"prettier-plugin-curly",
 		"prettier-plugin-packagejson",
+		"@ianvs/prettier-plugin-sort-imports",
 		"prettier-plugin-tailwindcss"
 	],
 	"proseWrap": "always",
