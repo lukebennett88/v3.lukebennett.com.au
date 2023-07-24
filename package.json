@@ -25,11 +25,7 @@
 		"fix:format": "pnpm format --write",
 		"fix:lint": "turbo run lint -- --fix",
 		"format": "prettier \"**/*\" --ignore-unknown --cache",
-		"postinstall": "manypkg check",
-		"lint:md": "markdownlint \"**/*.md\" \".github/**/*.md\" --rules sentences-per-line",
-		"lint:package": "npmPkgJsonLint .",
-		"lint:packages": "pnpm dedupe --check",
-		"lint:spelling": "cspell \"**\" \".github/**/*\""
+		"postinstall": "manypkg check"
 	},
 	"dependencies": {
 		"@lukebennett/eslint-config": "0.0.0",
