@@ -36,6 +36,10 @@ export const componentBlockRenderers = {
 		return <CloudImage {...props} />;
 	},
 	tweet(props) {
-		return <Tweet {...props} />;
+		return (
+			<div className="not-prose">
+				<Tweet {...props} />
+			</div>
+		);
 	},
 } satisfies InferRenderersForComponentBlocks<typeof componentBlocks>;
