@@ -13,7 +13,7 @@ type Post = {
 		title: string;
 		publishedAt: string;
 	};
-}
+};
 
 export function postsToSitemapEntries(posts: Post[]) {
 	return posts.map((post) => ({
@@ -26,7 +26,7 @@ export function sortPosts<P extends Post>(posts: P[]) {
 	return posts.sort(
 		(a, b) =>
 			new Date(b.entry.publishedAt).getTime() -
-			new Date(a.entry.publishedAt).getTime()
+			new Date(a.entry.publishedAt).getTime(),
 	);
 }
 
@@ -37,20 +37,20 @@ export async function getSortedEntries() {
 				...post,
 				type: 'post' as const,
 				pathname: `/posts/${post.slug}`,
-			}))
+			})),
 		),
 		reader.collections.links.all().then((links) =>
 			links.map((link) => ({
 				...link,
 				type: 'link' as const,
 				pathname: `/links/${link.slug}`,
-			}))
+			})),
 		),
 	]);
 
 	return sortPosts([...posts, ...links]).filter(
 		(item) =>
-			item.type === 'link' || (item.type === 'post' && !item.entry.isDraft)
+			item.type === 'link' || (item.type === 'post' && !item.entry.isDraft),
 	);
 }
 
