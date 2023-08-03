@@ -20,12 +20,6 @@ export const metadata = {
 		icon: [
 			{
 				rel: 'icon',
-				sizes: 'any',
-				type: 'image/x-icon',
-				url: '/favicon.ico',
-			},
-			{
-				rel: 'icon',
 				type: 'image/svg+xml',
 				url: '/favicon.svg',
 			},
