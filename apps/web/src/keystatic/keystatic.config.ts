@@ -26,6 +26,8 @@ export const config = createConfig({
 	singletons: {
 		homepage: singleton({
 			label: 'Homepage',
+			entryLayout: 'form',
+			format: { contentField: 'content' },
 			path: 'apps/web/src/content/_homepage',
 			schema: {
 				content: fields.document({
@@ -39,6 +41,8 @@ export const config = createConfig({
 		}),
 		about: singleton({
 			label: 'About',
+			entryLayout: 'form',
+			format: { contentField: 'content' },
 			path: 'apps/web/src/content/_about',
 			schema: {
 				content: fields.document({
@@ -54,6 +58,8 @@ export const config = createConfig({
 	collections: {
 		posts: collection({
 			label: 'Posts',
+			entryLayout: 'form',
+			format: { contentField: 'content' },
 			path: 'apps/web/src/content/posts/*',
 			slugField: 'title',
 			schema: {
@@ -86,6 +92,8 @@ export const config = createConfig({
 		}),
 		links: collection({
 			label: 'Links',
+			entryLayout: 'form',
+			format: { contentField: 'content' },
 			path: 'apps/web/src/content/links/*',
 			slugField: 'title',
 			schema: {
