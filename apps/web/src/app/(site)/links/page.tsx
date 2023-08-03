@@ -1,5 +1,6 @@
 import { type Metadata } from 'next';
 import { default as Link } from 'next/link';
+import { notFound } from 'next/navigation';
 
 import { ExternalLinkHeading } from '~/components/external-link-heading';
 import { ZeroWidthSpace } from '~/components/zero-width-space';
@@ -26,7 +27,10 @@ export default async function Page() {
 			</div>
 			<ul className="flex max-w-prose flex-col gap-1 sm:gap-3" role="list">
 				{links.map(async ({ slug, entry }) => {
-					const { content } = await reader.collections.links.readOrThrow(slug);
+					const page = await reader.collections.links.read(slug);
+					if (!page) {
+						notFound();
+					}
 					const headingLevel = '2';
 					const HeadingTag = `h${headingLevel}` as const;
 					return (
@@ -48,7 +52,7 @@ export default async function Page() {
 									</HeadingTag>
 								</div>
 							</div>
-							<DocumentRenderer document={await content()} />
+							<DocumentRenderer document={await page.content()} />
 							<time className="text-sm" dateTime={entry.publishedAt}>
 								{formatToAustralianDate(entry.publishedAt)}
 							</time>

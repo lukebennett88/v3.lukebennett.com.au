@@ -1,4 +1,5 @@
 import { type Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 import { ExternalLinkHeading } from '~/components/external-link-heading';
 import { Post } from '~/components/post';
@@ -23,15 +24,17 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-	const { content, linkedUrl, publishedAt, title } =
-		await reader.collections.links.readOrThrow(params.slug);
+	const page = await reader.collections.links.read(params.slug);
+	if (!page) {
+		notFound();
+	}
 	return (
 		<Post
-			document={await content()}
-			publishedAt={publishedAt}
+			document={await page.content()}
+			publishedAt={page.publishedAt}
 			title={
-				<ExternalLinkHeading href={linkedUrl} level="1">
-					{title}
+				<ExternalLinkHeading href={page.linkedUrl} level="1">
+					{page.title}
 				</ExternalLinkHeading>
 			}
 		/>

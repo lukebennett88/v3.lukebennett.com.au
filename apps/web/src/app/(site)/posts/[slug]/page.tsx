@@ -23,18 +23,20 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-	const { content, isDraft, publishedAt, title } =
-		await reader.collections.posts.readOrThrow(params.slug);
+	const page = await reader.collections.posts.readOrThrow(params.slug);
+	if (!page) {
+		notFound();
+	}
 
-	if (process.env.NODE_ENV === 'production' && isDraft) {
-		return notFound();
+	if (process.env.NODE_ENV === 'production' && page.isDraft) {
+		notFound();
 	}
 
 	return (
 		<Post
-			document={await content()}
-			publishedAt={publishedAt}
-			title={<h1>{title}</h1>}
+			document={await page.content()}
+			publishedAt={page.publishedAt}
+			title={<h1>{page.title}</h1>}
 		/>
 	);
 }
