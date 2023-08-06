@@ -1,6 +1,6 @@
 import slugify from '@sindresorhus/slugify';
-import { Fragment } from 'react';
 
+import { ZeroWidthSpace } from '~/components/zero-width-space';
 import { cn } from '~/lib/cn';
 
 type NativeHeadingProps = React.HTMLAttributes<HTMLHeadingElement>;
@@ -118,8 +118,4 @@ function HashtagIcon(props: React.SVGProps<SVGSVGElement>) {
 			/>
 		</svg>
 	);
-}
-
-export function ZeroWidthSpace() {
-	return <Fragment>&#8203;</Fragment>;
 }

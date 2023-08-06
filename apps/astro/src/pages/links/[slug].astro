@@ -8,13 +8,16 @@ import Layout from '~/layouts/layout.astro';
 const { slug } = Astro.params;
 invariant(slug, 'Slug not found');
 
-const { title, content, publishedAt } =
-	await reader.collections.links.readOrThrow(slug);
+const { title, content, isDraft, publishedAt } =
+	await reader.collections.posts.readOrThrow(slug);
+if (process.env.NODE_ENV === 'production' && isDraft) {
+	throw new Error('Draft post will not be rendered in production');
+}
 const document = await content();
 
 // Generate static pages
 export async function getStaticPaths() {
-	const posts = await reader.collections.links.all();
+	const posts = await reader.collections.posts.all();
 	return posts.map((post) => ({ params: { slug: post.slug } }));
 }
 ---
