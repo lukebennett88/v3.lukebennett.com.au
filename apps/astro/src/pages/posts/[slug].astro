@@ -1,0 +1,29 @@
+---
+import invariant from 'tiny-invariant';
+
+import Post from '~/components/post.astro';
+import { reader } from '~/keystatic/reader';
+import Layout from '~/layouts/layout.astro';
+
+const { slug } = Astro.params;
+invariant(slug, 'Slug not found');
+
+const { content, isDraft, publishedAt, title } =
+	await reader.collections.posts.readOrThrow(slug);
+if (process.env.NODE_ENV === 'production' && isDraft) {
+	throw new Error('Draft post will not be rendered in production');
+}
+const document = await content();
+
+// Generate static pages
+export async function getStaticPaths() {
+	const posts = await reader.collections.posts.all();
+	return posts.map((post) => ({ params: { slug: post.slug } }));
+}
+---
+
+<Layout title={title}>
+	<Post document={document} publishedAt={publishedAt}>
+		<h1 slot="title">{title}</h1>
+	</Post>
+</Layout>

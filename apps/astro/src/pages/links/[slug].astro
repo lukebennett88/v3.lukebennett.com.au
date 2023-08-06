@@ -1,0 +1,29 @@
+---
+import invariant from 'tiny-invariant';
+
+import ExternalLinkHeading from '~/components/external-link-heading.astro';
+import Post from '~/components/post.astro';
+import { reader } from '~/keystatic/reader';
+import Layout from '~/layouts/layout.astro';
+
+const { slug } = Astro.params;
+invariant(slug, 'Slug not found');
+
+const { content, linkedUrl, publishedAt, title } =
+	await reader.collections.links.readOrThrow(slug);
+const document = await content();
+
+// Generate static pages
+export async function getStaticPaths() {
+	const posts = await reader.collections.links.all();
+	return posts.map((post) => ({ params: { slug: post.slug } }));
+}
+---
+
+<Layout title={title}>
+	<Post document={document} publishedAt={publishedAt}>
+		<ExternalLinkHeading slot="title" href={linkedUrl} level="1">
+			{title}
+		</ExternalLinkHeading>
+	</Post>
+</Layout>

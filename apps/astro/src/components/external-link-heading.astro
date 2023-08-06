@@ -1,0 +1,26 @@
+---
+import { ExternalLinkIcon } from '~/components/icons/external-link';
+import { ZeroWidthSpace } from '~/components/zero-width-space';
+
+type Props = {
+	children: React.ReactNode;
+	href: string;
+	level: '1' | '2' | '3' | '4' | '5' | '6';
+};
+
+const { href, level } = Astro.props;
+
+const Tag = `h${level}` as const;
+---
+
+<a class="group relative underline" href={href}>
+	<Tag class="m-0 inline-block underline">
+		<slot />
+		<span class="inline-flex items-center">
+			<ZeroWidthSpace />
+			<ExternalLinkIcon
+				className="ms-1 hidden h-[0.75em] w-[0.75em] group-hover:absolute group-hover:inline-block group-focus:absolute group-focus:inline-block"
+			/>
+		</span>
+	</Tag>
+</a>

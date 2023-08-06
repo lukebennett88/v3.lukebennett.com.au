@@ -24,7 +24,7 @@
 		"fix": "pnpm fix:lint && pnpm fix:format",
 		"fix:format": "pnpm format --write",
 		"fix:lint": "turbo run lint -- --fix",
-		"format": "prettier \"**/*\" --ignore-unknown --cache",
+		"format": "prettier \"**/*\" --ignore-unknown --plugin-search-dir=. --cache",
 		"postinstall": "manypkg check"
 	},
 	"dependencies": {
