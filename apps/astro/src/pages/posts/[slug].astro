@@ -10,9 +10,13 @@ invariant(slug, 'Slug not found');
 
 const { content, isDraft, publishedAt, title } =
 	await reader.collections.posts.readOrThrow(slug);
-if (process.env.NODE_ENV === 'production' && isDraft) {
-	throw new Error('Draft post will not be rendered in production');
+
+// Don't allow draft posts to be rendered in production
+if (isDraft && process.env.NODE_ENV === 'production') {
+	Astro.response.status = 404;
+	Astro.response.statusText = 'Not found';
 }
+
 const document = await content();
 
 // Generate static pages
