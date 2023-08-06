@@ -1,5 +1,5 @@
 import { makePage } from '@keystatic/astro/ui';
 
-import keystaticConfig from './keystatic.config';
+import { config } from './keystatic.config';
 
-export const Keystatic = makePage(keystaticConfig);
+export const Keystatic = makePage(config);

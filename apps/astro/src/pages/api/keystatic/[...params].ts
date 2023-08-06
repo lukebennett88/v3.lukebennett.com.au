@@ -1,10 +1,10 @@
 // src/pages/api/keystatic/[...params].ts
 import { makeHandler } from '@keystatic/astro/api';
 
-import keystaticConfig from '~/keystatic/keystatic.config';
+import { config } from '~/keystatic/keystatic.config';
 
 export const all = makeHandler({
-	config: keystaticConfig,
+	config,
 });
 
 export const prerender = false;
