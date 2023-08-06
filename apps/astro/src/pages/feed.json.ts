@@ -1,4 +1,5 @@
 import { type APIRoute } from 'astro';
+import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import invariant from 'tiny-invariant';
 
@@ -23,7 +24,9 @@ export const get: APIRoute = async ({ site }) => {
 				return {
 					authors: [{ name: 'Luke Bennett' }],
 					content_html: renderToStaticMarkup(
-						<DocumentRenderer document={await entry.content()} />,
+						createElement(DocumentRenderer, {
+							document: await entry.content(),
+						}),
 					),
 					date_published: toIsoString(entry.publishedAt),
 					...(type === 'link' ? { external_url: entry.linkedUrl } : undefined),
@@ -35,7 +38,7 @@ export const get: APIRoute = async ({ site }) => {
 		),
 	};
 
-	return new Response(JSON.stringify(body), {
+	return new Response(JSON.stringify(body, null, '\t'), {
 		headers: {
 			'Content-Type': 'application/feed+json; charset=utf-8',
 		},
