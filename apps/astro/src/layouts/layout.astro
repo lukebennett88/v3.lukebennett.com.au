@@ -1,18 +1,27 @@
 ---
-import '@fontsource/source-sans-pro';
-import '@fontsource/source-serif-pro';
 import '@fontsource-variable/source-code-pro';
+import '@fontsource/source-sans-pro/400.css';
+import '@fontsource/source-sans-pro/700.css';
+import '@fontsource/source-serif-pro';
 import '~/styles.css';
 
-export interface Props {
+import { Analytics } from '@vercel/analytics/react';
+
+import Footer from '~/components/footer.astro';
+import Header from '~/components/header.astro';
+import { cn } from '~/lib/cn';
+import { MAIN_ID } from '~/lib/constants';
+import { packs } from '~/lib/packs';
+
+export type Props = {
 	title: string;
-}
+};
 
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en-AU" class="font-sans text-xl antialiased">
+<html lang="en-AU" class="font-sans text-xl dark antialiased">
 	<head>
 		<meta charset="UTF-8" />
 		<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
@@ -55,6 +64,24 @@ const { title } = Astro.props;
 		<meta name="twitter:image:height" content="1080" />
 	</head>
 	<body class="flex min-h-[100dvh] justify-center bg-teal-700 p-2 [tab-size:2]">
-		<slot />
+		<div
+			class={cn(
+				packs.container,
+				'flex flex-col rounded-2xl bg-gray-100 shadow-2xl dark:bg-gray-900',
+			)}
+		>
+			<Header />
+			<main
+				class={cn(
+					packs.innerPadding,
+					'flex-1 bg-gray-100 pb-20 pt-10 dark:bg-gray-900',
+				)}
+				id={MAIN_ID}
+			>
+				<slot />
+				{process.env.NODE_ENV === 'production' && <Analytics client:load />}
+			</main>
+			<Footer />
+		</div>
 	</body>
 </html>

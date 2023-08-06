@@ -2,17 +2,14 @@ import {
 	DocumentRenderer as KeystaticDocumentRenderer,
 	type DocumentRendererProps,
 } from '@keystatic/core/renderer';
-import { getHighlighter } from 'shiki';
 
 import {
 	componentBlockRenderers,
 	getDocumentRenderers,
 } from '~/keystatic/renderers';
+import { highlighter } from '~/lib/highlighter';
 
-export async function DocumentRenderer(props: DocumentRendererProps) {
-	const highlighter = await getHighlighter({
-		theme: 'poimandres',
-	});
+export function DocumentRenderer(props: DocumentRendererProps) {
 	const {
 		componentBlocks = componentBlockRenderers,
 		renderers = getDocumentRenderers(highlighter),

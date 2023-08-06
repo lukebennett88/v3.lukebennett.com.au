@@ -1,23 +1,27 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
+import invariant from 'tiny-invariant';
 
-import Layout from '../../layouts/layout.astro';
+import Post from '~/components/post.astro';
+import { reader } from '~/keystatic/reader';
+import Layout from '~/layouts/layout.astro';
 
 const { slug } = Astro.params;
-if (!slug) throw new Error('Slug not found');
-const post = await getEntry('posts', slug);
+invariant(slug, 'Slug not found');
 
-if (!post) throw new Error('No post found for this slug');
-const { Content } = await post.render();
+const { title, content, isDraft, publishedAt } =
+	await reader.collections.posts.readOrThrow(slug);
+invariant(!isDraft || process.env.NODE_ENV !== 'production', 'Post not found');
+const document = await content();
 
 // Generate static pages
 export async function getStaticPaths() {
-	const posts = await getCollection('posts');
+	const posts = await reader.collections.posts.all();
 	return posts.map((post) => ({ params: { slug: post.slug } }));
 }
 ---
 
-<Layout title={post.data.title}>
-	<h1>{post.data.title}</h1>
-	<Content />
+<Layout title={title}>
+	<Post document={document} publishedAt={publishedAt}>
+		<h1 slot="title">{title}</h1>
+	</Post>
 </Layout>
