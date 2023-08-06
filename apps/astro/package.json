@@ -1,0 +1,25 @@
+{
+	"name": "@keystatic/templates-astro",
+	"version": "0.0.6",
+	"license": "MIT",
+	"scripts": {
+		"astro": "astro",
+		"build": "astro build",
+		"dev": "astro dev --host 127.0.0.1",
+		"preview": "astro preview",
+		"start": "astro dev"
+	},
+	"dependencies": {
+		"@astrojs/markdoc": "^0.4.4",
+		"@astrojs/react": "^2.2.1",
+		"@keystatic/astro": "^0.0.8",
+		"@keystatic/core": "^0.0.114",
+		"@lukebennett/eslint-config": "0.0.0",
+		"@lukebennett/tsconfig": "0.0.0",
+		"@types/react": "^18.2.18",
+		"@types/react-dom": "^18.2.7",
+		"astro": "^2.10.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	}
+}

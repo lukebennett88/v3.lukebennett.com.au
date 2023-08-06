@@ -4,6 +4,7 @@
 	"extends": "./base.json",
 	"compilerOptions": {
 		"jsx": "react-jsx",
+		"jsxImportSource": "react",
 		"lib": ["ES2022", "DOM", "DOM.Iterable"],
 		"module": "ESNext"
 	}
