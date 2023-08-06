@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
+
 import Layout from '../../layouts/layout.astro';
 
 const { slug } = Astro.params;
@@ -11,12 +12,12 @@ const { Content } = await post.render();
 
 // Generate static pages
 export async function getStaticPaths() {
-  const posts = await getCollection('posts');
-  return posts.map(post => ({ params: { slug: post.slug } }));
+	const posts = await getCollection('posts');
+	return posts.map((post) => ({ params: { slug: post.slug } }));
 }
 ---
 
 <Layout title={post.data.title}>
-  <h1>{post.data.title}</h1>
-  <Content />
+	<h1>{post.data.title}</h1>
+	<Content />
 </Layout>

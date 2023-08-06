@@ -41,6 +41,18 @@ importers:
       '@astrojs/react':
         specifier: ^2.2.1
         version: 2.2.1(@types/react-dom@18.2.7)(@types/react@18.2.18)(react-dom@18.2.0)(react@18.2.0)
+      '@astrojs/tailwind':
+        specifier: ^4.0.0
+        version: 4.0.0(astro@2.10.1)(tailwindcss@3.3.3)
+      '@fontsource-variable/source-code-pro':
+        specifier: ^5.0.9
+        version: 5.0.9
+      '@fontsource/source-sans-pro':
+        specifier: ^5.0.8
+        version: 5.0.8
+      '@fontsource/source-serif-pro':
+        specifier: ^5.0.8
+        version: 5.0.8
       '@keystatic/astro':
         specifier: ^0.0.8
         version: 0.0.8(@keystatic/core@0.0.114)(astro@2.10.1)(react-dom@18.2.0)(react@18.2.0)
@@ -53,6 +65,9 @@ importers:
       '@lukebennett/tsconfig':
         specifier: 0.0.0
         version: link:../../packages/tsconfig
+      '@tailwindcss/typography':
+        specifier: ^0.5.9
+        version: 0.5.9(tailwindcss@3.3.3)
       '@types/react':
         specifier: ^18.2.18
         version: 18.2.18
@@ -62,12 +77,28 @@ importers:
       astro:
         specifier: ^2.10.1
         version: 2.10.1(@types/node@18.16.19)
+      clsx:
+        specifier: ^2.0.0
+        version: 2.0.0
       react:
         specifier: ^18.2.0
         version: 18.2.0
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      tailwind-merge:
+        specifier: ^1.14.0
+        version: 1.14.0
+      tailwindcss:
+        specifier: ^3.3.3
+        version: 3.3.3
+    devDependencies:
+      prettier:
+        specifier: ^3.0.1
+        version: 3.0.1
+      prettier-plugin-astro:
+        specifier: ^0.11.0
+        version: 0.11.0
 
   apps/web:
     dependencies:
@@ -145,7 +176,7 @@ importers:
         version: 3.0.1
       prettier-plugin-tailwindcss:
         specifier: ^0.4.1
-        version: 0.4.1(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier@3.0.1)
+        version: 0.4.1(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier-plugin-astro@0.11.0)(prettier@3.0.1)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -200,6 +231,12 @@ importers:
       '@ianvs/prettier-plugin-sort-imports':
         specifier: ^4.1.0
         version: 4.1.0(prettier@3.0.1)
+      prettier:
+        specifier: ^3.0.1
+        version: 3.0.1
+      prettier-plugin-astro:
+        specifier: ^0.11.0
+        version: 0.11.0
       prettier-plugin-curly:
         specifier: ^0.1.2
         version: 0.1.2(prettier@3.0.1)
@@ -208,7 +245,7 @@ importers:
         version: 2.4.5(prettier@3.0.1)
       prettier-plugin-tailwindcss:
         specifier: ^0.4.1
-        version: 0.4.1(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier@3.0.1)
+        version: 0.4.1(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier-plugin-astro@0.11.0)(prettier@3.0.1)
 
   packages/tsconfig: {}
 
@@ -245,7 +282,6 @@ packages:
 
   /@astrojs/compiler@1.8.1:
     resolution: {integrity: sha512-C28qplQzgIJ+JU9S+1wNx+ue2KCBUp0TTAd10EWAEkk4RsL3Tzlw0BYvLDDb4KP9jS48lXmR4/1TtZ4aavYJ8Q==}
-    dev: false
 
   /@astrojs/internal-helpers@0.1.2:
     resolution: {integrity: sha512-YXLk1CUDdC9P5bjFZcGjz+cE/ZDceXObDTXn/GCID4r8LjThuexxi+dlJqukmUpkSItzQqgzfWnrPLxSFPejdA==}
@@ -339,6 +375,21 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@astrojs/tailwind@4.0.0(astro@2.10.1)(tailwindcss@3.3.3):
+    resolution: {integrity: sha512-HmCAXFFes7MUBt5ihdfH1goa8QyGkHejIpz6Z4XBKK9VNYY9G2E3brCn8+pNn5zAOzcwl3FYcuH2AiOa/NGoMQ==}
+    peerDependencies:
+      astro: ^2.6.5
+      tailwindcss: ^3.0.24
+    dependencies:
+      astro: 2.10.1(@types/node@18.16.19)
+      autoprefixer: 10.4.14(postcss@8.4.27)
+      postcss: 8.4.27
+      postcss-load-config: 4.0.1(postcss@8.4.27)
+      tailwindcss: 3.3.3
+    transitivePeerDependencies:
+      - ts-node
     dev: false
 
   /@astrojs/telemetry@2.1.1:
@@ -1183,6 +1234,18 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       tabbable: 6.2.0
+    dev: false
+
+  /@fontsource-variable/source-code-pro@5.0.9:
+    resolution: {integrity: sha512-BHshWObGOKR1KN3uqoE2IcvHo3yJ9I2Vmri0TcaZj3TXXY991WXZAkRadbaJKBq4UgLQ+NCzxks/XJ0cmfnz8Q==}
+    dev: false
+
+  /@fontsource/source-sans-pro@5.0.8:
+    resolution: {integrity: sha512-5U2UvIYRkCMozZ388gCE73PEpa2MFgN/0t9O4a1FF7bGT/MIneQWSL1XpWZ8iMVYdh6ntxRf3iFA6slCIuFgkg==}
+    dev: false
+
+  /@fontsource/source-serif-pro@5.0.8:
+    resolution: {integrity: sha512-bb8bza+aBp6Wpz1LOXaQ9YSwMc/wNpk3hniENCPoBMMwsn9LQaJU0kKnJSSIi+ld1t7aH4jbh+mHQHN1zLfZ3A==}
     dev: false
 
   /@formatjs/ecma402-abstract@1.17.0:
@@ -4434,7 +4497,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.22.6
       cosmiconfig: 7.1.0
-      resolve: 1.22.2
+      resolve: 1.22.4
     dev: false
 
   /bail@2.0.2:
@@ -5484,7 +5547,7 @@ packages:
       eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.46.0)
       glob: 7.2.3
       is-glob: 4.0.3
-      resolve: 1.22.2
+      resolve: 1.22.4
       tsconfig-paths: 3.14.2
     transitivePeerDependencies:
       - supports-color
@@ -8242,7 +8305,7 @@ packages:
       postcss: 8.4.27
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
-      resolve: 1.22.2
+      resolve: 1.22.4
     dev: false
 
   /postcss-js@4.0.1(postcss@8.4.27):
@@ -8340,6 +8403,14 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
+  /prettier-plugin-astro@0.11.0:
+    resolution: {integrity: sha512-rl2hJ4Kty/aEfGjk3i4JS+bpng9MjgvwqLRNzeb9NqYhqKoWNwOR39cIJXFjU1vR3zYOPnwWNRMelKb0orunYA==}
+    engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.14.0'}
+    dependencies:
+      '@astrojs/compiler': 1.8.1
+      prettier: 3.0.1
+      sass-formatter: 0.7.7
+
   /prettier-plugin-astro@0.9.1:
     resolution: {integrity: sha512-pYZXSbdq0eElvzoIMArzv1SBn1NUXzopjlcnt6Ql8VW32PjC12NovwBjXJ6rh8qQLi7vF8jNqAbraKW03UPfag==}
     engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.14.0'}
@@ -8376,7 +8447,7 @@ packages:
       synckit: 0.8.5
     dev: false
 
-  /prettier-plugin-tailwindcss@0.4.1(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier@3.0.1):
+  /prettier-plugin-tailwindcss@0.4.1(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier-plugin-astro@0.11.0)(prettier@3.0.1):
     resolution: {integrity: sha512-hwn2EiJmv8M+AW4YDkbjJ6HlZCTzLyz1QlySn9sMuKV/Px0fjwldlB7tol8GzdgqtkdPtzT3iJ4UzdnYXP25Ag==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
@@ -8430,6 +8501,7 @@ packages:
     dependencies:
       '@ianvs/prettier-plugin-sort-imports': 4.1.0(prettier@3.0.1)
       prettier: 3.0.1
+      prettier-plugin-astro: 0.11.0
     dev: false
 
   /prettier@2.8.8:
@@ -8442,7 +8514,6 @@ packages:
     resolution: {integrity: sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==}
     engines: {node: '>=14'}
     hasBin: true
-    dev: false
 
   /pretty-format@29.6.2:
     resolution: {integrity: sha512-1q0oC8eRveTg5nnBEWMXAU2qpv65Gnuf2eCQzSjxpWFkPaPARwqZZDGuNE0zPAZfTCHzIk3A8dIjwlQKKLphyg==}
@@ -9038,7 +9109,6 @@ packages:
 
   /s.color@0.0.15:
     resolution: {integrity: sha512-AUNrbEUHeKY8XsYr/DYpl+qk5+aM+DChopnWOPEzn8YKzOhv4l2zH6LzZms3tOZP3wwdOyc0RmTciyi46HLIuA==}
-    dev: false
 
   /sade@1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
@@ -9077,7 +9147,6 @@ packages:
     resolution: {integrity: sha512-axtQ7c7Cf4UgHsD8e4okhIkkc90+tdgBIfUMx69+qJuMNq9EOo2k+RH/mDKj0XeA5z3nC1Ca5TCntuxRhI+1MA==}
     dependencies:
       suf-log: 2.5.3
-    dev: false
 
   /scheduler@0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
@@ -9496,7 +9565,6 @@ packages:
     resolution: {integrity: sha512-KvC8OPjzdNOe+xQ4XWJV2whQA0aM1kGVczMQ8+dStAO6KfEB140JEVQ9dE76ONZ0/Ylf67ni4tILPJB41U0eow==}
     dependencies:
       s.color: 0.0.15
-    dev: false
 
   /supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
@@ -9545,6 +9613,10 @@ packages:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
     dev: false
 
+  /tailwind-merge@1.14.0:
+    resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
+    dev: false
+
   /tailwindcss@3.3.3:
     resolution: {integrity: sha512-A0KgSkef7eE4Mf+nKJ83i75TMyq8HqY3qmFIJSWy8bNt0v1lG7jUcpGpoTFxAwYcWOphcTBLPPJg+bDfhDf52w==}
     engines: {node: '>=14.0.0'}
@@ -9570,7 +9642,7 @@ packages:
       postcss-load-config: 4.0.1(postcss@8.4.27)
       postcss-nested: 6.0.1(postcss@8.4.27)
       postcss-selector-parser: 6.0.13
-      resolve: 1.22.2
+      resolve: 1.22.4
       sucrase: 3.34.0
     transitivePeerDependencies:
       - ts-node
