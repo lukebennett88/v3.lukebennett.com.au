@@ -36,11 +36,11 @@ importers:
   apps/web:
     dependencies:
       '@keystatic/core':
-        specifier: ^0.0.114
-        version: 0.0.114(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^0.0.115
+        version: 0.0.115(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
       '@keystatic/next':
         specifier: ^0.0.11
-        version: 0.0.11(@keystatic/core@0.0.114)(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
+        version: 0.0.11(@keystatic/core@0.0.115)(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
       '@lukebennett/eslint-config':
         specifier: 0.0.0
         version: link:../../packages/eslint-config
@@ -792,8 +792,8 @@ packages:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
     dev: false
 
-  /@keystar/ui@0.1.7(next@13.4.12)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Wvphccp3i8w+L8CVucdreVlGq/M19OKZ6dd9hEOKqwBUad0fZp3rNAhpqdWOMQDx0/O+kMkazhN5ULRJ3RH1fA==}
+  /@keystar/ui@0.2.0(next@13.4.12)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-/jYibJyjMWvCPRIGtopZcF/QKTTneEyPemR9fMh8nvnovGLWEv+cALZoLZr4Do0AVGgTCmMM3BUgpQQmfltqWw==}
     peerDependencies:
       next: '13'
       react: ^18.2.0
@@ -888,8 +888,8 @@ packages:
       react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
-  /@keystatic/core@0.0.114(next@13.4.12)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-fZUbt6bEmEi5BYE6cKrglXGqiTuvrYgMJszMNG9YGxhtxyt7e2fPEfOjHyiXyehNiossk9N5kR2At0ZQLVv0bg==}
+  /@keystatic/core@0.0.115(next@13.4.12)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-EawsPlnsweVCAnFQzAEnHQRexlP2l/ODwaHSAm4acRsqoKN1oHnOQqY+7dGa4T+5S0JOP8jTmF60DOHWlSSTcg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -901,7 +901,7 @@ packages:
       '@floating-ui/react': 0.24.8(react-dom@18.2.0)(react@18.2.0)
       '@hapi/iron': 7.0.1
       '@internationalized/string': 3.1.1
-      '@keystar/ui': 0.1.7(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
+      '@keystar/ui': 0.2.0(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
       '@markdoc/markdoc': 0.3.0(@types/react@18.2.18)(react@18.2.0)
       '@react-aria/focus': 3.13.0(react@18.2.0)
       '@react-aria/i18n': 3.8.0(react@18.2.0)
@@ -966,7 +966,7 @@ packages:
       - supports-color
     dev: false
 
-  /@keystatic/next@0.0.11(@keystatic/core@0.0.114)(next@13.4.12)(react-dom@18.2.0)(react@18.2.0):
+  /@keystatic/next@0.0.11(@keystatic/core@0.0.115)(next@13.4.12)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-bH+Sjp1RqGo2Q6uZQH9dqjFtdPOOe8+1B2T/2VxQP6W6fRs8XYGXmjtHim6M4WWS3i6WsfyQ5rzlqrJ4agUltg==}
     peerDependencies:
       '@keystatic/core': '*'
@@ -975,7 +975,7 @@ packages:
       react-dom: ^18.2.0
     dependencies:
       '@babel/runtime': 7.22.6
-      '@keystatic/core': 0.0.114(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
+      '@keystatic/core': 0.0.115(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
       '@types/react': 18.2.18
       chokidar: 3.5.3
       next: 13.4.12(react-dom@18.2.0)(react@18.2.0)
