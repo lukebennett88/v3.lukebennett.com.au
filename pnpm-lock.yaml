@@ -36,11 +36,11 @@ importers:
   apps/web:
     dependencies:
       '@keystatic/core':
-        specifier: ^0.0.114
-        version: 0.0.114(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^0.0.115
+        version: 0.0.115(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
       '@keystatic/next':
         specifier: ^0.0.11
-        version: 0.0.11(@keystatic/core@0.0.114)(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
+        version: 0.0.11(@keystatic/core@0.0.115)(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
       '@lukebennett/eslint-config':
         specifier: 0.0.0
         version: link:../../packages/eslint-config
@@ -792,8 +792,8 @@ packages:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
     dev: false
 
-  /@keystar/ui@0.1.7(next@13.4.12)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Wvphccp3i8w+L8CVucdreVlGq/M19OKZ6dd9hEOKqwBUad0fZp3rNAhpqdWOMQDx0/O+kMkazhN5ULRJ3RH1fA==}
+  /@keystar/ui@0.2.0(next@13.4.12)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-/jYibJyjMWvCPRIGtopZcF/QKTTneEyPemR9fMh8nvnovGLWEv+cALZoLZr4Do0AVGgTCmMM3BUgpQQmfltqWw==}
     peerDependencies:
       next: '13'
       react: ^18.2.0
@@ -888,8 +888,8 @@ packages:
       react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
-  /@keystatic/core@0.0.114(next@13.4.12)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-fZUbt6bEmEi5BYE6cKrglXGqiTuvrYgMJszMNG9YGxhtxyt7e2fPEfOjHyiXyehNiossk9N5kR2At0ZQLVv0bg==}
+  /@keystatic/core@0.0.115(next@13.4.12)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-EawsPlnsweVCAnFQzAEnHQRexlP2l/ODwaHSAm4acRsqoKN1oHnOQqY+7dGa4T+5S0JOP8jTmF60DOHWlSSTcg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -901,7 +901,7 @@ packages:
       '@floating-ui/react': 0.24.8(react-dom@18.2.0)(react@18.2.0)
       '@hapi/iron': 7.0.1
       '@internationalized/string': 3.1.1
-      '@keystar/ui': 0.1.7(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
+      '@keystar/ui': 0.2.0(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
       '@markdoc/markdoc': 0.3.0(@types/react@18.2.18)(react@18.2.0)
       '@react-aria/focus': 3.13.0(react@18.2.0)
       '@react-aria/i18n': 3.8.0(react@18.2.0)
@@ -966,7 +966,7 @@ packages:
       - supports-color
     dev: false
 
-  /@keystatic/next@0.0.11(@keystatic/core@0.0.114)(next@13.4.12)(react-dom@18.2.0)(react@18.2.0):
+  /@keystatic/next@0.0.11(@keystatic/core@0.0.115)(next@13.4.12)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-bH+Sjp1RqGo2Q6uZQH9dqjFtdPOOe8+1B2T/2VxQP6W6fRs8XYGXmjtHim6M4WWS3i6WsfyQ5rzlqrJ4agUltg==}
     peerDependencies:
       '@keystatic/core': '*'
@@ -975,7 +975,7 @@ packages:
       react-dom: ^18.2.0
     dependencies:
       '@babel/runtime': 7.22.6
-      '@keystatic/core': 0.0.114(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
+      '@keystatic/core': 0.0.115(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
       '@types/react': 18.2.18
       chokidar: 3.5.3
       next: 13.4.12(react-dom@18.2.0)(react@18.2.0)
@@ -4378,7 +4378,7 @@ packages:
       eslint: 8.46.0
       eslint-import-resolver-node: 0.3.7
       eslint-import-resolver-typescript: 2.7.1(eslint-plugin-import@2.27.5)(eslint@8.46.0)
-      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.46.0)
+      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@2.7.1)(eslint@8.46.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.46.0)
       eslint-plugin-react: 7.33.1(eslint@8.46.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.46.0)
@@ -4403,7 +4403,7 @@ packages:
       eslint: 8.46.0
       eslint-import-resolver-node: 0.3.7
       eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint-plugin-import@2.27.5)(eslint@8.46.0)
-      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.46.0)
+      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@2.7.1)(eslint@8.46.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.46.0)
       eslint-plugin-react: 7.33.1(eslint@8.46.0)
       eslint-plugin-react-hooks: 5.0.0-canary-7118f5dd7-20230705(eslint@8.46.0)
@@ -4459,7 +4459,7 @@ packages:
     dependencies:
       debug: 4.3.4
       eslint: 8.46.0
-      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.46.0)
+      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@2.7.1)(eslint@8.46.0)
       glob: 7.2.3
       is-glob: 4.0.3
       resolve: 1.22.4
@@ -4479,7 +4479,7 @@ packages:
       enhanced-resolve: 5.15.0
       eslint: 8.46.0
       eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint-import-resolver-typescript@3.5.5)(eslint@8.46.0)
-      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.46.0)
+      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@2.7.1)(eslint@8.46.0)
       get-tsconfig: 4.6.2
       globby: 13.2.2
       is-core-module: 2.13.0
@@ -4489,6 +4489,36 @@ packages:
       - '@typescript-eslint/parser'
       - eslint-import-resolver-node
       - eslint-import-resolver-webpack
+      - supports-color
+    dev: false
+
+  /eslint-module-utils@2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint-import-resolver-typescript@2.7.1)(eslint@8.46.0):
+    resolution: {integrity: sha512-aWajIYfsqCKRDgUfjEXNN/JlrzauMuSEy5sbd7WXbtW3EH6A6MpwEh42c7qD+MqQo9QMJ6fWLAeIJynx0g6OAw==}
+    engines: {node: '>=4'}
+    peerDependencies:
+      '@typescript-eslint/parser': '*'
+      eslint: '*'
+      eslint-import-resolver-node: '*'
+      eslint-import-resolver-typescript: '*'
+      eslint-import-resolver-webpack: '*'
+    peerDependenciesMeta:
+      '@typescript-eslint/parser':
+        optional: true
+      eslint:
+        optional: true
+      eslint-import-resolver-node:
+        optional: true
+      eslint-import-resolver-typescript:
+        optional: true
+      eslint-import-resolver-webpack:
+        optional: true
+    dependencies:
+      '@typescript-eslint/parser': 5.62.0(eslint@8.46.0)(typescript@5.1.6)
+      debug: 3.2.7
+      eslint: 8.46.0
+      eslint-import-resolver-node: 0.3.7
+      eslint-import-resolver-typescript: 2.7.1(eslint-plugin-import@2.27.5)(eslint@8.46.0)
+    transitivePeerDependencies:
       - supports-color
     dev: false
 
@@ -4522,7 +4552,7 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-import@2.27.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.46.0):
+  /eslint-plugin-import@2.27.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@2.7.1)(eslint@8.46.0):
     resolution: {integrity: sha512-LmEt3GVofgiGuiE+ORpnvP+kAm3h6MLZJ4Q5HCyHADofsb4VzXFsRiWj3c0OFiV+3DWFh0qg3v9gcPlfc3zRow==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -4540,7 +4570,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.46.0
       eslint-import-resolver-node: 0.3.7
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint-import-resolver-typescript@3.5.5)(eslint@8.46.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint-import-resolver-typescript@2.7.1)(eslint@8.46.0)
       has: 1.0.3
       is-core-module: 2.13.0
       is-glob: 4.0.3
