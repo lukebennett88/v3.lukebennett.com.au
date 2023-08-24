@@ -1,10 +1,19 @@
 import { Image } from '@unpic/react';
 
 type CloudImageProps = {
+	/** The alt text for the image. */
 	alt: string;
+
+	/** The caption for the image. */
 	caption?: string;
+
+	/** The height of the image. */
 	height: number;
+
+	/** The source URL of the image. */
 	src: string;
+
+	/** The width of the image. */
 	width: number;
 };
 
@@ -20,7 +29,7 @@ export function CloudImage({
 			alt={alt}
 			height={height}
 			src={src}
-			style={{ aspectRatio: width / height }}
+			style={height && width ? { aspectRatio: width / height } : undefined}
 			width={width}
 		/>
 	);

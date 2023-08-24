@@ -33,7 +33,9 @@ export function getDocumentRenderers(highlighter: Highlighter) {
 
 export const componentBlockRenderers = {
 	cloudImage(props) {
-		return <CloudImage {...props} />;
+		return (
+			<CloudImage {...props} height={props.height!} width={props.width!} />
+		);
 	},
 	tweet(props) {
 		return (
