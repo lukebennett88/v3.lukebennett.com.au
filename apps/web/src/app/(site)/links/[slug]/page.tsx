@@ -1,4 +1,4 @@
-import { type Metadata } from 'next';
+import { type Metadata, type ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { ExternalLinkHeading } from '~/components/external-link-heading';
@@ -10,16 +10,15 @@ export async function generateStaticParams() {
 	return links.map(({ slug }) => ({ slug }));
 }
 
-export async function generateMetadata({
-	params,
-}: {
-	params: {
-		slug: string;
-	};
-}): Promise<Metadata> {
-	const { title } = await reader.collections.links.readOrThrow(params.slug);
+export async function generateMetadata(
+	{ params }: { params: { slug: string } },
+	parentPromise: ResolvingMetadata,
+): Promise<Metadata> {
+	const page = await reader.collections.posts.read(params.slug);
+	const parent = await parentPromise;
+
 	return {
-		title,
+		title: page?.title ?? parent?.title ?? 'Link',
 	};
 }
 

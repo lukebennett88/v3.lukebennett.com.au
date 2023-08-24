@@ -1,4 +1,4 @@
-import { type Metadata } from 'next';
+import { type Metadata, type ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { Post } from '~/components/post';
@@ -9,21 +9,20 @@ export async function generateStaticParams() {
 	return posts.map(({ slug }) => ({ slug }));
 }
 
-export async function generateMetadata({
-	params,
-}: {
-	params: {
-		slug: string;
-	};
-}): Promise<Metadata> {
-	const { title } = await reader.collections.posts.readOrThrow(params.slug);
+export async function generateMetadata(
+	{ params }: { params: { slug: string } },
+	parentPromise: ResolvingMetadata,
+): Promise<Metadata> {
+	const page = await reader.collections.posts.read(params.slug);
+	const parent = await parentPromise;
+
 	return {
-		title,
+		title: page?.title ?? parent?.title ?? 'Post',
 	};
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-	const page = await reader.collections.posts.readOrThrow(params.slug);
+	const page = await reader.collections.posts.read(params.slug);
 	if (!page) {
 		notFound();
 	}
