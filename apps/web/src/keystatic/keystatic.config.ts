@@ -47,8 +47,9 @@ export const config = createConfig({
 			schema: {
 				content: fields.document({
 					label: 'Content',
-					formatting: true,
+					componentBlocks,
 					dividers: true,
+					formatting: true,
 					links: true,
 					tables: true,
 				}),

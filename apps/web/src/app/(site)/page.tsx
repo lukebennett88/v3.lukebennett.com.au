@@ -1,3 +1,4 @@
+import { type Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { Me } from '~/components/me';
@@ -9,7 +10,7 @@ export const metadata = {
 	title: {
 		absolute: siteConfig.title,
 	},
-};
+} satisfies Metadata;
 
 export default async function Page() {
 	const page = await reader.singletons.homepage.read();
