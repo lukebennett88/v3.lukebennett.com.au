@@ -7,18 +7,17 @@ import {
 
 import { componentBlocks } from './component-block';
 
-const shouldUseGitHub = process.env.NODE_ENV === 'production';
+const shouldUseCloud = process.env.NODE_ENV === 'production';
 
 export const localBaseDirectory = '../../';
 
 export const config = createConfig({
-	storage: shouldUseGitHub
+	cloud: {
+		project: 'luke-bennett/lukebennett-com-au',
+	},
+	storage: shouldUseCloud
 		? {
-				kind: 'github',
-				repo: {
-					name: 'v3.lukebennett.com.au',
-					owner: 'lukebennett88',
-				},
+				kind: 'cloud',
 		  }
 		: {
 				kind: 'local',
