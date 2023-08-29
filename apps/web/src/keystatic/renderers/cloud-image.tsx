@@ -8,6 +8,28 @@ type CloudImageProps = {
 	caption?: string;
 
 	/**
+	 * The breakpoints at which to generate images.
+	 * @default [300, 400, 500, 600, 700]
+	 */
+	breakpoints?: number[];
+
+	/**
+	 * The densities at which to generate images.
+	 * @default [1, 1.5, 2]
+	 */
+	densities?: number[];
+
+	/**
+	 * How the image should be resized to fit its container.
+	 * - 'scale-down': Scale down to fit.
+	 * - 'contain': Scale to fit, preserving aspect ratio.
+	 * - 'cover': Scale to fill, preserving aspect ratio.
+	 * - 'crop': Scale to fill, cropping edges if necessary.
+	 * @default 'scale-down'
+	 */
+	fit?: 'scale-down' | 'contain' | 'cover' | 'crop';
+
+	/**
 	 * Hint for browser image decoding.
 	 * - 'sync': Decode with DOM rendering.
 	 * - 'async': Decode after DOM rendering.
@@ -26,6 +48,12 @@ type CloudImageProps = {
 	loading?: 'eager' | 'lazy';
 
 	/**
+	 * The maximum width of the image.
+	 * @default 700
+	 */
+	maxWidth?: number;
+
+	/**
 	 * Sets loading priority for the image.
 	 * When true, image loads eagerly and is given high priority.
 	 * Useful for above-the-fold or large hero images.
@@ -42,18 +70,22 @@ type CloudImageProps = {
 
 export function CloudImage({
 	alt,
+	breakpoints = [300, 400, 500, 600, 700],
 	caption,
 	decoding,
+	densities = [1, 1.5, 2],
+	fit = 'scale-down',
 	height,
 	loading,
+	maxWidth = 700,
 	priority = false,
 	src,
 	width,
 	...consumerProps
 }: CloudImageProps) {
 	const srcSet = useMemo(
-		() => generateSrcSet({ src, height, width }),
-		[src, height, width],
+		() => generateSrcSet({ breakpoints, densities, src, height, width }),
+		[breakpoints, densities, height, src, width],
 	);
 
 	const img = (
@@ -63,14 +95,14 @@ export function CloudImage({
 			decoding={decoding ?? priority ? 'async' : 'auto'}
 			loading={loading ?? priority ? 'eager' : 'lazy'}
 			role={alt ? undefined : 'presentation'}
-			sizes={`(min-width: ${MAX_WIDTH}px) ${MAX_WIDTH}px, 100vw`}
-			src={`${src}?width=${Math.min(width ?? 0, MAX_WIDTH)}&height=${
+			sizes={`(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`}
+			src={`${src}?width=${Math.min(width ?? 0, maxWidth)}&height=${
 				height ?? 0
-			}&fit=contain`}
+			}&fit=${fit}`}
 			srcSet={srcSet}
 			style={{
 				objectFit: 'cover',
-				maxWidth: width ? `${Math.min(width, MAX_WIDTH)}px` : '100%',
+				maxWidth: width ? `${Math.min(width, maxWidth)}px` : '100%',
 				maxHeight: height ? `${height}px` : '100%',
 				aspectRatio:
 					width && height ? `${(width / height).toFixed(2)}` : 'auto',
@@ -92,13 +124,15 @@ export function CloudImage({
 }
 
 function generateSrcSet({
+	breakpoints,
+	densities,
+	fit,
+	height,
 	src,
 	width,
-	height,
-}: {
-	src: string;
-	width: number | null;
-	height: number | null;
+}: Pick<CloudImageProps, 'fit' | 'height' | 'src' | 'width'> & {
+	breakpoints: number[];
+	densities: number[];
 }) {
 	if (!width || !height) {
 		return '';
@@ -106,19 +140,15 @@ function generateSrcSet({
 
 	const srcSet: Array<string> = [];
 
-	BREAKPOINTS.forEach((breakpoint) => {
-		DENSITIES.forEach((density) => {
+	breakpoints.forEach((breakpoint) => {
+		densities.forEach((density) => {
 			const scaledWidth = Math.round(breakpoint * density);
 			const scaledHeight = Math.round((scaledWidth / width) * height);
 			srcSet.push(
-				`${src}?width=${scaledWidth}&height=${scaledHeight}&fit=contain ${scaledWidth}w`,
+				`${src}?width=${scaledWidth}&height=${scaledHeight}&fit=${fit} ${scaledWidth}w`,
 			);
 		});
 	});
 
 	return srcSet.join(', ');
 }
-
-const MAX_WIDTH = 700;
-const BREAKPOINTS = [300, 400, 500, 600, 700]; // Viewport widths to consider
-const DENSITIES = [1, 1.5, 2]; // For 1x, 1.5x, 2x displays
