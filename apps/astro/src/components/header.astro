@@ -1,0 +1,71 @@
+---
+import ThemeSwitcher from '~/components/theme-switcher.astro';
+
+const mainNav = [
+	{ label: 'Home', href: '/' },
+	{ label: 'Posts', href: '/posts' },
+	{ label: 'Links', href: '/links' },
+	{ label: 'About', href: '/about' },
+];
+
+const pathname = Astro.url.pathname;
+---
+
+<header
+	class="px-4 sm:px-6 lg:px-8 flex flex-wrap items-center gap-4 py-8"
+	role="banner"
+>
+	<a
+		class="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:inline-block focus-visible:rounded-full focus-visible:bg-gray-200 focus-visible:px-3 focus-visible:py-1.5 focus-visible:hover:text-gray-600 dark:focus-visible:bg-teal-700 dark:focus-visible:hover:text-white focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-2 focus-visible:ring-teal-700 dark:focus-visible:ring-offset-gray-900"
+		href="#main">Skip to main content</a
+	><div class="flex flex-1 items-center">
+		<a
+			class="h-11 w-11 rounded-full p-1 font-sans font-bold shadow transition-colors bg-white text-teal-700 hover:text-teal-600 dark:bg-teal-600 dark:text-gray-900 dark:hover:bg-teal-500 focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-2 focus-visible:ring-teal-700 dark:focus-visible:ring-offset-gray-900"
+			href="/"
+			><span class="sr-only">Luke Bennett</span><svg
+				aria-hidden="true"
+				fill="currentColor"
+				fill-rule="evenodd"
+				focusable="false"
+				role="img"
+				viewBox="0 0 24 24"
+				><path
+					d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zm0-4.836l-4.8-2.4v-12l-2.4 1.2v12l7.2 3.6 7.2-3.6v-4.8l-2.4-1.2 2.4-1.2v-4.8l-7.2-3.6v16.8zm4.8-4.8l-2.4-1.2v4.8l2.4-1.2v-2.4zm0-7.2l-2.4-1.2v4.8l2.4-1.2v-2.4z"
+				></path></svg
+			></a
+		>
+	</div><nav
+		aria-label="Primary"
+		class="order-last flex w-full justify-center md:order-none md:w-auto"
+		role="navigation"
+	>
+		<ul
+			class="flex items-center gap-2 rounded-full bg-gray-200 p-1.5 shadow-inner dark:bg-gray-950"
+		>
+			{
+				mainNav.map(({ label, href }) => {
+					const isHighlighted =
+						href === '/' ? pathname === href : pathname?.includes(href);
+					return (
+						<li class="flex">
+							<a
+								class="relative rounded-full px-3 py-1.5 text-xs font-medium text-gray-800 transition hover:bg-gray-100 focus-visible:ring-offset-teal-50 dark:text-gray-200 dark:hover:bg-gray-900 sm:px-4 sm:py-1.5 focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-2 focus-visible:ring-teal-700 dark:focus-visible:ring-offset-gray-900"
+								href={href}
+							>
+								{isHighlighted && (
+									<span
+										aria-hidden="true"
+										class="pointer-events-none absolute inset-0 rounded-full bg-white shadow dark:bg-gray-800"
+										style="border-radius: 9999px; opacity: 1;"
+									/>
+								)}
+								<span class="relative z-10">{label}</span>
+							</a>
+						</li>
+					);
+				})
+			}
+		</ul>
+	</nav>
+	<ThemeSwitcher />
+</header>

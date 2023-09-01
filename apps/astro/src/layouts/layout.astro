@@ -1,0 +1,87 @@
+---
+import '@fontsource-variable/source-code-pro';
+import '@fontsource/source-sans-pro/400.css';
+import '@fontsource/source-sans-pro/700.css';
+import '@fontsource/source-serif-pro';
+import '~/styles.css';
+
+import { Analytics } from '@vercel/analytics/react';
+
+import Footer from '~/components/footer.astro';
+import Header from '~/components/header.astro';
+import { cn } from '~/lib/cn';
+import { MAIN_ID } from '~/lib/constants';
+import { packs } from '~/lib/packs';
+
+export type Props = {
+	title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en-AU" class="font-sans text-xl dark antialiased">
+	<head>
+		<meta charset="UTF-8" />
+		<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+		<link
+			href="/favicon-dark.svg"
+			rel="icon"
+			type="image/svg+xml"
+			media="(prefers-color-scheme: dark)"
+		/>
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<title>{title}</title>
+		<meta name="description" content="Luke Bennett’s personal website" />
+		<link rel="author" href="https://www.lukebennett.com.au" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="index, follow" />
+		<meta
+			name="googlebot"
+			content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+		/>
+		<meta property="og:title" content="Luke Bennett" />
+		<meta property="og:description" content="Luke Bennett’s personal website" />
+		<meta property="og:url" content="https://www.lukebennett.com.au/" />
+		<meta property="og:site_name" content="Luke Bennett" />
+		<meta property="og:locale" content="en-AU" />
+		<meta property="og:image" content="https://www.lukebennett.com.au/og.jpg" />
+		<meta property="og:image:width" content="1920" />
+		<meta property="og:image:height" content="1080" />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Luke Bennett" />
+		<meta
+			name="twitter:description"
+			content="Luke Bennett’s personal website"
+		/>
+		<meta
+			name="twitter:image"
+			content="https://www.lukebennett.com.au/og.jpg"
+		/>
+		<meta name="twitter:image:width" content="1920" />
+		<meta name="twitter:image:height" content="1080" />
+	</head>
+	<body class="flex min-h-[100dvh] justify-center bg-teal-700 p-2 [tab-size:2]">
+		<div
+			class={cn(
+				packs.container,
+				'flex flex-col rounded-2xl bg-gray-100 shadow-2xl dark:bg-gray-900',
+			)}
+		>
+			<Header />
+			<main
+				class={cn(
+					packs.innerPadding,
+					'flex-1 bg-gray-100 pb-20 pt-10 dark:bg-gray-900',
+				)}
+				id={MAIN_ID}
+			>
+				<slot />
+				{process.env.NODE_ENV === 'production' && <Analytics client:load />}
+			</main>
+			<Footer />
+		</div>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	/* Apply scroll-margin to IDs */
+	[id] {
+		scroll-margin-top: theme(spacing[4]);
+	}
+}

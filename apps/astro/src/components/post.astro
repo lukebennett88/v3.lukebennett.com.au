@@ -1,0 +1,21 @@
+---
+import { type DocumentElement } from '@keystatic/core';
+
+import { DocumentRenderer } from '~/keystatic/document-renderer';
+import { formatToAustralianDate } from '~/lib/posts';
+
+type Props = {
+	document: DocumentElement[];
+	publishedAt: string;
+};
+
+const { document, publishedAt } = Astro.props;
+---
+
+<div class="prose dark:prose-invert mx-auto">
+	<time class="block text-sm" datetime={publishedAt}>
+		{formatToAustralianDate(publishedAt)}
+	</time>
+	<slot name="title" />
+	<DocumentRenderer document={document} />
+</div>
