@@ -50,29 +50,24 @@ const pathname = Astro.url.pathname;
 					return (
 						<li class="flex">
 							<a
-								class="group relative overflow-hidden rounded-full px-3 py-1.5 text-xs font-medium text-gray-800 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-50 dark:text-gray-200 dark:focus-visible:ring-offset-gray-900 sm:px-4 sm:py-1.5"
+								class="group rounded-full text-xs font-medium text-gray-800 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-50 dark:text-gray-200 dark:focus-visible:ring-offset-gray-900"
 								href={href}
 							>
-								{isHighlighted && (
+								{isHighlighted ? (
 									<span
-										aria-hidden="true"
 										class={cn(
-											'pointer-events-none absolute inset-0 rounded-full bg-white shadow transition-colors dark:bg-gray-800',
-											isHighlighted &&
-												'group-hover:bg-gray-100 group-active:bg-white dark:group-hover:bg-gray-700 dark:group-active:bg-gray-800',
+											'inline-block rounded-full bg-white px-3 py-1.5 shadow transition-colors dark:bg-gray-800 sm:px-4 sm:py-1.5',
+											'group-hover:bg-gray-100 group-active:bg-white dark:group-hover:bg-gray-700 dark:group-active:bg-gray-800',
 										)}
 										transition:animate="initial"
-									/>
+									>
+										{label}
+									</span>
+								) : (
+									<span class="inline-block rounded-full py-1.5 transition-colors group-hover:bg-gray-100 dark:group-hover:bg-gray-900 sm:px-4 sm:py-1.5">
+										{label}
+									</span>
 								)}
-								<span
-									class={cn(
-										'relative z-10',
-										!isHighlighted &&
-											'decoration-teal-700 underline-offset-4 group-hover:underline',
-									)}
-								>
-									{label}
-								</span>
 							</a>
 						</li>
 					);
