@@ -17,5 +17,5 @@ const { document, publishedAt } = Astro.props;
 		{formatToAustralianDate(publishedAt)}
 	</time>
 	<slot name="title" />
-	<DocumentRenderer document={document} />
+	<DocumentRenderer client:load document={document} />
 </div>

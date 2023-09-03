@@ -7,18 +7,17 @@ import {
 
 import { componentBlocks } from './component-block';
 
-const shouldUseGitHub = process.env.NODE_ENV === 'production';
+const shouldUseCloud = process.env.NODE_ENV === 'production';
 
 export const localBaseDirectory = '../../';
 
 export const config = createConfig({
-	storage: shouldUseGitHub
+	cloud: {
+		project: 'luke-bennett/lukebennett-com-au',
+	},
+	storage: shouldUseCloud
 		? {
-				kind: 'github',
-				repo: {
-					name: 'v3.lukebennett.com.au',
-					owner: 'lukebennett88',
-				},
+				kind: 'cloud',
 		  }
 		: {
 				kind: 'local',
@@ -28,7 +27,7 @@ export const config = createConfig({
 			label: 'Homepage',
 			entryLayout: 'form',
 			format: { contentField: 'content' },
-			path: 'apps/astro/src/content/_homepage',
+			path: 'apps/astro/content/_homepage',
 			schema: {
 				content: fields.document({
 					label: 'Content',
@@ -43,12 +42,13 @@ export const config = createConfig({
 			label: 'About',
 			entryLayout: 'form',
 			format: { contentField: 'content' },
-			path: 'apps/astro/src/content/_about',
+			path: 'apps/astro/content/_about',
 			schema: {
 				content: fields.document({
 					label: 'Content',
-					formatting: true,
+					componentBlocks,
 					dividers: true,
+					formatting: true,
 					links: true,
 					tables: true,
 				}),
@@ -60,7 +60,7 @@ export const config = createConfig({
 			label: 'Posts',
 			entryLayout: 'form',
 			format: { contentField: 'content' },
-			path: 'apps/astro/src/content/posts/*',
+			path: 'apps/astro/content/posts/*',
 			slugField: 'title',
 			schema: {
 				title: fields.slug({
@@ -94,7 +94,7 @@ export const config = createConfig({
 			label: 'Links',
 			entryLayout: 'form',
 			format: { contentField: 'content' },
-			path: 'apps/astro/src/content/links/*',
+			path: 'apps/astro/content/links/*',
 			slugField: 'title',
 			schema: {
 				title: fields.slug({
