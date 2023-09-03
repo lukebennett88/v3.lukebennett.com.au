@@ -1,0 +1,7 @@
+{
+	"extends": "@lukebennett/tsconfig/react-library",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": { "~/*": ["./src/*"] }
+	}
+}

@@ -14,17 +14,19 @@
 	"type": "module",
 	"scripts": {
 		"build": "turbo run build",
+		"build:next": "turbo run build --filter=next...",
 		"build:packages": "turbo run build --filter=./packages/*",
-		"build:web": "turbo run build --filter=web...",
 		"check": "pnpm run check:format && pnpm run check:lint && pnpm run check:types",
-		"check:format": "pnpm prettier . --cache --check",
+		"check:format": "pnpm prettier . --check --cache",
 		"check:lint": "turbo run lint",
 		"check:types": "pnpm build:packages && turbo run check:types",
 		"dev": "turbo run dev",
+		"dev:astro": "turbo dev --filter=@lukebennett/astro",
+		"dev:next": "turbo dev --filter=@lukebennett/next",
 		"fix": "pnpm fix:lint && pnpm fix:format",
 		"fix:format": "pnpm format --write",
 		"fix:lint": "turbo run lint -- --fix",
-		"format": "prettier \"**/*\" --ignore-unknown --plugin-search-dir=. --cache",
+		"format": "prettier -w . --cache",
 		"postinstall": "manypkg check"
 	},
 	"dependencies": {
@@ -34,7 +36,7 @@
 		"@turbo/gen": "^1.10.13",
 		"eslint": "^8.48.0",
 		"eslint-config-custom": "0.0.0",
-		"prettier": "^3.0.2",
+		"prettier": "^3.0.3",
 		"turbo": "^1.10.13"
 	},
 	"packageManager": "pnpm@8.7.0",

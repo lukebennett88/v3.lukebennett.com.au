@@ -6,10 +6,11 @@
 	"main": "index.json",
 	"dependencies": {
 		"@ianvs/prettier-plugin-sort-imports": "^4.1.0",
-		"prettier": "^3.0.2",
+		"prettier": "^3.0.3",
+		"prettier-plugin-astro": "^0.12.0",
 		"prettier-plugin-curly": "^0.1.2",
 		"prettier-plugin-packagejson": "^2.4.5",
-		"prettier-plugin-tailwindcss": "^0.5.3"
+		"prettier-plugin-tailwindcss": "^0.5.4"
 	},
 	"publishConfig": {
 		"access": "public"
