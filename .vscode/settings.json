@@ -13,6 +13,13 @@
 		"typescriptreact",
 		"yaml"
 	],
+	"eslint.validate": [
+		"astro",
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact"
+	],
 	"eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
 	"prettier.documentSelectors": ["**/*.astro"],
 	"typescript.preferences.importModuleSpecifier": "non-relative",
