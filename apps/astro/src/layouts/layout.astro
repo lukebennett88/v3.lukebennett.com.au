@@ -6,7 +6,6 @@ import '@fontsource/source-sans-pro/700.css';
 import '@fontsource/source-serif-pro';
 import '~/styles.css';
 
-import { Analytics } from '@vercel/analytics/react';
 
 import Footer from '~/components/footer.astro';
 import Header from '~/components/header.astro';
@@ -80,7 +79,6 @@ const { title } = Astro.props;
 				id={MAIN_ID}
 			>
 				<slot />
-				{process.env.NODE_ENV === 'production' && <Analytics client:load />}
 			</main>
 			<Footer />
 		</div>
