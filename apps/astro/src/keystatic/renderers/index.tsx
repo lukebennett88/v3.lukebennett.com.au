@@ -1,6 +1,5 @@
 import { type InferRenderersForComponentBlocks } from '@keystatic/core';
 import { type DocumentRendererProps } from '@keystatic/core/renderer';
-import { Tweet } from 'react-tweet';
 import { type Highlighter } from 'shiki';
 
 import { type componentBlocks } from '../component-block';
@@ -34,12 +33,5 @@ export function getDocumentRenderers(highlighter: Highlighter) {
 export const componentBlockRenderers = {
 	cloudImage(props) {
 		return <CloudImage {...props} />;
-	},
-	tweet(props) {
-		return (
-			<div className="not-prose">
-				<Tweet {...props} />
-			</div>
-		);
 	},
 } satisfies InferRenderersForComponentBlocks<typeof componentBlocks>;

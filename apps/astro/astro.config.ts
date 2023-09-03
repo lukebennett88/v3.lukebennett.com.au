@@ -10,9 +10,4 @@ export default defineConfig({
 	adapter: vercel(),
 	integrations: [markdoc(), react(), tailwind()],
 	output: 'hybrid',
-	vite: {
-		ssr: {
-			noExternal: ['react-tweet'],
-		},
-	},
 });

@@ -5,7 +5,13 @@ linkedUrl: https://twitter.com/antfu7/status/1679184417930059777
 ---
 I kinda like this idea:
 
-{% tweet #1679184417930059777 /%}
+> I'd propose a 4-digit semver:
+> 
+> epoch.major.minor.patch
+> 
+> Major indicates there are technical breaking changes, but not necessarily affect many usages.
+> 
+> The new Epoch digit indicates an overhaul rewrite or massive update that usually requires migrations. Or for marketing.
 
 [Keystone](https://keystonejs.com/) gets around this by literally calling the package&nbsp;`@keystone-6` (the epoch is right there in the name rather than the version). It would be nice to&nbsp;*not*&nbsp;have to do that.
 

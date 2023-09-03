@@ -19,7 +19,7 @@ importers:
         version: 0.21.0
       '@turbo/gen':
         specifier: ^1.10.13
-        version: 1.10.13(@types/node@20.5.8)(typescript@5.2.2)
+        version: 1.10.13(@types/node@18.16.19)(typescript@5.2.2)
       eslint:
         specifier: ^8.48.0
         version: 8.48.0
@@ -91,7 +91,7 @@ importers:
         version: 1.0.2
       astro:
         specifier: ^3.0.6
-        version: 3.0.6(@types/node@20.5.8)
+        version: 3.0.6(@types/node@18.16.19)
       clsx:
         specifier: ^2.0.0
         version: 2.0.0
@@ -113,9 +113,6 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
-      react-tweet:
-        specifier: ^3.1.1
-        version: 3.1.1(react-dom@18.2.0)(react@18.2.0)
       shiki:
         specifier: ^0.14.4
         version: 0.14.4
@@ -321,7 +318,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.0
       '@astrojs/prism': 3.0.0
       '@markdoc/markdoc': 0.3.2(@types/react@18.2.21)(react@18.2.0)
-      astro: 3.0.6(@types/node@20.5.8)
+      astro: 3.0.6(@types/node@18.16.19)
       esbuild: 0.19.2
       github-slugger: 2.0.0
       gray-matter: 4.0.3
@@ -340,7 +337,7 @@ packages:
       astro: ^3.0.0
     dependencies:
       '@astrojs/prism': 3.0.0
-      astro: 3.0.6(@types/node@20.5.8)
+      astro: 3.0.6(@types/node@18.16.19)
       github-slugger: 2.0.0
       import-meta-resolve: 3.0.0
       rehype-raw: 6.1.1
@@ -398,7 +395,7 @@ packages:
       astro: ^3.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 3.0.6(@types/node@20.5.8)
+      astro: 3.0.6(@types/node@18.16.19)
       autoprefixer: 10.4.15(postcss@8.4.29)
       postcss: 8.4.29
       postcss-load-config: 4.0.1(postcss@8.4.29)
@@ -431,7 +428,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.0
       '@vercel/analytics': 1.0.2
       '@vercel/nft': 0.23.1
-      astro: 3.0.6(@types/node@20.5.8)
+      astro: 3.0.6(@types/node@18.16.19)
       esbuild: 0.19.2
       fast-glob: 3.3.1
       set-cookie-parser: 2.6.0
@@ -1757,7 +1754,7 @@ packages:
       '@babel/runtime': 7.22.11
       '@keystatic/core': 0.1.3(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)
       '@types/react': 18.2.21
-      astro: 3.0.6(@types/node@20.5.8)
+      astro: 3.0.6(@types/node@18.16.19)
       cookie: 0.5.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -3925,7 +3922,7 @@ packages:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     dev: false
 
-  /@turbo/gen@1.10.13(@types/node@20.5.8)(typescript@5.2.2):
+  /@turbo/gen@1.10.13(@types/node@18.16.19)(typescript@5.2.2):
     resolution: {integrity: sha512-fwGVjeun2i0RIdq/20d2wpatPw9vE4Mbk60uB8rk8NENDXn2JLfbsh00mZ5KAEX5ZQUibh6tD+B7xROV8Eb7dQ==}
     hasBin: true
     dependencies:
@@ -3937,7 +3934,7 @@ packages:
       minimatch: 9.0.3
       node-plop: 0.26.3
       proxy-agent: 6.3.0
-      ts-node: 10.9.1(@types/node@20.5.8)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@18.16.19)(typescript@5.2.2)
       update-check: 1.5.4
       validate-npm-package-name: 5.0.0
     transitivePeerDependencies:
@@ -4113,10 +4110,6 @@ packages:
 
   /@types/node@20.5.4:
     resolution: {integrity: sha512-Y9vbIAoM31djQZrPYjpTLo0XlaSwOIsrlfE3LpulZeRblttsLQRFRlBAppW0LOxyT3ALj2M5vU1ucQQayQH3jA==}
-    dev: false
-
-  /@types/node@20.5.8:
-    resolution: {integrity: sha512-eajsR9aeljqNhK028VG0Wuw+OaY5LLxYmxeoXynIoE6jannr9/Ucd1LL0hSSoafk5LTYG+FfqsyGt81Q6Zkybw==}
     dev: false
 
   /@types/parse-json@4.0.0:
@@ -4534,7 +4527,7 @@ packages:
       '@babel/plugin-transform-react-jsx-self': 7.22.5(@babel/core@7.22.11)
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.22.11)
       react-refresh: 0.14.0
-      vite: 4.4.9(@types/node@20.5.8)
+      vite: 4.4.9(@types/node@18.16.19)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -4798,7 +4791,7 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /astro@3.0.6(@types/node@20.5.8):
+  /astro@3.0.6(@types/node@18.16.19):
     resolution: {integrity: sha512-I4W71g/IzRp1dYHKbQGKp44TSlR+vO3z1c2TscMMJPCyQ3b15o0DVLWibd4zdDDeAQ1JqM8jvQy+nOYMIlacpg==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -4854,7 +4847,7 @@ packages:
       undici: 5.23.0
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.4.9(@types/node@20.5.8)
+      vite: 4.4.9(@types/node@18.16.19)
       vitefu: 0.2.4(vite@4.4.9)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -10733,7 +10726,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: false
 
-  /ts-node@10.9.1(@types/node@20.5.8)(typescript@5.2.2):
+  /ts-node@10.9.1(@types/node@18.16.19)(typescript@5.2.2):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -10752,7 +10745,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.5.8
+      '@types/node': 18.16.19
       acorn: 8.10.0
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -11231,7 +11224,7 @@ packages:
       vfile-message: 3.1.4
     dev: false
 
-  /vite@4.4.9(@types/node@20.5.8):
+  /vite@4.4.9(@types/node@18.16.19):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -11259,7 +11252,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.5.8
+      '@types/node': 18.16.19
       esbuild: 0.18.20
       postcss: 8.4.29
       rollup: 3.28.1
@@ -11275,7 +11268,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.9(@types/node@20.5.8)
+      vite: 4.4.9(@types/node@18.16.19)
     dev: false
 
   /vscode-oniguruma@1.7.0:
