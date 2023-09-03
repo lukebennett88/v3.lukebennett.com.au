@@ -4,6 +4,7 @@ import '@fontsource/source-sans-pro/400-italic.css';
 import '@fontsource/source-sans-pro/400.css';
 import '@fontsource/source-sans-pro/700.css';
 import '@fontsource/source-serif-pro';
+import { ViewTransitions } from 'astro:transitions';
 import '~/styles.css';
 
 
@@ -62,6 +63,7 @@ const { title } = Astro.props;
 		/>
 		<meta name="twitter:image:width" content="1920" />
 		<meta name="twitter:image:height" content="1080" />
+		<ViewTransitions />
 	</head>
 	<body class="flex min-h-[100dvh] justify-center bg-teal-700 p-2 [tab-size:2]">
 		<div
