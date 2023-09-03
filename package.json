@@ -17,7 +17,7 @@
 		"build:next": "turbo run build --filter=next...",
 		"build:packages": "turbo run build --filter=./packages/*",
 		"check": "pnpm run check:format && pnpm run check:lint && pnpm run check:types",
-		"check:format": "pnpm prettier . --cache --check",
+		"check:format": "pnpm prettier . --check --cache",
 		"check:lint": "turbo run lint",
 		"check:types": "pnpm build:packages && turbo run check:types",
 		"dev": "turbo run dev",
@@ -26,7 +26,7 @@
 		"fix": "pnpm fix:lint && pnpm fix:format",
 		"fix:format": "pnpm format --write",
 		"fix:lint": "turbo run lint -- --fix",
-		"format": "prettier \"**/*\" --ignore-unknown --plugin-search-dir=. --cache",
+		"format": "prettier -w . --cache",
 		"postinstall": "manypkg check"
 	},
 	"dependencies": {
