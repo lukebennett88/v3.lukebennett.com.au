@@ -17,7 +17,7 @@ export const fontStackMonoArray = [
 ];
 
 export default {
-	darkMode: 'class',
+	darkMode: ['class', '[data-theme="dark"]'],
 	content: ['./src/**/*.{astro,mdoc,ts,tsx}'],
 	theme: {
 		extend: {

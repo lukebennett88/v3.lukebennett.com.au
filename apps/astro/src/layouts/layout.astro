@@ -13,6 +13,7 @@ import Header from '~/components/header.astro';
 import { cn } from '~/lib/cn';
 import { MAIN_ID } from '~/lib/constants';
 import { packs } from '~/lib/packs';
+import ThemeProvider from '~/components/theme-provider.astro';
 
 export type Props = {
 	title: string;
@@ -66,6 +67,7 @@ const { title } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body class="flex min-h-[100dvh] justify-center bg-teal-700 p-2 [tab-size:2]">
+		<ThemeProvider />
 		<div
 			class={cn(
 				packs.container,
