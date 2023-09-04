@@ -4,16 +4,17 @@ import '@fontsource/source-sans-pro/400-italic.css';
 import '@fontsource/source-sans-pro/400.css';
 import '@fontsource/source-sans-pro/700.css';
 import '@fontsource/source-serif-pro';
-import { ViewTransitions } from 'astro:transitions';
-import '~/styles.css';
 
+import { ViewTransitions } from 'astro:transitions';
+
+import '~/styles.css';
 
 import Footer from '~/components/footer.astro';
 import Header from '~/components/header.astro';
+import ThemeProvider from '~/components/theme-provider.astro';
 import { cn } from '~/lib/cn';
 import { MAIN_ID } from '~/lib/constants';
 import { packs } from '~/lib/packs';
-import ThemeProvider from '~/components/theme-provider.astro';
 
 export type Props = {
 	title: string;
@@ -22,8 +23,8 @@ export type Props = {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
-<html lang="en-AU" class="font-sans text-xl dark antialiased">
+<!doctype html>
+<html lang="en-AU" class="font-sans text-xl antialiased">
 	<head>
 		<meta charset="UTF-8" />
 		<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
@@ -67,7 +68,6 @@ const { title } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body class="flex min-h-[100dvh] justify-center bg-teal-700 p-2 [tab-size:2]">
-		<ThemeProvider />
 		<div
 			class={cn(
 				packs.container,
@@ -86,5 +86,6 @@ const { title } = Astro.props;
 			</main>
 			<Footer />
 		</div>
+		<ThemeProvider />
 	</body>
 </html>

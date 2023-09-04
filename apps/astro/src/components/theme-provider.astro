@@ -12,8 +12,14 @@ import Icon from './icon.astro';
 			(window.matchMedia('(prefers-color-scheme: light)').matches
 				? 'light'
 				: 'dark');
-		document.documentElement.dataset.theme =
-			theme === 'light' ? 'light' : 'dark';
+
+		function setThemeClass(newTheme) {
+			document.documentElement.classList.remove('light', 'dark');
+			document.documentElement.classList.add(newTheme);
+		}
+
+		setThemeClass(theme);
+
 		return {
 			updatePickers(theme = storedTheme || 'auto') {
 				document.querySelectorAll('theme-select').forEach((picker) => {

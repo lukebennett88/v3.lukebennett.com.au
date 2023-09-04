@@ -1,31 +1,41 @@
 ---
 import Icon from '~/components/icon.astro';
-
-import { packs } from '~/lib/packs';
 import { cn } from '~/lib/cn';
+import { packs } from '~/lib/packs';
 
 type Props = {
 	label: string;
 	value: string;
-	icon: Parameters<typeof Icon>[number]['name'];
+	icon: Parameters<typeof Icon>[0]['name'];
 	width?: string;
 	options: Array<{
 		label: string;
 		value: string;
 		selected: boolean;
 	}>;
-}
+};
 ---
 
-<label class="flex items-center relative text-gray-800 dark:text-gray-200 text-sm">
+<label
+	class="relative flex items-center text-sm text-gray-800 dark:text-gray-200"
+>
 	<span class="sr-only">{Astro.props.label}</span>
-	<Icon name={Astro.props.icon} class="h-4 w-5 absolute inset-y-0 left-2 my-auto" />
-	<select value={Astro.props.value} class={cn("appearance-none bg-transparent px-8 rounded-full h-8 bg-white dark:bg-gray-800 shadow", packs.focusVisible)}>
+	<Icon
+		name={Astro.props.icon}
+		class="label-icon absolute inset-y-0 left-2 my-auto h-4 w-5"
+	/>
+	<select
+		value={Astro.props.value}
+		class={cn(
+			'appearance-none bg-transparent px-8 rounded-full h-8 bg-white dark:bg-gray-800 shadow',
+			packs.focusVisible,
+		)}
+	>
 		{
 			Astro.props.options.map(({ value, selected, label }) => (
 				<option value={value} selected={selected} set:html={label} />
 			))
 		}
 	</select>
-	<Icon name="down-caret" class="h-4 w-4 absolute inset-y-0 right-2 my-auto" />
+	<Icon name="down-caret" class="absolute inset-y-0 right-2 my-auto h-4 w-4" />
 </label>

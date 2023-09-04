@@ -60,8 +60,10 @@ import ThemeSelect from '~/components/theme-select.astro';
 			/** Update select menu UI, document theme, and local storage state. */
 			#onThemeChange(theme: Theme): void {
 				ThemeProvider.updatePickers(theme);
-				document.documentElement.dataset.theme =
-					theme === 'auto' ? this.#getPreferredColorScheme() : theme;
+				document.documentElement.classList.remove('light', 'dark');
+				document.documentElement.classList.add(
+					theme === 'auto' ? this.#getPreferredColorScheme() : theme,
+				);
 				this.#storeTheme(theme);
 			}
 
