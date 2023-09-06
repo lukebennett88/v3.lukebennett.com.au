@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 
-type CloudImageProps = {
+import { cn } from '~/lib/cn';
+
+type CloudImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
 	/** The alt text for the image. */
 	alt?: string;
 
@@ -71,6 +73,7 @@ type CloudImageProps = {
 export function CloudImage({
 	alt,
 	breakpoints = [300, 400, 500, 600, 700],
+	className,
 	caption,
 	decoding,
 	densities = [1, 1.5, 2],
@@ -92,6 +95,7 @@ export function CloudImage({
 		<img
 			{...consumerProps}
 			alt={alt}
+			className={cn('rounded-lg bg-white dark:bg-gray-800', className)}
 			decoding={decoding ?? priority ? 'async' : 'auto'}
 			loading={loading ?? priority ? 'eager' : 'lazy'}
 			role={alt ? undefined : 'presentation'}
