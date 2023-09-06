@@ -21,6 +21,22 @@ export default {
 	content: ['./src/**/*.{astro,mdoc,ts,tsx}'],
 	theme: {
 		extend: {
+			animation: {
+				steamRise: [
+					'steamFade 3s ease-in-out infinite',
+					'steamTransform 3s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+				].join(', '),
+			},
+			keyframes: {
+				steamFade: {
+					'0%, 100%': { opacity: '0' },
+					'50%': { opacity: '1' },
+				},
+				steamTransform: {
+					'0%': { transform: 'translate3d(0, 0.5rem, 0) scale(0.9)' },
+					'100%': { transform: 'translate3d(-0.125rem, 0, 0) scale(1.1)' },
+				},
+			},
 			colors: {
 				gray: zinc,
 			},

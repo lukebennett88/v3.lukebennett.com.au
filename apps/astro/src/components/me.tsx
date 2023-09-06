@@ -1,20 +1,3 @@
-import { motion } from 'framer-motion';
-
-const variants = {
-	enter: {
-		y: '0.5rem',
-		opacity: 0,
-	},
-	mounted: {
-		y: 0,
-		opacity: [0, 1, 0],
-	},
-	exit: {
-		y: '-1rem',
-		opacity: 0,
-	},
-};
-
 export function Me(props: React.SVGProps<SVGSVGElement>) {
 	return (
 		<svg
@@ -48,16 +31,12 @@ export function Me(props: React.SVGProps<SVGSVGElement>) {
 				strokeOpacity={0.6}
 				strokeWidth={0.4}
 			/>
-			<motion.path
-				animate="mounted"
+			<path
+				className="animate-steamRise [transform-box:fill-box]"
 				d="M329 188.05c-.5.09-1.06.22-1.31.67-.4.7.32 1.5.96 1.97 1.18.9 2.43 1.77 3.24 3.02.8 1.24 1.06 2.98.17 4.18-1.15 1.56-3.89 1.89-4.15 3.8-.17 1.24.9 2.3 1.97 2.9 2.67 1.53 6.1 1.94 8.03 4.33.8-1.64 2.58-2.6 4.35-3 1.76-.4 3.62-.37 5.43-.65.58-.08 1.24-.26 1.5-.79.5-1.02-.94-2.25-.44-3.28.4-.79 1.48-.72 2.3-1.03 1.31-.51 1.85-2.2 1.48-3.56-.37-1.34-1.43-2.43-2.54-3.3-3-2.37-6.6-3.74-10.25-4.74-1.7-.46-3.68-1.19-5.44-1.26-1.68-.08-3.62.45-5.3.74z"
-				exit="exit"
 				fill="#afafaf"
 				fillOpacity={0.25}
 				fillRule="nonzero"
-				initial="enter"
-				transition={{ duration: 2, repeat: Infinity, repeatType: 'loop' }}
-				variants={variants}
 			/>
 			<path
 				d="M352.73 216a7.72 7.72 0 00-7.69 7.69 7.73 7.73 0 007.7 7.69 7.72 7.72 0 007.68-7.7 7.72 7.72 0 00-7.69-7.68zm0 12.42a4.76 4.76 0 01-4.74-4.74c0-2.6 2.14-4.75 4.74-4.75s4.74 2.14 4.74 4.75c0 2.6-2.14 4.74-4.74 4.74z"
