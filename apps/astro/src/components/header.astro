@@ -21,7 +21,12 @@ const pathname = Astro.url.pathname;
 		href="#main">Skip to main content</a
 	><div class="flex flex-1 items-center">
 		<a
-			class="h-11 w-11 rounded-full bg-white p-1 font-sans font-bold text-teal-700 shadow transition-colors hover:text-teal-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-700 focus-visible:ring-offset-2 dark:bg-teal-600 dark:text-gray-900 dark:hover:bg-teal-500 dark:focus-visible:ring-offset-gray-900"
+			class={cn(
+				'h-11 w-11 rounded-full bg-white p-1 font-sans shadow transition-colors',
+				'text-teal-700 hover:text-teal-600',
+				'dark:bg-teal-600 dark:text-gray-900 dark:hover:bg-teal-500',
+				packs.focusVisible,
+			)}
 			href="/"
 			><span class="sr-only">Luke Bennett</span><svg
 				aria-hidden="true"
