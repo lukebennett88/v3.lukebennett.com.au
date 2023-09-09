@@ -4,15 +4,15 @@ import { zinc } from 'tailwindcss/colors';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 export const fontStackSansArray = [
-	'Source Sans Pro',
+	'"Source Sans 3 Variable"',
 	...defaultTheme.fontFamily.sans,
 ];
 export const fontStackSerifArray = [
-	'Source Serif Pro',
+	'"Source Serif 4 Variable"',
 	...defaultTheme.fontFamily.serif,
 ];
 export const fontStackMonoArray = [
-	'Source Code Pro Variable',
+	'"Source Code Pro Variable"',
 	...defaultTheme.fontFamily.mono,
 ];
 
