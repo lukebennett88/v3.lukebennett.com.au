@@ -7,9 +7,7 @@ import { defineConfig } from 'astro/config';
 /** @see https://astro.build/config */
 export default defineConfig({
 	site: 'https://www.lukebennett.com.au',
-	adapter: vercel({
-		analytics: true,
-	}),
+	adapter: vercel(),
 	integrations: [markdoc(), react(), tailwind()],
 	output: 'hybrid',
 });
