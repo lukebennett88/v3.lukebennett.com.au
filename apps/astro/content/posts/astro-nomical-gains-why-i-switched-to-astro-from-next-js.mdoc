@@ -3,7 +3,7 @@ title: 'Astro-nomical Gains: Why I Switched to Astro from Next.js'
 publishedAt: '2023-09-10'
 isDraft: true
 ---
-I recently [revived my long-dormant website](/posts/using-keystatic-as-a-cms) as an excuse to better understand [Keystatic](https://keystatic.com/), the new [app router](https://nextjs.org/blog/layouts-rfc#introducing-the-app-directory), and the long-awaited [server components](https://react.dev/blog/2020/12/21/data-fetching-with-react-server-components) in Next.js 13.
+I recently [revived my long-dormant website](/posts/using-keystatic-as-a-cms) as an excuse to better understand [Keystatic](https://keystatic.com/), as well as the new Next.js [app router](https://nextjs.org/blog/layouts-rfc#introducing-the-app-directory), and [server components](https://react.dev/blog/2020/12/21/data-fetching-with-react-server-components).
 
 A few months have passed since then, and I've rebuilt the site again, this time using Astro. This post explains why.
 
@@ -30,7 +30,7 @@ When I'm building a new page for a website, I typically keep all of my component
 - I have to use a component on another page
 - The page becomes too big to be able to quickly find the section I'm looking for
 
-With server components, if I need some state (or even if I just want to generate a unique id for something), I have to extract that out into a new file. A lot of the time, these components aren't really reusable and are very page-specific, so putting them in a components folder feels wrong, and co-locating it with the page is also kinda weird because Next.js has some file naming conventions, so it's sometimes not clear if that file will be treated as "special" by Next.js or not. I typically add an underscore to the beginning of the filename of page-specific client components, which is fine, I guess ¯\_(ツ)_/¯
+With server components, if I need some state (or even if I just want to generate a unique id for something), I have to extract that out into a new file. A lot of the time, these components aren't really reusable and are very page-specific, so putting them in a components folder feels wrong, and co-locating it with the page is also kinda weird because Next.js has some file naming conventions, so it's sometimes not clear if that file will be treated as "special" by Next.js or not. I typically add an underscore to the beginning of the filename of page-specific client components, which is fine, I guess ¯_(ツ)_/¯
 
 Were any of these a deal breaker for me? No. In fact, I like using bleeding-edge stuff for non-critical stuff so that I have a good idea of when it's ready to be used for client work.
 
