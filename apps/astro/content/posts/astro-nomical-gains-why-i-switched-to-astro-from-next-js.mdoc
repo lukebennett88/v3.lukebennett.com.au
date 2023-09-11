@@ -19,7 +19,7 @@ My personal website is a space to learn new things and over-engineer the hell ou
 
 I've had something on this domain [since 2019](https://web.archive.org/web/20190313191850/https://www.lukebennett.com.au/), that's roughly one framework a year. So why did I drop Next.js after just a few months?
 
-I actually really like Next.js; it's my go-to in my day job. However, Next 13 has its issues. I mostly like the new app directory, and I've wanted nested layouts in Next.js ever since I got a taste of them in Remix. The new app router, however, is *slow*. So slow that the Next.js team felt they had to publicly address it [on their blog](https://nextjs.org/blog/june-2023-update). I fear that the app router won't be practical for medium-sized websites and above until [Turbopack](https://turbo.build/pack) becomes stable. As of right now, I can't use Turbopack on *any* of the websites that I've built with Next.js, so a stable release may still be some time away.
+I actually really like Next.js; it's my go-to in my day job. However, Next 13 has its issues. For the most part, I like the new app router, and I've wanted nested layouts in Next.js ever since I got a taste of them in Remix. The new app router, however, is *slow*. So slow that the Next.js team felt they had to publicly address it [on their blog](https://nextjs.org/blog/june-2023-update). I fear that the app router won't be practical for medium-sized websites and above until [Turbopack](https://turbo.build/pack) becomes stable. As of right now, I can't use Turbopack on *any* of the websites that I've built with Next.js, so a stable release may still be some time away.
 
 Server components also, on the whole, seem to be a great addition. They let me colocate fetching data with the components that use them, and they [can also be leveraged so you can server render components that would otherwise require shipping large libraries to the client](https://www.youtube.com/watch?v=3JB_qEk39w0). Using server components usually results in a lot less JavaScript making its way to the client, which is always a good thing.
 
@@ -34,21 +34,15 @@ With server components, if I need some state (or even if I just want to generate
 
 Were any of these a deal breaker for me? No. In fact, I like using bleeding-edge stuff for non-critical stuff so that I have a good idea of when it's ready to be used for client work.
 
-Well, truth be told, I actually did most of the work of porting the site to Astro about a month ago but decided I didn't like it enough to switch.
+I actually did most of the work of porting the site to Astro about a month ago, but I decided I didn't like it enough to switch.
 
-The full page refresh didn't feel very nice, and I lost the animation in my navigation. My theme switcher didn't work properly and would require rebuilding. The [react-tweet](https://github.com/vercel/react-tweet) library didn't work properly for the handful of links to tweets I had wired up. I also don't love the Astro template syntax. It's just close enough to React to be annoying when it doesn't work how I expect it to. There are also a bunch of Astro-specific things like the numerous template directives that have me reaching for the docs a lot. It feels like the API surface of Astro is bigger than with Next.js or Remix, but maybe that's just because I'm still getting used to it.
+The full page refreshes didn't feel very nice, and I lost the animation in my navigation. My theme switcher didn't work properly and would require rebuilding. The [react-tweet](https://github.com/vercel/react-tweet) library didn't work properly for the handful of links to tweets I had wired up. I also don't love the Astro template syntax. It's just close enough to React to be annoying when it doesn't work how I expect it to. There are also a bunch of Astro-specific things like the numerous template directives that have me reaching for the docs a lot. It feels like the API surface of Astro is bigger than with Next.js or Remix, but maybe that's just because I'm still getting used to it.
 
 So why did I switch to Astro?
 
-There were a few reasons, all of them good, but the real reason is the stupidest of them all — View Transitions!
+There were a few reasons, all of them good, but the main reason I'm somewhat ashamed to admit was a purely cosmetic one is the stupidest of them all — View Transitions!
 
 When Astro 3 came out with the stable View Transitions API, I decided to revive the Astro port and try it out. I added the `<ViewTransitions />` component to the head of my document, and almost magically, all of my page transitions were super smooth, and the frustrations I had with Astro faded away.
-
-{% cloudImage
-   src="https://whwfzhw0vq15.keystatic.net/twnwnaffxs5x/images/j34frbz8rg7c/pagespeed-insights"
-   alt="Screenshot of the PageSpeed Insights website showing 99 for performance, 100 for accessibility, 100 for best practices, and 100 for SEO"
-   height=532
-   width=700 /%}
 
 The View Transitions fixed my issue with the navigation no longer animating, and I could drop framer motion here as the built-in animation was pretty much identical. This meant the only place I was using framer-motion was the animated steam on my coffee in SVG illustration on the home page. It took a bit of time to get right, but I was able to produce the effect I wanted with a keyframe animation (in fact, I think it looks better than it did before!)
 
@@ -56,6 +50,12 @@ I referenced Astro's new Starlight to learn how to implement a theme switcher. I
 
 I got rid of the react-tweet library and inline the text of the tweets I was linking to. Twitter will probably go under soon anyway, so it's probably more resilient this way.
 
-I still think Astro has some quirks, but I love the islands architecture, and for most small to medium sites, it's probably the best choice.
+I still think Astro has some quirks, but I love the [islands architecture](https://jasonformat.com/islands-architecture/). For most small to medium sites, it's probably the best choice. Sure, I removed a few libraries in the process of porting to Astro, but I'm pretty happy with the results.
+
+{% cloudImage
+   src="https://whwfzhw0vq15.keystatic.net/twnwnaffxs5x/images/j34frbz8rg7c/pagespeed-insights"
+   alt="Screenshot of the PageSpeed Insights website showing 99 for performance, 100 for accessibility, 100 for best practices, and 100 for SEO"
+   height=532
+   width=700 /%}
 
 For now, I think I'll stick with Astro, but who knows for how long.
