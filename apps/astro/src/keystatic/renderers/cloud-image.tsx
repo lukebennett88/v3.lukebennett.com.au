@@ -2,7 +2,20 @@ import { useMemo } from 'react';
 
 import { cn } from '~/lib/cn';
 
-type CloudImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
+type NativeImageProps = React.ImgHTMLAttributes<HTMLImageElement>;
+
+type CloudImageProps = Omit<
+	NativeImageProps,
+	| 'alt'
+	| 'decoding'
+	| 'height'
+	| 'loading'
+	| 'role'
+	| 'sizes'
+	| 'src'
+	| 'srcSet'
+	| 'width'
+> & {
 	/** The alt text for the image. */
 	alt?: string;
 
@@ -14,6 +27,14 @@ type CloudImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
 	 * @default [300, 400, 500, 600, 700]
 	 */
 	breakpoints?: number[];
+
+	/**
+	 * Hint for browser image decoding.
+	 * - 'sync': Decode with DOM rendering.
+	 * - 'async': Decode after DOM rendering.
+	 * - 'auto': Browser decides.
+	 */
+	decoding?: 'sync' | 'async' | 'auto';
 
 	/**
 	 * The densities at which to generate images.
@@ -31,16 +52,8 @@ type CloudImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
 	 */
 	fit?: 'scale-down' | 'contain' | 'cover' | 'crop';
 
-	/**
-	 * Hint for browser image decoding.
-	 * - 'sync': Decode with DOM rendering.
-	 * - 'async': Decode after DOM rendering.
-	 * - 'auto': Browser decides.
-	 */
-	decoding?: 'sync' | 'async' | 'auto';
-
 	/** The height of the image. */
-	height: number | null;
+	height?: number | null;
 
 	/**
 	 * Browser loading behavior for the image.
@@ -67,14 +80,14 @@ type CloudImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
 	src: string;
 
 	/** The width of the image. */
-	width: number | null;
+	width?: number | null;
 };
 
 export function CloudImage({
 	alt,
 	breakpoints = [300, 400, 500, 600, 700],
-	className,
 	caption,
+	className,
 	decoding,
 	densities = [1, 1.5, 2],
 	fit = 'scale-down',
@@ -83,6 +96,7 @@ export function CloudImage({
 	maxWidth = 700,
 	priority = false,
 	src,
+	style,
 	width,
 	...consumerProps
 }: CloudImageProps) {
@@ -105,11 +119,12 @@ export function CloudImage({
 			}&fit=${fit}`}
 			srcSet={srcSet}
 			style={{
-				objectFit: 'cover',
-				maxWidth: width ? `${Math.min(width, maxWidth)}px` : '100%',
-				maxHeight: height ? `${height}px` : '100%',
+				...style,
 				aspectRatio:
 					width && height ? `${(width / height).toFixed(2)}` : 'auto',
+				maxHeight: height ? `${height}px` : '100%',
+				maxWidth: width ? `${Math.min(width, maxWidth)}px` : '100%',
+				objectFit: 'cover',
 				width: '100%',
 			}}
 		/>
