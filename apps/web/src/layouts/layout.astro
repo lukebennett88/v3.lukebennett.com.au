@@ -15,16 +15,28 @@ import { MAIN_ID } from '~/lib/constants';
 import { packs } from '~/lib/packs';
 
 export type Props = {
+	description?: string;
 	title?: string;
 };
 
-const { title = 'Luke Bennett' } = Astro.props;
+const {
+	description = 'Luke Bennett’s personal website',
+	title = 'Luke Bennett',
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
+	.toString()
+	.replace(/\/$/, '');
+
+const ogImage = new URL('/og.jpg', Astro.site).toString();
 ---
 
 <!doctype html>
 <html lang="en-AU" class="font-sans text-xl antialiased">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title}</title>
 		<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
 		<link
 			href="/favicon-dark.svg"
@@ -33,35 +45,34 @@ const { title = 'Luke Bennett' } = Astro.props;
 			media="(prefers-color-scheme: dark)"
 		/>
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<title>{title}</title>
-		<meta name="description" content="Luke Bennett’s personal website" />
-		<link rel="author" href="https://www.lukebennett.com.au" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			href="/feed.xml"
+			title="RSS"
+		/>
+		<link rel="author" href={Astro.site} />
 		<meta name="robots" content="index, follow" />
 		<meta
 			name="googlebot"
 			content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
 		/>
+		<link rel="canonical" href={canonicalUrl} />
+		<meta name="description" content={description} />
 		<meta property="og:title" content={title} />
-		<meta property="og:description" content="Luke Bennett’s personal website" />
-		<meta property="og:url" content="https://www.lukebennett.com.au/" />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
 		<meta property="og:site_name" content="Luke Bennett" />
 		<meta property="og:locale" content="en-AU" />
-		<meta property="og:image" content="https://www.lukebennett.com.au/og.jpg" />
+		<meta property="og:image" content={ogImage} />
 		<meta property="og:image:width" content="1920" />
 		<meta property="og:image:height" content="1080" />
 		<meta property="og:type" content="website" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
-		<meta
-			name="twitter:description"
-			content="Luke Bennett’s personal website"
-		/>
-		<meta
-			name="twitter:image"
-			content="https://www.lukebennett.com.au/og.jpg"
-		/>
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
 		<meta name="twitter:image:width" content="1920" />
 		<meta name="twitter:image:height" content="1080" />
 		<ViewTransitions />
