@@ -8,7 +8,14 @@ import { defineConfig } from 'astro/config';
 /** @see https://astro.build/config */
 export default defineConfig({
 	site: 'https://www.lukebennett.com.au',
-	adapter: vercel(),
+	adapter: vercel({
+		speedInsights: {
+			enabled: true,
+		},
+		webAnalytics: {
+			enabled: true,
+		},
+	}),
 	integrations: [markdoc(), react(), sitemap(), tailwind()],
 	output: 'hybrid',
 });
