@@ -27,7 +27,7 @@ export const config = createConfig({
 			label: 'Homepage',
 			entryLayout: 'form',
 			format: { contentField: 'content' },
-			path: 'apps/astro/content/_homepage',
+			path: 'apps/web/content/_homepage',
 			schema: {
 				content: fields.document({
 					label: 'Content',
@@ -42,7 +42,7 @@ export const config = createConfig({
 			label: 'About',
 			entryLayout: 'form',
 			format: { contentField: 'content' },
-			path: 'apps/astro/content/_about',
+			path: 'apps/web/content/_about',
 			schema: {
 				content: fields.document({
 					label: 'Content',
@@ -60,7 +60,7 @@ export const config = createConfig({
 			label: 'Posts',
 			entryLayout: 'form',
 			format: { contentField: 'content' },
-			path: 'apps/astro/content/posts/*',
+			path: 'apps/web/content/posts/*',
 			slugField: 'title',
 			schema: {
 				title: fields.slug({
@@ -94,7 +94,7 @@ export const config = createConfig({
 			label: 'Links',
 			entryLayout: 'form',
 			format: { contentField: 'content' },
-			path: 'apps/astro/content/links/*',
+			path: 'apps/web/content/links/*',
 			slugField: 'title',
 			schema: {
 				title: fields.slug({

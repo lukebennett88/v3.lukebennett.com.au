@@ -1,5 +1,5 @@
 {
-	"name": "@lukebennett/astro",
+	"name": "@lukebennett/web",
 	"private": true,
 	"scripts": {
 		"astro": "astro",
