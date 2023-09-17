@@ -8,7 +8,7 @@ import { getSortedEntries, toIsoString } from '~/lib/posts';
 
 const MAX_POSTS = 100;
 
-export const get: APIRoute = async ({ site }) => {
+export const GET: APIRoute = async ({ site }) => {
 	invariant(site, '`site` must be defined in astro.config.ts');
 	const baseUrl = site.toString();
 	const sortedEntries = (await getSortedEntries()).slice(0, MAX_POSTS);
