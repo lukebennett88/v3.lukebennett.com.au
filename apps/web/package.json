@@ -1,6 +1,7 @@
 {
 	"name": "@lukebennett/web",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"astro": "astro",
 		"build": "astro build",
