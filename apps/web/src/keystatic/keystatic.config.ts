@@ -7,27 +7,25 @@ import {
 
 import { componentBlocks } from './component-block';
 
-const shouldUseCloud = process.env.NODE_ENV === 'production';
-
-export const localBaseDirectory = '../../';
-
 export const config = createConfig({
 	cloud: {
 		project: 'luke-bennett/lukebennett-com-au',
 	},
-	storage: shouldUseCloud
-		? {
-				kind: 'cloud',
-		  }
-		: {
-				kind: 'local',
-		  },
+	storage:
+		process.env.NODE_ENV === 'production'
+			? {
+					kind: 'cloud',
+					pathPrefix: 'apps/web',
+			  }
+			: {
+					kind: 'local',
+			  },
 	singletons: {
 		homepage: singleton({
 			label: 'Homepage',
 			entryLayout: 'form',
 			format: { contentField: 'content' },
-			path: 'apps/web/content/_homepage',
+			path: 'content/_homepage',
 			schema: {
 				content: fields.document({
 					label: 'Content',
@@ -42,7 +40,7 @@ export const config = createConfig({
 			label: 'About',
 			entryLayout: 'form',
 			format: { contentField: 'content' },
-			path: 'apps/web/content/_about',
+			path: 'content/_about',
 			schema: {
 				content: fields.document({
 					label: 'Content',
@@ -60,7 +58,7 @@ export const config = createConfig({
 			label: 'Posts',
 			entryLayout: 'form',
 			format: { contentField: 'content' },
-			path: 'apps/web/content/posts/*',
+			path: 'content/posts/*',
 			slugField: 'title',
 			schema: {
 				title: fields.slug({
@@ -94,7 +92,7 @@ export const config = createConfig({
 			label: 'Links',
 			entryLayout: 'form',
 			format: { contentField: 'content' },
-			path: 'apps/web/content/links/*',
+			path: 'content/links/*',
 			slugField: 'title',
 			schema: {
 				title: fields.slug({
