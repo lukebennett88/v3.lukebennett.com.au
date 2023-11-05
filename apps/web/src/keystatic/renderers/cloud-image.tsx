@@ -91,18 +91,26 @@ export function CloudImage({
 	decoding,
 	densities = [1, 1.5, 2],
 	fit = 'scale-down',
-	height,
+	height = null,
 	loading,
 	maxWidth = 700,
 	priority = false,
 	src,
 	style,
-	width,
+	width = null,
 	...consumerProps
 }: CloudImageProps) {
 	const srcSet = useMemo(
-		() => generateSrcSet({ breakpoints, densities, src, height, width }),
-		[breakpoints, densities, height, src, width],
+		() =>
+			generateSrcSet({
+				breakpoints,
+				densities,
+				fit,
+				height,
+				src,
+				width,
+			}),
+		[breakpoints, densities, fit, height, src, width],
 	);
 
 	const img = (
@@ -149,10 +157,12 @@ function generateSrcSet({
 	height,
 	src,
 	width,
-}: Pick<CloudImageProps, 'fit' | 'height' | 'src' | 'width'> & {
-	breakpoints: number[];
-	densities: number[];
-}) {
+}: Required<
+	Pick<CloudImageProps, 'fit' | 'height' | 'src' | 'width'> & {
+		breakpoints: number[];
+		densities: number[];
+	}
+>) {
 	if (!width || !height) {
 		return '';
 	}
