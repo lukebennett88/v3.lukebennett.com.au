@@ -22,7 +22,7 @@
 		"@fontsource-variable/source-sans-3": "^5.0.16",
 		"@fontsource-variable/source-serif-4": "^5.0.14",
 		"@keystatic/astro": "^1.0.2",
-		"@keystatic/core": "^0.1.6",
+		"@keystatic/core": "^0.2.0",
 		"@sindresorhus/slugify": "^2.2.1",
 		"astro": "^3.3.0",
 		"clsx": "^2.0.0",
