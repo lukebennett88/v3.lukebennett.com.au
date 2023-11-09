@@ -63,8 +63,8 @@ importers:
         specifier: ^5.0.14
         version: 5.0.14
       '@keystatic/astro':
-        specifier: ^1.0.2
-        version: 1.0.2(@keystatic/core@0.2.0)(astro@3.3.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^2.0.0
+        version: 2.0.0(@keystatic/core@0.2.0)(astro@3.3.0)(react-dom@18.2.0)(react@18.2.0)
       '@keystatic/core':
         specifier: ^0.2.0
         version: 0.2.0(react-dom@18.2.0)(react@18.2.0)
@@ -1407,8 +1407,8 @@ packages:
       react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
-  /@keystatic/astro@1.0.2(@keystatic/core@0.2.0)(astro@3.3.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-FmLZ7jHyKrI96C+MkyP3I9mnhr9vGtSya24+4JMudd8uaYivUQaCKR8hlf6otrzsKFw1UNbkKYhtxJxUbl5m4A==}
+  /@keystatic/astro@2.0.0(@keystatic/core@0.2.0)(astro@3.3.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-tx3hnSQOkUXgIsR+h6QpmfDIOkYoTn2EslbRe+J24hNgUILUKiqWC3w05jrKcygh4hquYlvFrll6lPvHq4Q0rQ==}
     peerDependencies:
       '@keystatic/core': '*'
       astro: 2 || 3
@@ -1422,7 +1422,6 @@ packages:
       cookie: 0.5.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      react-router-dom: 6.16.0(react-dom@18.2.0)(react@18.2.0)
       set-cookie-parser: 2.6.0
     dev: false
 
@@ -2880,11 +2879,6 @@ packages:
       '@react-types/overlays': 3.8.4(react@18.2.0)
       '@react-types/shared': 3.22.0(react@18.2.0)
       react: 18.2.0
-    dev: false
-
-  /@remix-run/router@1.9.0:
-    resolution: {integrity: sha512-bV63itrKBC0zdT27qYm6SDZHlkXwFL1xMBuhkn+X7l0+IIhNaH5wuuvZKp6eKhCD4KFhujhfhCT1YxXW6esUIA==}
-    engines: {node: '>=14.0.0'}
     dev: false
 
   /@rollup/pluginutils@4.2.1:
@@ -8432,29 +8426,6 @@ packages:
   /react-refresh@0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
-    dev: false
-
-  /react-router-dom@6.16.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-aTfBLv3mk/gaKLxgRDUPbPw+s4Y/O+ma3rEN1u8EgEpLpPe6gNjIsWt9rxushMHHMb7mSwxRGdGlGdvmFsyPIg==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      react: '>=16.8'
-      react-dom: '>=16.8'
-    dependencies:
-      '@remix-run/router': 1.9.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-router: 6.16.0(react@18.2.0)
-    dev: false
-
-  /react-router@6.16.0(react@18.2.0):
-    resolution: {integrity: sha512-VT4Mmc4jj5YyjpOi5jOf0I+TYzGpvzERy4ckNSvSh2RArv8LLoCxlsZ2D+tc7zgjxcY34oTz2hZaeX5RVprKqA==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      react: '>=16.8'
-    dependencies:
-      '@remix-run/router': 1.9.0
-      react: 18.2.0
     dev: false
 
   /react-transition-group@4.4.5(react-dom@18.2.0)(react@18.2.0):
