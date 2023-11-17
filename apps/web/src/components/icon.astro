@@ -1,5 +1,5 @@
 ---
-import { Icons } from "~/components/icons/icons";
+import { Icons } from '~/components/icons/icons';
 
 type Props = {
 	class?: string;
@@ -10,7 +10,7 @@ type Props = {
 const { name, label } = Astro.props;
 const a11yAttrs = label
 	? ({ 'aria-label': label } as const)
-	: ({ 'aria-hidden': "true" } as const);
+	: ({ 'aria-hidden': 'true' } as const);
 ---
 
 <svg

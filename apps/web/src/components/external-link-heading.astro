@@ -13,7 +13,7 @@ const { href, level } = Astro.props;
 const Tag = `h${level}` as const;
 ---
 
-<a class="group relative underline block" href={href}>
+<a class="group relative block underline" href={href}>
 	<Tag class="m-0 inline-block underline">
 		<slot />
 		<span class="inline-flex items-center">
