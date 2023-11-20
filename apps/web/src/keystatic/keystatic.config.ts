@@ -1,11 +1,9 @@
-import {
-	collection,
-	config as createConfig,
-	fields,
-	singleton,
-} from '@keystatic/core';
+import { config as createConfig } from '@keystatic/core';
 
-import { componentBlocks } from './component-block';
+import { links } from '~/keystatic/schema/collections/links';
+import { posts } from '~/keystatic/schema/collections/posts';
+import { about } from '~/keystatic/schema/singletons/about';
+import { homepage } from '~/keystatic/schema/singletons/homepage';
 
 export const config = createConfig({
 	cloud: {
@@ -21,106 +19,11 @@ export const config = createConfig({
 					kind: 'local',
 			  },
 	singletons: {
-		homepage: singleton({
-			label: 'Homepage',
-			entryLayout: 'form',
-			format: { contentField: 'content' },
-			path: 'content/_homepage',
-			schema: {
-				content: fields.document({
-					label: 'Content',
-					formatting: true,
-					dividers: true,
-					links: true,
-					tables: true,
-				}),
-			},
-		}),
-		about: singleton({
-			label: 'About',
-			entryLayout: 'form',
-			format: { contentField: 'content' },
-			path: 'content/_about',
-			schema: {
-				content: fields.document({
-					label: 'Content',
-					componentBlocks,
-					dividers: true,
-					formatting: true,
-					links: true,
-					tables: true,
-				}),
-			},
-		}),
+		homepage,
+		about,
 	},
 	collections: {
-		posts: collection({
-			label: 'Posts',
-			entryLayout: 'form',
-			format: { contentField: 'content' },
-			path: 'content/posts/*',
-			slugField: 'title',
-			schema: {
-				title: fields.slug({
-					name: {
-						label: 'Title',
-					},
-				}),
-				publishedAt: fields.date({
-					label: 'Published at',
-					validation: {
-						isRequired: true,
-					},
-				}),
-				isDraft: fields.checkbox({
-					label: 'Do not publish',
-					description:
-						'Check this box to prevent this post from being published',
-					defaultValue: false,
-				}),
-				content: fields.document({
-					label: 'Content',
-					componentBlocks,
-					formatting: true,
-					dividers: true,
-					links: true,
-					tables: true,
-				}),
-			},
-		}),
-		links: collection({
-			label: 'Links',
-			entryLayout: 'form',
-			format: { contentField: 'content' },
-			path: 'content/links/*',
-			slugField: 'title',
-			schema: {
-				title: fields.slug({
-					name: {
-						label: 'Title',
-					},
-				}),
-				publishedAt: fields.date({
-					label: 'Published at',
-					validation: {
-						isRequired: true,
-					},
-				}),
-				linkedUrl: fields.url({
-					label: 'Linked URL',
-					validation: {
-						isRequired: true,
-					},
-				}),
-				content: fields.document({
-					label: 'Content',
-					componentBlocks,
-					formatting: true,
-					dividers: true,
-					links: true,
-					tables: true,
-				}),
-			},
-		}),
+		posts,
+		links,
 	},
 });
