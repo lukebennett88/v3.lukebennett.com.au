@@ -1,0 +1,70 @@
+---
+title: asChild Considered Harmful
+publishedAt: '2023-11-19'
+isDraft: true
+---
+[Radix Primitives](https://www.radix-ui.com/primitives) is a library of "headless" React components created to help developers build accessible web apps. Radix Primitives use a compound component pattern, meaning that each component that they offer is made up of smaller subcomponents. This generally makes for more flexible components as you can compose components together (change the order, add wrappers, style individual parts etc).
+
+It's a great library, and the folks behind it put in a lot of thought and effort. I'm a fan. However, I must admit that in my experience using Radix Primitives, I've often become frustrated with it.
+
+Radix touts itself as being a good choice for using in design systems. Design system maintainers such as myself can install one of Radix's primitives, add their own styles and design an API that makes sense for their design system.
+
+Here is an example of how you might use a Tooltip component that uses Radix UI internally:
+
+```typescript
+<Tooltip content="Copy to clipboard">
+  <IconButton
+    aria-label="Copy icon"
+    icon={ClipboardCopyIcon}
+  />
+</Tooltip>
+```
+
+To make that simplified API we'd do something like this:
+
+```tsx
+export function Tooltip({
+  children,
+  className,
+  content,
+  placement = 'top',
+  ...consumerProps
+}: TooltipProps) {
+  const styles = getTooltipStyles();
+  return (
+    <RadixTooltip.Provider>
+      <RadixTooltip.Root>
+        <RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
+        <RadixTooltip.Portal>
+          <RadixTooltip.Content
+            className={cn(styles.content, className)}
+            side={placement}
+            sideOffset={4}
+            {...consumerProps}
+          >
+            {content}
+          </RadixTooltip.Content>
+        </RadixTooltip.Portal>
+      </RadixTooltip.Root>
+    </RadixTooltip.Provider>
+  );
+}
+```
+
+As someone who builds design systems, this seems great. I haven't had to set up any event handlers, `useEffects` or `useCallbacks` or context providers.
+
+In actual fact, I've traded control for reduced complexity. For instance, it's common to delay showing or hiding a tooltip to avoid accidental activation. This seems reasonable for mouse users, but for keyboard users maybe I want to remove the delay since focusing with a tab key is far more intentional.
+
+Radix doesn't offer an API to do this, so I'd have to either decide if I want this feature or not, and if I did I either can't use Radix at all because of 1 missing feature I need, or I'd have to try to come up with workaround.
+
+The other issue I have with this is this line:
+
+```tsx
+<RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
+```
+
+Radix's `asChild` prop is saying, "Don't render an element here. Instead, use `React.cloneElement` to intercept the child and attempt to merge the user-provided props required to make it functional." In this case, it needs to attach a `ref` (so it can measure where the trigger is in the DOM), a `style` prop so the tooltip can be placed next to the trigger, as well as some event handlers to show and hide the tooltip when the trigger is interacted with.
+
+This means that the trigger we provide when we use the Tooltip component needs to forward it's ref, and spread in consumer props.
+
+Now a lot of the time this is fine, internally Radix do a pretty good job of merging your props for you — it will concatenate `classeName` strings, merge `style` objects and refs, and chaining event handlers. But because this all happens internally inside of another component, if you want to opt out of any of these
