@@ -1,5 +1,16 @@
-import { getHighlighter } from 'shiki';
+import { getHighlighter } from 'shikiji';
 
 export const highlighter = await getHighlighter({
-	theme: 'poimandres',
+	themes: ['poimandres'],
+	langs: [
+		'css',
+		'diff',
+		'html',
+		'javascript',
+		'json',
+		'jsx',
+		'ts',
+		'tsx',
+		'typescript',
+	],
 });

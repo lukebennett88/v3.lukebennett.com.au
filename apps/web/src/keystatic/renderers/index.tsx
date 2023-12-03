@@ -1,6 +1,6 @@
 import { type InferRenderersForComponentBlocks } from '@keystatic/core';
 import { type DocumentRendererProps } from '@keystatic/core/renderer';
-import { type Highlighter } from 'shiki';
+import { type Highlighter } from 'shikiji';
 
 import { type componentBlocks } from '../component-block';
 import { CloudImage } from './cloud-image';

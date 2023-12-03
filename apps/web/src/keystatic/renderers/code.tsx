@@ -1,4 +1,4 @@
-import { renderToHtml, type Highlighter } from 'shiki';
+import { type Highlighter } from 'shikiji';
 
 export function Code({
 	children,
@@ -11,13 +11,9 @@ export function Code({
 }) {
 	let codeBlock = children;
 	try {
-		const tokens = highlighter.codeToThemedTokens(children, language);
-		codeBlock = renderToHtml(tokens, {
-			elements: {
-				pre({ children }) {
-					return `<pre>${children}</pre>`;
-				},
-			},
+		codeBlock = highlighter.codeToHtml(children, {
+			lang: language || 'auto',
+			theme: 'poimandres',
 		});
 	} catch (_error) {
 		throw new Error(
