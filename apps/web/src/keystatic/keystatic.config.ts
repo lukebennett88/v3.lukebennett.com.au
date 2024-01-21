@@ -14,10 +14,10 @@ export const config = createConfig({
 			? {
 					kind: 'cloud',
 					pathPrefix: 'apps/web',
-			  }
+				}
 			: {
 					kind: 'local',
-			  },
+				},
 	singletons: {
 		homepage,
 		about,
