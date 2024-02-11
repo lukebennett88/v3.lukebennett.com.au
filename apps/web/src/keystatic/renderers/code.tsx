@@ -1,9 +1,9 @@
-import { renderToHtml, type Highlighter } from 'shiki';
+import { type Highlighter } from 'shiki';
 
 export function Code({
 	children,
 	highlighter,
-	language,
+	language = 'javascript',
 }: {
 	children: string;
 	highlighter: Highlighter;
@@ -11,13 +11,9 @@ export function Code({
 }) {
 	let codeBlock = children;
 	try {
-		const tokens = highlighter.codeToThemedTokens(children, language);
-		codeBlock = renderToHtml(tokens, {
-			elements: {
-				pre({ children }) {
-					return `<pre>${children}</pre>`;
-				},
-			},
+		codeBlock = highlighter.codeToHtml(children, {
+			lang: language,
+			theme: 'poimandres',
 		});
 	} catch (_error) {
 		throw new Error(

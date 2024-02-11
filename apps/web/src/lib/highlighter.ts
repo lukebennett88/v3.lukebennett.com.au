@@ -1,5 +1,6 @@
-import { getHighlighter } from 'shiki';
+import { bundledLanguages, getHighlighter, type Highlighter } from 'shiki';
 
-export const highlighter = await getHighlighter({
-	theme: 'poimandres',
+export const highlighter: Highlighter = await getHighlighter({
+	themes: ['poimandres'],
+	langs: Object.keys(bundledLanguages),
 });
