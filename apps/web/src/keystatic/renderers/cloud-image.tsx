@@ -19,14 +19,14 @@ type CloudImageProps = Omit<
 	/** The alt text for the image. */
 	alt?: string;
 
-	/** The caption for the image. */
-	caption?: string;
-
 	/**
 	 * The breakpoints at which to generate images.
 	 * @default [300, 400, 500, 600, 700]
 	 */
 	breakpoints?: number[];
+
+	/** The caption for the image. */
+	caption?: string;
 
 	/**
 	 * Hint for browser image decoding.
@@ -167,7 +167,7 @@ function generateSrcSet({
 		return '';
 	}
 
-	const srcSet: Array<string> = [];
+	const srcSet: string[] = [];
 
 	breakpoints.forEach((breakpoint) => {
 		densities.forEach((density) => {
