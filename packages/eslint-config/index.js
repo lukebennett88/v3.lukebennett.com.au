@@ -23,7 +23,7 @@ module.exports = {
 				'plugin:@typescript-eslint/strict',
 				'plugin:@typescript-eslint/stylistic',
 			],
-			files: ['**/*.ts'],
+			files: ['**/*.ts', '**/*.tsx'],
 			parser: '@typescript-eslint/parser',
 			rules: {
 				'@typescript-eslint/ban-ts-comment': OFF,
