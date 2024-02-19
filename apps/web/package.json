@@ -12,7 +12,7 @@
 		"start": "astro dev"
 	},
 	"dependencies": {
-		"@astrojs/markdoc": "^0.8.0",
+		"@astrojs/markdoc": "^0.9.0",
 		"@astrojs/react": "^3.0.10",
 		"@astrojs/rss": "^4.0.5",
 		"@astrojs/sitemap": "^3.0.3",
