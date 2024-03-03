@@ -64,10 +64,10 @@ importers:
         version: 5.0.17
       '@keystatic/astro':
         specifier: ^4.0.0
-        version: 4.0.0(@keystatic/core@0.3.19)(astro@4.4.4)(react-dom@18.2.0)(react@18.2.0)
+        version: 4.0.0(@keystatic/core@0.4.0)(astro@4.4.4)(react-dom@18.2.0)(react@18.2.0)
       '@keystatic/core':
-        specifier: ^0.3.17
-        version: 0.3.19(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^0.4.0
+        version: 0.4.0(react-dom@18.2.0)(react@18.2.0)
       '@sindresorhus/slugify':
         specifier: ^2.2.1
         version: 2.2.1
@@ -1226,7 +1226,7 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@keystatic/astro@4.0.0(@keystatic/core@0.3.19)(astro@4.4.4)(react-dom@18.2.0)(react@18.2.0):
+  /@keystatic/astro@4.0.0(@keystatic/core@0.4.0)(astro@4.4.4)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-3cRoZmQJnwsyKSZVW7XA5HnJdDvBBPFOEMB4IhYO/s7kqKmWdNIGRaDyTveGyjkTSeoIyImJRmabtbsF1Y/QOg==}
     peerDependencies:
       '@keystatic/core': '*'
@@ -1235,7 +1235,7 @@ packages:
       react-dom: ^18.2.0
     dependencies:
       '@babel/runtime': 7.23.9
-      '@keystatic/core': 0.3.19(react-dom@18.2.0)(react@18.2.0)
+      '@keystatic/core': 0.4.0(react-dom@18.2.0)(react@18.2.0)
       '@types/react': 18.2.58
       astro: 4.4.4(@types/node@20.11.20)(typescript@5.3.3)
       cookie: 0.5.0
@@ -1244,8 +1244,8 @@ packages:
       set-cookie-parser: 2.6.0
     dev: false
 
-  /@keystatic/core@0.3.19(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-r/f7VqQe6wqZjqqnVPt9lorVIlBb3uagaUDacYj/QIQdCbZAdoQopnJlwejsWqJWCXltvaCtcUkugJx/pklNZg==}
+  /@keystatic/core@0.4.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-UwL1xSfySXg8zdgRs/7ki/JilCZocadhDQfwuLUB8PgAc35FkaDppo+gAWwWl2ZUF04ulcZcpsnu6CzJGaTGmg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
