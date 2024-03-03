@@ -21,7 +21,7 @@
 		"@fontsource-variable/source-code-pro": "^5.0.17",
 		"@fontsource-variable/source-sans-3": "^5.0.19",
 		"@fontsource-variable/source-serif-4": "^5.0.17",
-		"@keystatic/astro": "^3.0.2",
+		"@keystatic/astro": "^4.0.0",
 		"@keystatic/core": "^0.3.17",
 		"@sindresorhus/slugify": "^2.2.1",
 		"astro": "^4.3.5",
