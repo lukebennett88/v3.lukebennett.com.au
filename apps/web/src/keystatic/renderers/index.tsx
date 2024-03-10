@@ -16,7 +16,7 @@ export function getDocumentRenderers(highlighter: Highlighter) {
 				return <Code {...props} highlighter={highlighter} />;
 			},
 			heading(props) {
-				return <Heading {...props} isAnchor={props.level !== 1} />;
+				return <Heading {...props} />;
 			},
 		},
 		inline: {
