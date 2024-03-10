@@ -1,0 +1,88 @@
+---
+title: Top picks — 2024 February
+publishedAt: 2024-02-29
+isDraft: false
+---
+It seems I'm not very good at posting regularly, so I thought I might borrow an idea I first saw on [Paweł Grzybek's blog](https://pawelgrzybek.com/) and try posting a monthly roundup of links.
+
+Here are my most interesting links from February.
+
+---
+
+## Links:
+
+### [Offloading JavaScript With Custom Properties](https://heydonworks.com/article/offloading-javascript-with-custom-properties/)
+
+Heydon Pickering makes use of applying CSS custom properties in an Intersection Observer which can then be used in CSS to apply animations. Nothing to revelatory here, but I found it to be a very nice example of using the right tool for the job.
+
+### [In Loving Memory of Square Checkbox](https://tonsky.me/blog/checkbox/)
+
+As someone who spends a lot of time working on design systems, it really bothers me when people mess with intuitive design. I really hope the round checkboxes in VisionOS get rolled back, or at the very least, don't spread to other Apple operating systems.
+
+### [How To Use forwardRef With Generic Components](https://www.totaltypescript.com/forwardref-with-generic-components)
+
+If you've worked with React components that accept a generic prop that also needs to be wrapped with `React.forwardRef`, you'll know that it doesn't work.\
+Matt Pocock shows you how to work around it with a wrapper component that fixes the types.
+
+Even better (in my opinion) if you're just using these components in your app, and you don't need to bundle them, you can use module augmentation to "fix" the types so you don't need to use the wrapper:
+
+```typescript
+declare module 'react' {
+	function forwardRef<T, P = {}>(
+		render: (props: P, ref: React.Ref<T>) => React.ReactNode
+	): (props: P & React.RefAttributes<T>) => React.ReactNode;
+}
+```
+
+### [Don’t Disable Form Controls](https://adrianroselli.com/2024/02/dont-disable-form-controls.html)
+
+Really great article on why you really shouldn't be disabling form controls (including submit buttons).
+
+### [When will Apple focus on Safari?](https://www.mayank.co/blog/safari-focus/)
+
+I can't, for the life of me, understand why Apple doesn't allow tabbing through buttons and links by default. It's one of the first things I change whenever I set up a new Mac, and I always end up having to look it up 😡
+
+### [The Importance of Feedback Loops](https://textslashplain.com/2024/02/22/the-importance-of-feedback-loops/)
+
+> Sweat the small stuff, before it becomes the big stuff.
+
+### [Avoiding Hydration Mismatches with useSyncExternalStore](https://tkdodo.eu/blog/avoiding-hydration-mismatches-with-use-sync-external-store)
+
+Hydration mismatches have to be one of the most frustrating things to debug in React.
+
+I wouldn't have thought to use `useSyncExternalStore` for this, but it after reading it makes sense. The `ClientGate` component is also a clever idea.
+
+### [React Labs: What We've Been Working On – February 2024](https://react.dev/blog/2024/02/15/react-labs-what-we-have-been-working-on-february-2024)
+
+Really looking forward to the Canary features that are exposed in Next.js to finally become stable. Kudos to the React team for taking the time to get these things right. React 19 is going to be awesome, and I'm really looking forward to never having to worry about `useMemo` or `useCallback` ever again when React Compiler becomes stable (hopefully later this year).
+
+### [Tempo](https://tempo.formkit.com/)
+
+5 kB, tree-shakable date library that has first-class support for working with time zones? This could be good...
+
+### [Things Unexpectedly Named After People](https://notes.rolandcrosby.com/posts/unexpectedly-eponymous/)
+
+I don't think I knew about *any* of these.
+
+### [Syntax Highlighting code snippets with Prism and the Custom Highlight API](https://www.bram.us/2024/02/18/custom-highlight-api-for-syntax-highlighting/)
+
+Bramus Van Damme talks a bit about syntax highlighting and introduces an interesting new browser API that enables syntax highlighting without excessive use of `<span>` elements.
+
+### [The Great Fiction of AI](https://www.theverge.com/c/23194235/ai-fiction-writing-amazon-kindle-sudowrite-jasper)
+
+I love a good art-directed post.
+
+## YouTube:
+
+- [React's new cache function](https://www.youtube.com/watch?v=MxjCLqdk4G4)
+- [Preloading data (React's cache part 2)](https://www.youtube.com/watch?v=_gZ3ctkbGPo)
+- [Out-of-order streaming in React](https://www.youtube.com/watch?v=23bHSDJD9y4&t=567s)
+- [Asset loading in React](https://www.youtube.com/watch?v=dxWLp-8mXes&t=17s)
+- [Is this a good idea?](https://www.youtube.com/watch?v=FD3aC_Ke8uk)
+- [So You Think You Know Git - FOSDEM 2024](https://www.youtube.com/watch?v=aolI_Rz0ZqY)
+
+## Social media:
+
+- [Interesting discussion about component composition](https://twitter.com/diegohaz/status/1753448052893876697)
+- [Me, editing my GitHub Action file until it runs correctly.](https://twitter.com/saadeghi/status/1756994057396428800)
+- [Never roll your own date time library kids](https://mastodon.social/@LifesAHaskell/111904476759967560)

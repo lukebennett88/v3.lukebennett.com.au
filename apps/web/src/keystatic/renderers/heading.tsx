@@ -6,7 +6,6 @@ import { cn } from '~/lib/cn';
 type NativeHeadingProps = React.HTMLAttributes<HTMLHeadingElement>;
 
 type HeadingProps = NativeHeadingProps & {
-	isAnchor?: boolean;
 	level: 1 | 2 | 3 | 4 | 5 | 6;
 	textAlign?: 'center' | 'end';
 };
@@ -25,7 +24,6 @@ function getAlignmentClass(textAlign: HeadingProps['textAlign']) {
 export function Heading({
 	children,
 	className,
-	isAnchor,
 	level,
 	textAlign,
 	...consumerProps
@@ -33,6 +31,8 @@ export function Heading({
 	const Tag = `h${level}` as const;
 
 	const alignmentClass = getAlignmentClass(textAlign);
+
+	const isAnchor = false;
 
 	if (isAnchor) {
 		const slug = getSlug(children);
