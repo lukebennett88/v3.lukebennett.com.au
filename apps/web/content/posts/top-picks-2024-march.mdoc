@@ -1,0 +1,85 @@
+---
+title: Top picks — 2024 March
+publishedAt: 2024-04-01
+isDraft: false
+---
+## Links
+
+## [Million Lint is in public beta](https://million.dev/blog/lint)
+
+I haven't had a change to try this out myself, but they tout themselves on the website as as "ESLint, but for performance". I rarely have to use React devtools to identify perf issues, but using and making sense of the flame-graph can be daunting. Since this is a VS Code extension and a plugin for your React app it looks like it might help me find perf issues before they start effecting users.
+
+## [The DevRel Went Down to Georgia](https://alex.party/posts/2024-02-29-the-devrel-went-down-to-georgia/)
+
+I love the chaotic 90's aesthetic of this website.
+
+## [Please Stop Sending Me Nested Dependency Security Reports](https://www.joshuakgoldberg.com/blog/please-stop-sending-me-nested-dependency-security-reports/)
+
+Security issues sound scary so I get why this happens, but most of the time they're not a real issue:
+
+> These excessive reports are produced because traditional scanners such as `npm audit` and Dependabot don’t have a way to indicate which API(s) in a package are impacted by a reported issue. That means every downstream package that directly or transitively relies on an impacted package -even if they never use the impacted APIs- will get a security report.
+
+Make sure to also read [the linked post by Dan Abramov](https://overreacted.io/npm-audit-broken-by-design/) if you haven't already.
+
+## [Announcing TypeScript 5.4](https://devblogs.microsoft.com/typescript/announcing-typescript-5-4/)
+
+Probably the most useful change in this update is the addition of the `NoInfer` utility type. But the change I'm most excited about is the auto-import support for subpath imports (e.g., the `imports` key in your `package.json`). I'm excited for two reasons. Firstly, hopefully, it will mean fewer people will use the path mapping in `tsconfig.js`, which was annoying because it was a TypeScript feature and not all tooling supported it. But the second (and more important) reason is that it was a community contribution from Emma Hamilton, whom I'm lucky enough to work with at Thinkmill!
+
+## [Modern Font Stacks](https://modernfontstacks.com/)
+
+Who knew there were so many great native font stacks? I think I might switch to using one of these instead of using custom fonts like I currently am.
+
+## [Maybe sometimes you should use pixels](https://www.thudfactor.com/posts/2024/03/pixels/)
+
+Interesting case against the conventional wisdom of using `rem` for almost everything since it respects users base font-size. Josh W Comeau wrote [a similar post last year](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/).
+
+I still think I'll continue to mostly use `rem` units, but both posts make some good points and are worth reading.
+
+## [No Maintenance Intended](https://unmaintained.tech/)
+
+Lucky for me, I haven't written anything popular enough to receive maintenance requests. But if I did, maybe I would add this badge to the README.
+
+## [require(esm) in Node.js](https://joyeecheung.github.io/blog/2024/03/18/require-esm-in-node-js/)
+
+This is experimental for now, but could be huge if/when it becomes stable.
+
+## [Radix Themes 3.0](https://www.radix-ui.com/blog/themes-3)
+
+Some really great additions in this release, in particular I thought the Skeleton component was clever.
+
+## [Kuto, a reverse JS bundler](https://samthor.au/2024/kuto/)
+
+Clever use of circular dependencies (usually considered a bad thing) to enable hoisting for non-hoistable code.
+
+## [Welcome to Canva, Affinity!](https://www.canva.com/newsroom/news/affinity/)
+
+This looks like a big play from Canva to directly compete with Adobe. I sure hope they don't ruin the Affinity apps in the process.
+
+The two companies have made [a joint pledge to continue to offer perpetual licenses](https://affinity.serif.com/en-us/press/newsroom/affinity-and-canva-pledge/), amongst other things.
+
+So far I'm cautiously optimistic.
+
+## [The Case for Design Engineers, Pt. III](https://blog.jim-nielsen.com/2024/the-case-for-design-engineers-pt-iii/)
+
+This one really summed up the way I think about making software.
+
+> Over the course of making anything, new understandings will always arise. And if you’re unable to shift, evolve, and *design through the process of production*, you will lose out on these new understandings discovered through the process of making — and your finished product will be the poorer because of it.
+
+## [Optimizing Javascript for fun and for profit](https://romgrk.com/posts/optimizing-javascript)
+
+I found this super interesting to read even if I only fully understood about a third of it!
+
+## [On disabled and aria-disabled attributes](https://kittygiraudel.com/2024/03/29/on-disabled-and-aria-disabled-attributes/)
+
+I've been guilty in the past of going too hard in the direction of using `aria-disabled` for everything and *never* using `disabled`, but Kitty makes so good points here.
+
+One again, the correct answer is always "it depends".
+
+## Social media:
+
+- [Next.js hydration error diffs coming soon to Next.js](https://twitter.com/rauchg/status/1763597428513804301)
+- [CSS-Tricks might be making a comeback](https://twitter.com/paddix/status/1763664035529294011)
+- [CSS-Tricks follow-up](https://twitter.com/paddix/status/1770851651756138606)
+- [Nice to see React Select still hitting a niche](https://twitter.com/shadcn/status/1765084030960345143)
+- [Anthony Shew from Turborepo praising Emma for her recent addition to TypeScript](https://twitter.com/anthonysheww/status/1765631490908406205)
+- [How to speedrun a repo ban](https://twitter.com/mattgperry/status/1768223137307541887)
