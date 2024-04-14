@@ -33,8 +33,8 @@
 		"tiny-invariant": "^1.3.1"
 	},
 	"devDependencies": {
-		"@lukebennett/eslint-config": "0.0.0",
-		"@lukebennett/tsconfig": "0.0.0",
+		"@lukebennett/eslint-config": "workspace:^",
+		"@lukebennett/tsconfig": "workspace:^",
 		"@tailwindcss/typography": "^0.5.10",
 		"@types/react": "^18.2.64",
 		"@types/react-dom": "^18.2.21",

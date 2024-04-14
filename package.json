@@ -29,8 +29,8 @@
 		"postinstall": "manypkg check"
 	},
 	"dependencies": {
-		"@lukebennett/eslint-config": "0.0.0",
-		"@lukebennett/prettier-config": "0.0.0",
+		"@lukebennett/eslint-config": "workspace:^",
+		"@lukebennett/prettier-config": "workspace:^",
 		"@manypkg/cli": "^0.21.1",
 		"@turbo/gen": "^1.12.5",
 		"eslint": "^8.55.0",
@@ -46,6 +46,7 @@
 		"node": "20.12.1"
 	},
 	"manypkg": {
-		"defaultBranch": "main"
+		"defaultBranch": "main",
+		"workspaceProtocol": "require"
 	}
 }

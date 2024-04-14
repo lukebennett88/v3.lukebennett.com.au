@@ -9,10 +9,10 @@ importers:
   .:
     dependencies:
       '@lukebennett/eslint-config':
-        specifier: 0.0.0
+        specifier: workspace:^
         version: link:packages/eslint-config
       '@lukebennett/prettier-config':
-        specifier: 0.0.0
+        specifier: workspace:^
         version: link:packages/prettier-config
       '@manypkg/cli':
         specifier: ^0.21.1
@@ -94,10 +94,10 @@ importers:
         version: 1.3.3
     devDependencies:
       '@lukebennett/eslint-config':
-        specifier: 0.0.0
+        specifier: workspace:^
         version: link:../../packages/eslint-config
       '@lukebennett/tsconfig':
-        specifier: 0.0.0
+        specifier: workspace:^
         version: link:../../packages/tsconfig
       '@tailwindcss/typography':
         specifier: ^0.5.10
