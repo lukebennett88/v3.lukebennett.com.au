@@ -32,6 +32,10 @@
 		{
 			"groupName": "react",
 			"matchPackageNames": ["react", "react-dom"]
+		},
+		{
+			"groupName": "turbo",
+			"matchPackageNames": ["@turbo/*", "eslint-config-turbo", "turbo"]
 		}
 	],
 	"postUpdateOptions": ["pnpmDedupe"],
