@@ -29,11 +29,13 @@
 		"postinstall": "manypkg check"
 	},
 	"dependencies": {
+		"@eslint/eslintrc": "^3.1.0",
+		"@eslint/js": "^9.4.0",
 		"@lukebennett/eslint-config": "workspace:^",
 		"@lukebennett/prettier-config": "workspace:^",
 		"@manypkg/cli": "^0.21.1",
 		"@turbo/gen": "^2.0.3",
-		"eslint": "^8.55.0",
+		"eslint": "^9.0.0",
 		"eslint-config-custom": "0.0.0",
 		"prettier": "^3.2.5",
 		"turbo": "^2.0.3"
