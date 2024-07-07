@@ -1,4 +1,4 @@
-import { type APIRoute } from 'astro';
+import type { APIRoute } from 'astro';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import invariant from 'tiny-invariant';

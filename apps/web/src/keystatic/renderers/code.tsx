@@ -1,4 +1,4 @@
-import { type Highlighter } from 'shiki';
+import type { Highlighter } from 'shiki';
 
 export function Code({
 	children,

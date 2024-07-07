@@ -1,5 +1,5 @@
 import rss, { type RSSFeedItem } from '@astrojs/rss';
-import { type APIRoute } from 'astro';
+import type { APIRoute } from 'astro';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import invariant from 'tiny-invariant';
@@ -46,6 +46,6 @@ export const GET: APIRoute = async ({ site }) => {
 		),
 
 		// (optional) inject custom xml
-		customData: `<language>en-AU</language>`,
+		customData: '<language>en-AU</language>',
 	});
 };

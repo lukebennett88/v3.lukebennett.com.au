@@ -87,7 +87,7 @@ function getTextNode(node: React.ReactNode): string {
 		return node.text;
 	}
 
-	if (node instanceof Array) {
+	if (Array.isArray(node)) {
 		return node.map(getTextNode).join('');
 	}
 

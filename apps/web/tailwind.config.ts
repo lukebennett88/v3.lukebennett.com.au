@@ -1,5 +1,5 @@
 import typographyPlugin from '@tailwindcss/typography';
-import { type Config } from 'tailwindcss';
+import type { Config } from 'tailwindcss';
 import { zinc } from 'tailwindcss/colors';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
