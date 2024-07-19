@@ -8,19 +8,19 @@
 		"./index.js": "./index.js"
 	},
 	"dependencies": {
-		"@babel/eslint-parser": "^7.11.0",
-		"@typescript-eslint/eslint-plugin": "^7.13.0",
-		"@typescript-eslint/parser": "^7.13.0",
+		"@babel/eslint-parser": "^7.24.8",
+		"@typescript-eslint/eslint-plugin": "^7.16.1",
+		"@typescript-eslint/parser": "^7.16.1",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-config-turbo": "^2.0.3",
-		"eslint-plugin-react": "^7.34.2",
+		"eslint-config-turbo": "^2.0.7",
+		"eslint-plugin-react": "^7.34.4",
 		"eslint-plugin-react-hooks": "^4.6.2",
-		"globals": "^15.4.0"
+		"globals": "^15.8.0"
 	},
 	"devDependencies": {
 		"@types/eslint__eslintrc": "^2.1.1",
 		"@types/eslint__js": "^8.42.3",
-		"eslint": "^9.0.0"
+		"eslint": "^9.7.0"
 	},
 	"peerDependencies": {
 		"eslint": ">= 9"
