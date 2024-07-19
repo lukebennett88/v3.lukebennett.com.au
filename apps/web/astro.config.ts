@@ -7,8 +7,8 @@ import { defineConfig } from 'astro/config';
 
 /** @see https://astro.build/config */
 export default defineConfig({
-	site: 'https://www.lukebennett.com.au',
 	adapter: vercel({
+		edgeMiddleware: true,
 		speedInsights: {
 			enabled: true,
 		},
@@ -18,4 +18,9 @@ export default defineConfig({
 	}),
 	integrations: [markdoc(), react(), sitemap(), tailwind()],
 	output: 'hybrid',
+	site: 'https://www.lukebennett.com.au',
+	server: {
+		host: true,
+	},
+	trailingSlash: 'never',
 });
