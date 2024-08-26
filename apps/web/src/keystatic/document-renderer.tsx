@@ -1,6 +1,6 @@
 import {
-	DocumentRenderer as KeystaticDocumentRenderer,
 	type DocumentRendererProps,
+	DocumentRenderer as KeystaticDocumentRenderer,
 } from '@keystatic/core/renderer';
 
 import {

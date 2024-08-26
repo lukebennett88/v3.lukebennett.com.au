@@ -3,11 +3,7 @@
 	"automerge": true,
 	"extends": ["config:recommended", "schedule:earlyMondays"],
 	"internalChecksFilter": "strict",
-	"ignoreDeps": [
-		"@lukebennett/eslint-config",
-		"@lukebennett/prettier-config",
-		"@lukebennett/tsconfig"
-	],
+	"ignoreDeps": ["@lukebennett/tsconfig"],
 	"labels": ["dependencies"],
 	"lockFileMaintenance": {
 		"enabled": true
@@ -22,10 +18,6 @@
 			"automergeType": "branch"
 		},
 		{
-			"groupName": "eslint",
-			"matchPackagePatterns": ["eslint*"]
-		},
-		{
 			"groupName": "keystatic",
 			"matchPackagePatterns": ["@keystatic*"]
 		},
@@ -35,7 +27,7 @@
 		},
 		{
 			"groupName": "turbo",
-			"matchPackageNames": ["@turbo/*", "eslint-config-turbo", "turbo"]
+			"matchPackageNames": ["@turbo/*", "turbo"]
 		}
 	],
 	"postUpdateOptions": ["pnpmDedupe"],
