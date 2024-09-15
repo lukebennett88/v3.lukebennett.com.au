@@ -34,7 +34,7 @@
 		"@turbo/gen": "^2.0.14",
 		"turbo": "^2.0.14"
 	},
-	"packageManager": "pnpm@9.9.0",
+	"packageManager": "pnpm@9.10.0",
 	"engines": {
 		"node": ">=18"
 	},
