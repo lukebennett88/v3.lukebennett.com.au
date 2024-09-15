@@ -29,7 +29,7 @@
 		"postinstall": "manypkg check"
 	},
 	"dependencies": {
-		"@biomejs/biome": "1.8.3",
+		"@biomejs/biome": "1.9.0",
 		"@manypkg/cli": "^0.21.4",
 		"@turbo/gen": "^2.0.14",
 		"turbo": "^2.0.14"
