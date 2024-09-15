@@ -118,8 +118,8 @@ export function CloudImage({
 			{...consumerProps}
 			alt={alt}
 			className={cn('rounded-lg bg-white dark:bg-gray-800', className)}
-			decoding={decoding ?? priority ? 'async' : 'auto'}
-			loading={loading ?? priority ? 'eager' : 'lazy'}
+			decoding={(decoding ?? priority) ? 'async' : 'auto'}
+			loading={(loading ?? priority) ? 'eager' : 'lazy'}
 			role={alt ? undefined : 'presentation'}
 			sizes={`(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`}
 			src={`${src}?width=${Math.min(width ?? 0, maxWidth)}&height=${
