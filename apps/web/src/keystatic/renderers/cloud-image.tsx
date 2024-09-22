@@ -23,7 +23,7 @@ type CloudImageProps = Omit<
 	 * The breakpoints at which to generate images.
 	 * @default [300, 400, 500, 600, 700]
 	 */
-	breakpoints?: number[];
+	breakpoints?: Array<number>;
 
 	/** The caption for the image. */
 	caption?: string;
@@ -40,7 +40,7 @@ type CloudImageProps = Omit<
 	 * The densities at which to generate images.
 	 * @default [1, 1.5, 2]
 	 */
-	densities?: number[];
+	densities?: Array<number>;
 
 	/**
 	 * How the image should be resized to fit its container.
@@ -159,25 +159,25 @@ function generateSrcSet({
 	width,
 }: Required<
 	Pick<CloudImageProps, 'fit' | 'height' | 'src' | 'width'> & {
-		breakpoints: number[];
-		densities: number[];
+		breakpoints: Array<number>;
+		densities: Array<number>;
 	}
 >) {
-	if (!width || !height) {
+	if (!(width && height)) {
 		return '';
 	}
 
-	const srcSet: string[] = [];
+	const srcSet: Array<string> = [];
 
-	breakpoints.forEach((breakpoint) => {
-		densities.forEach((density) => {
+	for (const breakpoint of breakpoints) {
+		for (const density of densities) {
 			const scaledWidth = Math.round(breakpoint * density);
 			const scaledHeight = Math.round((scaledWidth / width) * height);
 			srcSet.push(
 				`${src}?width=${scaledWidth}&height=${scaledHeight}&fit=${fit} ${scaledWidth}w`,
 			);
-		});
-	});
+		}
+	}
 
 	return srcSet.join(', ');
 }

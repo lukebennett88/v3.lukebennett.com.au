@@ -6,6 +6,7 @@ import { cn } from '~/lib/cn';
 type NativeHeadingProps = React.HTMLAttributes<HTMLHeadingElement>;
 
 type HeadingProps = NativeHeadingProps & {
+	isAnchor?: boolean;
 	level: 1 | 2 | 3 | 4 | 5 | 6;
 	textAlign?: 'center' | 'end';
 };
@@ -24,6 +25,7 @@ function getAlignmentClass(textAlign: HeadingProps['textAlign']) {
 export function Heading({
 	children,
 	className,
+	isAnchor = false,
 	level,
 	textAlign,
 	...consumerProps
@@ -31,34 +33,30 @@ export function Heading({
 	const Tag = `h${level}` as const;
 
 	const alignmentClass = getAlignmentClass(textAlign);
+	const slug = getSlug(children);
 
-	const isAnchor = false;
-
-	if (isAnchor) {
-		const slug = getSlug(children);
-		return (
-			<a className="relative block no-underline" href={`#${slug}`} id={slug}>
-				<Tag
-					{...consumerProps}
-					className={cn(alignmentClass, '[text-wrap:balance]', className)}
-				>
-					<span className="inline-flex items-center">
-						<ZeroWidthSpace />
-						<HashtagIcon className="absolute me-1 h-[0.75em] max-h-[1.25rem] w-[0.75em] max-w-[1.25rem] -translate-x-full text-gray-500" />
-					</span>
-					{children}
-				</Tag>
-			</a>
-		);
-	}
-
-	return (
+	const headingContent = (
 		<Tag
 			{...consumerProps}
 			className={cn(alignmentClass, '[text-wrap:balance]', className)}
+			id={slug}
 		>
+			{isAnchor ? (
+				<span className="inline-flex items-center">
+					<ZeroWidthSpace />
+					<HashtagIcon className="absolute me-1 h-[0.75em] max-h-[1.25rem] w-[0.75em] max-w-[1.25rem] -translate-x-full text-gray-500" />
+				</span>
+			) : null}
 			{children}
 		</Tag>
+	);
+
+	return isAnchor ? (
+		<a className="relative block no-underline" href={`#${slug}`}>
+			{headingContent}
+		</a>
+	) : (
+		headingContent
 	);
 }
 
@@ -67,17 +65,11 @@ function getSlug(node: React.ReactNode) {
 }
 
 function getTextNode(node: React.ReactNode): string {
-	if (!node) {
-		return '';
-	}
+	if (!node) return '';
+	if (typeof node === 'string') return node;
+	if (typeof node === 'number') return String(node);
 
-	if (typeof node === 'string') {
-		return node;
-	}
-
-	if (typeof node === 'number') {
-		return String(node);
-	}
+	if (Array.isArray(node)) return node.map(getTextNode).join('');
 
 	if (
 		typeof node === 'object' &&
@@ -85,10 +77,6 @@ function getTextNode(node: React.ReactNode): string {
 		typeof node.text === 'string'
 	) {
 		return node.text;
-	}
-
-	if (Array.isArray(node)) {
-		return node.map(getTextNode).join('');
 	}
 
 	if (typeof node === 'object' && 'props' in node && 'node' in node.props) {

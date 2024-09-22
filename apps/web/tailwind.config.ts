@@ -2,6 +2,7 @@ import typographyPlugin from '@tailwindcss/typography';
 import type { Config } from 'tailwindcss';
 import { zinc } from 'tailwindcss/colors';
 import defaultTheme from 'tailwindcss/defaultTheme';
+import plugin from 'tailwindcss/plugin';
 
 export const fontStackSansArray = [
 	'"Source Sans 3 Variable"',
@@ -15,6 +16,23 @@ export const fontStackMonoArray = [
 	'"Source Code Pro Variable"',
 	...defaultTheme.fontFamily.mono,
 ];
+
+const baseStylesPlugin = plugin(({ addBase, theme }) => {
+	return addBase({
+		':root': {
+			scrollbarGutter: 'stable both-edges',
+		},
+		'.dark': {
+			colorScheme: 'dark',
+		},
+		'.light': {
+			colorScheme: 'light',
+		},
+		'[id]': {
+			scrollMarginTop: theme('spacing[4]'),
+		},
+	});
+});
 
 export default {
 	darkMode: 'class',
@@ -68,5 +86,5 @@ export default {
 			}),
 		},
 	},
-	plugins: [typographyPlugin],
+	plugins: [typographyPlugin, baseStylesPlugin],
 } satisfies Config;
