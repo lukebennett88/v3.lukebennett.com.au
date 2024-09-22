@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   check:
-    name: 🧹 Biome
+    name: 👀 Check
     runs-on: ubuntu-latest
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -48,5 +48,5 @@ jobs:
         with:
           version: latest
 
-      - name: 🧹 Run Biome (Lint, Format, Check)
+      - name: ⚡ Run checks with turbo (lint, format, type-check)
         run: pnpm run check
