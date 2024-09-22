@@ -6,13 +6,14 @@
 			"dependsOn": ["^build"],
 			"outputs": [".next/**", "!.next/cache/**"]
 		},
-		"check:types": {
-			"dependsOn": ["^build"],
-			"outputs": ["tsconfig.tsbuildinfo"]
-		},
+		"check:format": {},
+		"check:lint": {},
+		"check:types": {},
 		"dev": {
 			"cache": false,
 			"persistent": true
-		}
+		},
+		"fix:format": {},
+		"fix:lint": {}
 	}
 }

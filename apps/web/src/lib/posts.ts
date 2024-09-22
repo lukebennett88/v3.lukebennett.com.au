@@ -11,7 +11,7 @@ type Post = {
 	};
 };
 
-export function sortPosts<P extends Post>(posts: P[]) {
+export function sortPosts<P extends Post>(posts: Array<P>) {
 	return posts.sort(
 		(a, b) =>
 			new Date(b.entry.publishedAt).getTime() -
@@ -44,9 +44,12 @@ export async function getSortedEntries() {
 }
 
 export function toIsoString(date: unknown): string {
-	return new Date(typeof date === 'string' ? date : startDate)
-		.toISOString()
-		.split('T')[0]!;
+	return (
+		// biome-ignore lint/style/noNonNullAssertion:
+		new Date(typeof date === 'string' ? date : startDate)
+			.toISOString()
+			.split('T')[0]!
+	);
 }
 
 export function formatToAustralianDate(date: string) {
