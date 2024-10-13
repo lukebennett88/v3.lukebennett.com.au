@@ -31,7 +31,7 @@ importers:
     dependencies:
       '@astrojs/markdoc':
         specifier: 0.11.5
-        version: 0.11.5(@types/react@18.3.11)(astro@4.16.0(rollup@4.22.4)(typescript@5.6.2))(react@18.3.1)
+        version: 0.11.5(@types/react@18.3.11)(astro@4.16.0(rollup@4.22.4)(typescript@5.6.3))(react@18.3.1)
       '@astrojs/react':
         specifier: 3.6.2
         version: 3.6.2(@types/react-dom@18.3.0)(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.8)
@@ -43,10 +43,10 @@ importers:
         version: 3.2.0
       '@astrojs/tailwind':
         specifier: 5.1.2
-        version: 5.1.2(astro@4.16.0(rollup@4.22.4)(typescript@5.6.2))(tailwindcss@3.4.13)
+        version: 5.1.2(astro@4.16.0(rollup@4.22.4)(typescript@5.6.3))(tailwindcss@3.4.13)
       '@astrojs/vercel':
         specifier: 7.8.1
-        version: 7.8.1(astro@4.16.0(rollup@4.22.4)(typescript@5.6.2))(react@18.3.1)
+        version: 7.8.1(astro@4.16.0(rollup@4.22.4)(typescript@5.6.3))(react@18.3.1)
       '@fontsource-variable/source-code-pro':
         specifier: 5.1.0
         version: 5.1.0
@@ -58,7 +58,7 @@ importers:
         version: 5.1.0
       '@keystatic/astro':
         specifier: 5.0.0
-        version: 5.0.0(@keystatic/core@0.5.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.16.0(rollup@4.22.4)(typescript@5.6.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 5.0.0(@keystatic/core@0.5.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.16.0(rollup@4.22.4)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@keystatic/core':
         specifier: 0.5.36
         version: 0.5.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -67,7 +67,7 @@ importers:
         version: 2.2.1
       astro:
         specifier: 4.16.0
-        version: 4.16.0(rollup@4.22.4)(typescript@5.6.2)
+        version: 4.16.0(rollup@4.22.4)(typescript@5.6.3)
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -103,8 +103,8 @@ importers:
         specifier: 3.4.13
         version: 3.4.13
       typescript:
-        specifier: 5.6.2
-        version: 5.6.2
+        specifier: 5.6.3
+        version: 5.6.3
 
   packages/tsconfig: {}
 
@@ -3489,8 +3489,8 @@ packages:
     resolution: {integrity: sha512-yOGpmOAL7CkKe/91I5O3gPICmJNLJ1G4zFYVAsRHg7M64biSnPtRj0WNQt++bRkjYOqjWXrhnUw1utzmVErAdg==}
     engines: {node: '>=16'}
 
-  typescript@5.6.2:
-    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
+  typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3750,13 +3750,13 @@ snapshots:
 
   '@astrojs/internal-helpers@0.4.1': {}
 
-  '@astrojs/markdoc@0.11.5(@types/react@18.3.11)(astro@4.16.0(rollup@4.22.4)(typescript@5.6.2))(react@18.3.1)':
+  '@astrojs/markdoc@0.11.5(@types/react@18.3.11)(astro@4.16.0(rollup@4.22.4)(typescript@5.6.3))(react@18.3.1)':
     dependencies:
       '@astrojs/internal-helpers': 0.4.1
       '@astrojs/markdown-remark': 5.3.0
       '@astrojs/prism': 3.1.0
       '@markdoc/markdoc': 0.4.0(@types/react@18.3.11)(react@18.3.1)
-      astro: 4.16.0(rollup@4.22.4)(typescript@5.6.2)
+      astro: 4.16.0(rollup@4.22.4)(typescript@5.6.3)
       esbuild: 0.21.5
       github-slugger: 2.0.0
       gray-matter: 4.0.3
@@ -3816,9 +3816,9 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/tailwind@5.1.2(astro@4.16.0(rollup@4.22.4)(typescript@5.6.2))(tailwindcss@3.4.13)':
+  '@astrojs/tailwind@5.1.2(astro@4.16.0(rollup@4.22.4)(typescript@5.6.3))(tailwindcss@3.4.13)':
     dependencies:
-      astro: 4.16.0(rollup@4.22.4)(typescript@5.6.2)
+      astro: 4.16.0(rollup@4.22.4)(typescript@5.6.3)
       autoprefixer: 10.4.20(postcss@8.4.47)
       postcss: 8.4.47
       postcss-load-config: 4.0.2(postcss@8.4.47)
@@ -3838,13 +3838,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vercel@7.8.1(astro@4.16.0(rollup@4.22.4)(typescript@5.6.2))(react@18.3.1)':
+  '@astrojs/vercel@7.8.1(astro@4.16.0(rollup@4.22.4)(typescript@5.6.3))(react@18.3.1)':
     dependencies:
       '@astrojs/internal-helpers': 0.4.1
       '@vercel/analytics': 1.3.1(react@18.3.1)
       '@vercel/edge': 1.1.2
       '@vercel/nft': 0.27.4
-      astro: 4.16.0(rollup@4.22.4)(typescript@5.6.2)
+      astro: 4.16.0(rollup@4.22.4)(typescript@5.6.3)
       esbuild: 0.21.5
       fast-glob: 3.3.2
       web-vitals: 3.5.2
@@ -4441,12 +4441,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@keystatic/astro@5.0.0(@keystatic/core@0.5.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.16.0(rollup@4.22.4)(typescript@5.6.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@keystatic/astro@5.0.0(@keystatic/core@0.5.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.16.0(rollup@4.22.4)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.25.6
       '@keystatic/core': 0.5.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/react': 18.3.11
-      astro: 4.16.0(rollup@4.22.4)(typescript@5.6.2)
+      astro: 4.16.0(rollup@4.22.4)(typescript@5.6.3)
       cookie: 0.5.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -5889,7 +5889,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@4.16.0(rollup@4.22.4)(typescript@5.6.2):
+  astro@4.16.0(rollup@4.22.4)(typescript@5.6.3):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -5944,7 +5944,7 @@ snapshots:
       shiki: 1.22.0
       string-width: 7.2.0
       tinyexec: 0.3.0
-      tsconfck: 3.1.3(typescript@5.6.2)
+      tsconfck: 3.1.3(typescript@5.6.3)
       unist-util-visit: 5.0.0
       vfile: 6.0.3
       vite: 5.4.8
@@ -5954,7 +5954,7 @@ snapshots:
       yargs-parser: 21.1.1
       zod: 3.23.8
       zod-to-json-schema: 3.23.3(zod@3.23.8)
-      zod-to-ts: 1.2.0(typescript@5.6.2)(zod@3.23.8)
+      zod-to-ts: 1.2.0(typescript@5.6.3)(zod@3.23.8)
     optionalDependencies:
       sharp: 0.33.5
     transitivePeerDependencies:
@@ -8065,9 +8065,9 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsconfck@3.1.3(typescript@5.6.2):
+  tsconfck@3.1.3(typescript@5.6.3):
     optionalDependencies:
-      typescript: 5.6.2
+      typescript: 5.6.3
 
   tslib@2.7.0: {}
 
@@ -8100,7 +8100,7 @@ snapshots:
 
   type-fest@4.26.1: {}
 
-  typescript@5.6.2: {}
+  typescript@5.6.3: {}
 
   ultrahtml@1.5.3: {}
 
@@ -8310,9 +8310,9 @@ snapshots:
     dependencies:
       zod: 3.23.8
 
-  zod-to-ts@1.2.0(typescript@5.6.2)(zod@3.23.8):
+  zod-to-ts@1.2.0(typescript@5.6.3)(zod@3.23.8):
     dependencies:
-      typescript: 5.6.2
+      typescript: 5.6.3
       zod: 3.23.8
 
   zod@3.23.8: {}
