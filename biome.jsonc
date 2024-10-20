@@ -5,6 +5,14 @@
 			"quoteStyle": "single"
 		}
 	},
+	"files": {
+		"ignore": [
+			"**/coverage/",
+			"**/dist/",
+			"**/node_modules/",
+			"**/pnpm-lock.yaml"
+		]
+	},
 	"formatter": {
 		"attributePosition": "auto",
 		"enabled": true,
@@ -13,16 +21,6 @@
 		"indentWidth": 2,
 		"lineEnding": "lf",
 		"lineWidth": 80
-	},
-	"files": {
-		"ignore": [
-			"**/.*",
-			"**/.*/*",
-			"**/coverage/",
-			"**/dist/",
-			"**/node_modules/",
-			"**/pnpm-lock.yaml"
-		]
 	},
 	"javascript": {
 		"formatter": {
