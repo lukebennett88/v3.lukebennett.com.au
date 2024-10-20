@@ -57,11 +57,11 @@ importers:
         specifier: 5.1.0
         version: 5.1.0
       '@keystatic/astro':
-        specifier: 5.0.0
-        version: 5.0.0(@keystatic/core@0.5.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.16.6(rollup@4.22.4)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 5.0.2
+        version: 5.0.2(@keystatic/core@0.5.38(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.16.6(rollup@4.22.4)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@keystatic/core':
-        specifier: 0.5.36
-        version: 0.5.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 0.5.38
+        version: 0.5.38(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@sindresorhus/slugify':
         specifier: 2.2.1
         version: 2.2.1
@@ -714,16 +714,16 @@ packages:
       next:
         optional: true
 
-  '@keystatic/astro@5.0.0':
-    resolution: {integrity: sha512-ahPtok9c1IEwjXwL7Ud6ooRPA7CpVGTQV/uHk560zznNX913E2QX9MlmO10qQtgvUwl2mPK7U68ucpwLp3fWfw==}
+  '@keystatic/astro@5.0.2':
+    resolution: {integrity: sha512-04JNaIl0aB3BdDhdmZH0RYrK5bDGbQa+tUM8hAIk8GcGNFLY3IVB8LFGD9WJN5txDk05PmOQMEaKqWlcuWoNyA==}
     peerDependencies:
       '@keystatic/core': '*'
-      astro: 2 || 3 || 4
+      astro: 2 || 3 || 4 || 5
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@keystatic/core@0.5.36':
-    resolution: {integrity: sha512-vhoOkBZOjumZhkeNFKuucE2egYVIrBZNz0sfX7DX9XeazoctIyyCshw+UMsuaT2OhlUx/6LJyXlqcUOZMOYCPQ==}
+  '@keystatic/core@0.5.38':
+    resolution: {integrity: sha512-mtvGYBfJldFaTLX6ivTUylJaskvZr35qid8aKID/WjLygxbo5s1xkxRBTeQaJkSPF0Vu4CmpHqLYUjZcpVUvMw==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -1853,13 +1853,13 @@ packages:
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
-  cookie@0.5.0:
-    resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
-    engines: {node: '>= 0.6'}
-
   cookie@0.7.2:
     resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
     engines: {node: '>= 0.6'}
+
+  cookie@1.0.1:
+    resolution: {integrity: sha512-Xd8lFX4LM9QEEwxQpF9J9NTUh8pmdJO0cyRJhFiDoLTk2eH8FXlRv2IFGYVadZpqI3j8fhNrSdKCeYPxiAhLXw==}
+    engines: {node: '>=18'}
 
   cosmiconfig@7.1.0:
     resolution: {integrity: sha512-AdmX6xUzdNASswsFtmwSt7Vj8po9IuqXm0UXz7QKPuEUmPB4XyjGfaAr2PSuELMwkRMVH1EpIkX5bTZGRB3eCA==}
@@ -4441,18 +4441,17 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@keystatic/astro@5.0.0(@keystatic/core@0.5.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.16.6(rollup@4.22.4)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@keystatic/astro@5.0.2(@keystatic/core@0.5.38(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.16.6(rollup@4.22.4)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.25.6
-      '@keystatic/core': 0.5.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@keystatic/core': 0.5.38(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/react': 18.3.11
       astro: 4.16.6(rollup@4.22.4)(typescript@5.6.3)
-      cookie: 0.5.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       set-cookie-parser: 2.7.0
 
-  '@keystatic/core@0.5.36(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@keystatic/core@0.5.38(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.25.6
       '@braintree/sanitize-url': 6.0.4
@@ -4483,7 +4482,7 @@ snapshots:
       '@urql/exchange-auth': 2.2.0(@urql/core@5.0.6(graphql@16.9.0))
       '@urql/exchange-graphcache': 7.1.3(@urql/core@5.0.6(graphql@16.9.0))(graphql@16.9.0)
       '@urql/exchange-persisted': 4.3.0(@urql/core@5.0.6(graphql@16.9.0))
-      cookie: 0.5.0
+      cookie: 1.0.1
       emery: 1.4.3
       escape-string-regexp: 4.0.0
       fast-deep-equal: 3.1.3
@@ -6146,9 +6145,9 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
-  cookie@0.5.0: {}
-
   cookie@0.7.2: {}
+
+  cookie@1.0.1: {}
 
   cosmiconfig@7.1.0:
     dependencies:
