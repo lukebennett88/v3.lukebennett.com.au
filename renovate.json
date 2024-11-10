@@ -34,7 +34,7 @@
 	"prConcurrentLimit": 0,
 	"prHourlyLimit": 3,
 	"rangeStrategy": "replace",
-	"schedule": ["before 7am on Monday"],
+	"schedule": ["before 7am on the first day of the month"],
 	"separateMajorMinor": true,
 	"separateMinorPatch": false,
 	"stabilityDays": 3,
