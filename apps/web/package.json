@@ -30,7 +30,7 @@
 		"@fontsource-variable/source-sans-3": "5.1.0",
 		"@fontsource-variable/source-serif-4": "5.1.0",
 		"@keystatic/astro": "5.0.3",
-		"@keystatic/core": "0.5.39",
+		"@keystatic/core": "0.5.41",
 		"@sindresorhus/slugify": "2.2.1",
 		"astro": "4.16.10",
 		"clsx": "2.1.1",

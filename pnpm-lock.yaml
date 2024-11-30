@@ -58,10 +58,10 @@ importers:
         version: 5.1.0
       '@keystatic/astro':
         specifier: 5.0.3
-        version: 5.0.3(@keystatic/core@0.5.39(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.16.10(rollup@4.27.4)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 5.0.3(@keystatic/core@0.5.41(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.16.10(rollup@4.27.4)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@keystatic/core':
-        specifier: 0.5.39
-        version: 0.5.39(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 0.5.41
+        version: 0.5.41(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@sindresorhus/slugify':
         specifier: 2.2.1
         version: 2.2.1
@@ -714,8 +714,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@keystatic/core@0.5.39':
-    resolution: {integrity: sha512-bOnNXT32ZrAs+s1g/Z1D8QEzkGQ5svVyhsAXM+bcR7kN+4ZoFvWGLMrosyCBflh+b3CuvcxPP1rD2v+stc/1AQ==}
+  '@keystatic/core@0.5.41':
+    resolution: {integrity: sha512-g2vU9QFegDxtv/nTXdLEXdMgvcwbyz3EeGkZJghUAk582RrE+dp7uvxC5uruK9ZOEzG7Av4OD0M3GFlWB6Wokg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -4291,17 +4291,17 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@keystatic/astro@5.0.3(@keystatic/core@0.5.39(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.16.10(rollup@4.27.4)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@keystatic/astro@5.0.3(@keystatic/core@0.5.41(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(astro@4.16.10(rollup@4.27.4)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.26.0
-      '@keystatic/core': 0.5.39(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@keystatic/core': 0.5.41(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/react': 18.3.12
       astro: 4.16.10(rollup@4.27.4)(typescript@5.6.3)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       set-cookie-parser: 2.7.1
 
-  '@keystatic/core@0.5.39(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@keystatic/core@0.5.41(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.26.0
       '@braintree/sanitize-url': 6.0.4
