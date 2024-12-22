@@ -33,20 +33,17 @@
 		"postinstall": "manypkg check",
 		"sort:packages": "npx sort-package-json 'package.json' './apps/*/package.json' './packages/*/package.json'"
 	},
-	"dependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@manypkg/cli": "0.22.0",
-		"prettier": "3.3.3",
-		"prettier-plugin-astro": "0.14.1",
-		"prettier-plugin-tailwindcss": "0.6.9",
-		"turbo": "2.2.3"
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@manypkg/cli": "^0.23.0",
+		"prettier": "^3.4.2",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-tailwindcss": "^0.6.9",
+		"turbo": "^2.3.3"
 	},
-	"packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee",
+	"packageManager": "pnpm@9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf",
 	"engines": {
-		"node": ">=18"
-	},
-	"volta": {
-		"node": "22.11.0"
+		"node": ">=22"
 	},
 	"manypkg": {
 		"defaultBranch": "main",
