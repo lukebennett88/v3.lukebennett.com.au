@@ -7,10 +7,14 @@
 	},
 	"files": {
 		"ignore": [
-			"**/coverage/",
-			"**/dist/",
-			"**/node_modules/",
-			"**/pnpm-lock.yaml"
+			"**/.astro/**",
+			"**/.turbo/**",
+			"**/.vercel/**",
+			"**/coverage/**",
+			"**/dist/**",
+			"**/node_modules/**",
+			"**/pnpm-lock.yaml",
+			"**/tsconfig.tsbuildinfo"
 		]
 	},
 	"formatter": {
@@ -69,7 +73,7 @@
 				"noNamespaceImport": "off",
 				"useBlockStatements": "off",
 				"useConsistentArrayType": {
-					"level": "error",
+					"level": "warn",
 					"options": {
 						"syntax": "generic"
 					}
