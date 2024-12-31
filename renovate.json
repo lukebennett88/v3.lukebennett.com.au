@@ -1,15 +1,15 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"config:recommended",
+		"schedule:monthly",
+		":maintainLockFilesMonthly"
+	],
 	"automerge": true,
-	"extends": ["config:recommended", "schedule:earlyMondays"],
-	"internalChecksFilter": "strict",
-	"ignoreDeps": ["@lukebennett/tsconfig"],
-	"labels": ["dependencies"],
-	"lockFileMaintenance": {
-		"enabled": true
-	},
-	"rebaseWhen": "conflicted",
 	"baseBranches": ["main"],
+	"ignoreDeps": ["@lukebennett/tsconfig"],
+	"internalChecksFilter": "strict",
+	"minimumReleaseAge": "3 days",
 	"packageRules": [
 		{
 			"description": "Automatically merge minor and patch-level updates",
@@ -17,27 +17,15 @@
 			"automerge": true,
 			"automergeType": "branch"
 		},
-		{
-			"groupName": "keystatic",
-			"matchPackagePatterns": ["@keystatic*"]
-		},
-		{
-			"groupName": "react",
-			"matchPackageNames": ["react", "react-dom"]
-		},
-		{
-			"groupName": "turbo",
-			"matchPackageNames": ["@turbo/*", "turbo"]
-		}
+		{ "groupName": "keystatic", "matchPackagePatterns": ["@keystatic*"] },
+		{ "groupName": "react", "matchPackageNames": ["react", "react-dom"] }
 	],
 	"postUpdateOptions": ["pnpmDedupe"],
 	"prConcurrentLimit": 0,
 	"prHourlyLimit": 3,
 	"rangeStrategy": "replace",
-	"schedule": ["before 7am on the first day of the month"],
 	"separateMajorMinor": true,
 	"separateMinorPatch": false,
-	"stabilityDays": 3,
 	"timezone": "Australia/Sydney",
 	"updateNotScheduled": false
 }
