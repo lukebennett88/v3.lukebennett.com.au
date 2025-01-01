@@ -1,0 +1,148 @@
+---
+title: Using Loops and Maps for Efficient Data Transformations
+publishedAt: 2025-01-01
+isDraft: false
+---
+Recently, I’ve been working on a client project built as a single-page application (SPA). Unlike server-rendered apps (where I’ve spent the majority of my time over the past few years), all the data transformations in this app happen client-side. This makes performance something we need to consider much more carefully.
+
+The app fetches data from an API that uses [JSON pointers](https://opis.io/json-schema/2.x/pointers.html) to reduce the size of the payload. The data is then validated (using a runtime schema validator), transformed into a more usable shape, and plotted on a directed graph to form a tree structure.
+
+Early on, we realised that minimising data passes and avoiding unnecessary memory allocations (like creating intermediate arrays) would be important for maintaining performance, particularly for users working with larger datasets.
+
+In the past, I rarely used loops like `for` or `for...of` after learning them. The conventional wisdom in the JavaScript community seemed to be to favour immutable data structures and functional programming styles — chaining methods like `filter` and `map`. However, I’d noticed performance-conscious projects often favoured loops, and I’d read about how they can be faster and more memory-efficient. This inspired me to experiment with them more on this project.
+
+I quickly realised that (in most cases) loops allowed me to do more work in a single pass without sacrificing readability or maintainability. While chaining array methods is often concise, I’ve found loops strike a nice balance between clarity and efficiency — especially when TypeScript introduces friction with array methods, as I’ll demonstrate in the examples below.
+
+This isn’t to say there’s anything wrong with array methods — in most cases, they’re perfectly fine, and their method names often make the code’s intent clear, especially for simpler tasks. But for more complex transformations or when performance really matters, I’ve been gravitating towards loops lately.
+
+Let’s compare three ways to write a `makeDisplayName` function: one that chains array methods, one using `reduce`, and another with a `for...of` loop. The function takes multiple arguments representing the parts of a name, filters out invalid values, trims the remaining strings, and concatenates them with a space:
+
+```typescript
+makeDisplayName(null, 'Maynard', undefined, 'James', false && 'Bob', 'Keenan', '');
+// Returns 'Maynard James Keenan'
+```
+
+This function is unlikely to have performance issues in practice, but it’s complex enough to showcase the trade-offs you might encounter when choosing between different approaches.
+
+## Chained array methods
+
+```typescript
+function makeDisplayName(...parts: Array<string | undefined | null | false>): string {
+	// Filter, trim, and join valid parts
+	return (
+		parts
+			// Filter out invalid parts (non-strings or falsy values)
+			.filter(
+				(part): part is string => Boolean(part) && typeof part === 'string',
+			)
+			// Trim each part
+			.map((part) => part.trim())
+			// Join all parts with a space
+			.join(' ')
+	);
+}
+```
+
+This function is fine for the most part: it’s concise and uses familiar methods. However, it requires three passes over the array (`filter`, `map`, and `join`) and creates two intermediate arrays. While this isn’t an issue for this use case, it’s worth considering for larger datasets. A minor annoyance is dealing with TypeScript — the `filter` needs a type predicate, and the truthy check requires wrapping with `Boolean()` or using `!!`, which adds some verbosity.
+
+## Reduce
+
+```typescript
+function makeDisplayName(...parts: Array<string | undefined | null | false>): string {
+	// Accumulate valid parts into a single string
+	return parts.reduce<string>(
+		// Callback
+		(name, part) => {
+			// If the part is a non-empty string
+			if (part && typeof part === 'string') {
+				// Append the trimmed part to the name, with a space
+				return name ? `${name} ${part.trim()}` : part.trim();
+			}
+			// Return the current name if the part is invalid
+			return name;
+		},
+		// Initial value
+		'',
+	);
+}
+```
+
+The first thing I noticed about this is we have to explicitly provide a value to the generic parameter of `reduce` for this to work. Trying to write a function like this can be pretty painful unless you know about this quirk. You also need to remember to return `name` if the part doesn't pass the check in the `if` statement. Finally, we need to pass an empty string as the initial value so TypeScript can infer the type for `name`. While it’s a single-pass solution, it’s arguably harder to read than the `filter` and `map` approach.
+
+## `for...of` loop
+
+```typescript
+function makeDisplayName(...parts: Array<string | undefined | null | false>): string {
+	// Start with an empty string
+	let name = '';
+	// Loop through the parts
+	for (const part of parts) {
+		// If the part is a non-empty string
+		if (part && typeof part === 'string') {
+			// Add the trimmed part to the name, with a space
+			name = name ? `${name} ${part.trim()}` : part.trim();
+		}
+	}
+	// Return the final name
+	return name;
+}
+```
+
+In terms of code style, the `for...of` loop is the most imperative, but as you can see, it’s still about the same amount of code. We have basically the same logic as the `reduce` version, and none of the TypeScript shenanigans to worry about.
+
+This is just one example, but it shows how different approaches trade off clarity, efficiency, and ease of use. Hopefully, it’s fairly representative of what you can expect.
+
+Let’s look at how you can use a [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) to take these benefits even further.
+
+## Using Maps in loops
+
+Another JavaScript feature I’ve found myself using more than ever on this project is the `Map` object. Maps are a special type of object that stores key-value pairs, and I often use its `get` and `has` methods to retrieve or check data inside a loop.
+
+Imagine you’ve got an array of employees, and you want to print each employee’s name along with their manager’s name. Storing the manager object inside each employee isn’t ideal since managers are also employees and can manage multiple people, leading to lots of duplicates. A better approach might be to store the manager’s ID in each employee’s data.
+
+Now there’s another challenge: you need to use the manager’s ID to find their data. At first, you might be tempted to use the `find` array method to search through the list of employees for the manager’s ID. But this can get very inefficient. For every employee in the array, you’d potentially have to search through the entire array again to find their manager.
+
+Let’s break it down with some quick math. Say there are 100 employees in the array. On average, `find` would need to search through half the array (50 employees) to find the manager. That’s `100 * 50 = 5000` searches in total.
+
+Instead, you can set up a `Map` where the key is the employee’s ID and the value is the corresponding employee object. Lookups are much faster because the `Map` knows exactly where each employee is stored in memory. This reduces the total operations to just `100` (to build the `Map`) plus `100` for the lookups, for a total of `200` operations compared to `5000` with `find`.
+
+Here’s what that might look like:
+
+```typescript
+// Initial shape
+type Employee = {
+	id: string;
+	name: string;
+	managerId?: string;
+};
+
+// Transformed shape
+type EmployeeManagementPair = {
+	employeeName: string;
+	managerName: string;
+};
+
+function mapEmployeesToManagers(employees: Array<Employee>) {
+	// Precompute a Map for quick lookups
+	const employeesById = new Map(
+		employees.map((employee) => [employee.id, employee]),
+	);
+
+	const data: Array<EmployeeManagementPair> = [];
+	for (const employee of employees) {
+		const manager = employee.managerId
+			? employeesById.get(employee.managerId)
+			: undefined;
+		data.push({
+			employeeName: employee.name,
+			managerName: manager?.name || 'None',
+		});
+	}
+
+	return data;
+}
+```
+
+## Closing thoughts
+
+I’m glad I decided to experiment with using loops more often. They’ve become an invaluable addition to my toolbelt. They are generally faster than equivalent code using array methods — often easier to read — and as long as the mutations are properly encapsulated within a function, concerns about mutability are largely unfounded. Going forward, I’ll continue to use whatever I deem the best tool for the job, but now that I’ve spent more time with them, I expect to reach for a loop much more often.
