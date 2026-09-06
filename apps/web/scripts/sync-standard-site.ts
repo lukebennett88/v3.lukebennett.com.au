@@ -2,16 +2,15 @@ import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { basename } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import {
+	serializeStandardSiteManifest,
+	standardSitePublicationUri,
+} from '../src/lib/standard-site.ts';
+import {
 	type AtprotoRepo,
 	connectAtprotoRepo,
 	type ExistingRecord,
 	getRkey,
 } from './atproto.ts';
-
-import {
-	serializeStandardSiteManifest,
-	standardSitePublicationUri,
-} from '../src/lib/standard-site.ts';
 
 type PublishedPost = {
 	portableContent: string;
