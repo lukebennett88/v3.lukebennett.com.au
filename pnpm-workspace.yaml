@@ -1,17 +1,26 @@
+# image-size and extract-zip are at latest upstream with no patched version published;
+# transitive via @astrojs/netlify dev chain; re-check when Netlify updates its deps.
+auditConfig:
+  ignoreGhsas:
+    - GHSA-w3rx-r6r6-pgpr
+    - GHSA-5p2g-fcmc-qvqq
+    - GHSA-jmr9-qjv8-65gv
 allowBuilds:
   "@parcel/watcher": false
   esbuild: false
   sharp: false
 catalogMode: prefer
 minimumReleaseAge: 2880 # Security: Wait 2 days (2880 minutes) before installing newly released packages
+overrides:
+  sharp: ^0.35.4
+  toml: ^4.3.0
 packages:
   - apps/*
   - packages/*
+peerDependencyRules:
+  allowedVersions:
+    "@astrojs/check>typescript": "7"
 trustLockfile: true
-overrides:
-  esbuild: ">=0.28.2" # Security: esbuild RCE (GHSA-g7r4-rqvm-qjhr) + arbitrary file read (GHSA-g7r4-m6w7-qqqr), patched in 0.28.1
-  vite: "catalog:"
-  yaml: ">=2.9.0" # Security: yaml stack overflow via deeply nested collections (GHSA-48c2-rrv3-qjmp), patched in 2.8.3
 catalog:
   "@astrojs/check": ^0.9.10
   "@astrojs/compiler-rs": ^0.4.0
