@@ -9,40 +9,40 @@ packages:
   - packages/*
 trustLockfile: true
 overrides:
-  esbuild: ">=0.28.1" # Security: esbuild RCE (GHSA-g7r4-rqvm-qjhr) + arbitrary file read (GHSA-g7r4-m6w7-qqqr), patched in 0.28.1
-  vite: 'catalog:'
+  esbuild: ">=0.28.2" # Security: esbuild RCE (GHSA-g7r4-rqvm-qjhr) + arbitrary file read (GHSA-g7r4-m6w7-qqqr), patched in 0.28.1
+  vite: "catalog:"
   yaml: ">=2.9.0" # Security: yaml stack overflow via deeply nested collections (GHSA-48c2-rrv3-qjmp), patched in 2.8.3
 catalog:
-  "@astrojs/check": ^0.9.9
-  "@astrojs/compiler-rs": ^0.3.0
-  "@astrojs/markdoc": ^2.0.1
-  "@astrojs/netlify": ^8.0.0
-  "@astrojs/react": ^6.0.0
-  "@astrojs/rss": ^4.0.18
-  "@astrojs/sitemap": ^3.7.3
+  "@astrojs/check": ^0.9.10
+  "@astrojs/compiler-rs": ^0.4.0
+  "@astrojs/markdoc": ^2.0.9
+  "@astrojs/netlify": ^8.2.5
+  "@astrojs/react": ^6.0.5
+  "@astrojs/rss": ^4.0.19
+  "@astrojs/sitemap": ^3.7.4
   "@biomejs/biome": 2.3.0
   "@keystatic/astro": ^6.0.0
-  "@keystatic/core": ^0.5.50
+  "@keystatic/core": ^0.6.9
   "@manypkg/cli": ^0.25.1
-  "@sindresorhus/slugify": ^3.0.0
+  "@sindresorhus/slugify": ^3.0.1
   "@tailwindcss/typography": ^0.5.20
-  "@tailwindcss/vite": ^4.3.2
-  "@types/react": ^19.2.17
-  "@types/react-dom": ^19.2.3
+  "@tailwindcss/vite": ^4.3.3
+  "@types/react": ^19.2.18
+  "@types/react-dom": ^19.2.7
   "@unpic/react": ^1.0.2
-  astro: ^7.0.3
+  astro: ^7.3.1
   clsx: ^2.1.1
-  prettier: ^3.9.4
+  prettier: ^3.9.6
   prettier-plugin-astro: ^0.14.1
-  prettier-plugin-tailwindcss: ^0.8.0
-  react: ^19.2.7
+  prettier-plugin-tailwindcss: ^0.8.1
+  react: ^19.2.8
   react-compiler-runtime: 19.0.0-beta-ebf51a3-20250411
-  react-dom: ^19.2.7
-  shiki: ^4.3.0
+  react-dom: ^19.2.8
+  shiki: ^4.4.3
   tailwind-merge: ^3.6.0
-  tailwindcss: ^4.3.2
+  tailwindcss: ^4.3.3
   tiny-invariant: ^1.3.3
-  turbo: ^2.10.1
-  typescript: ^7.0.0
-  vite: ^8.1.3
-  zod: ^4.4.3
+  turbo: ^2.10.12
+  typescript: ^7.0.2
+  vite: ^8.2.2
+  zod: ^4.5.4
